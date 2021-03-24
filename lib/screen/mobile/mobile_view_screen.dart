@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio_app/utils/colors.dart';
 import 'package:portfolio_app/utils/strings.dart';
 
 class MobileViewScreen extends StatelessWidget {
@@ -30,24 +32,26 @@ class MobileViewScreen extends StatelessWidget {
                     children: <TableRow>[
                 TableRow(
                 children: <Widget>[
-                  Container(
+                      /*Container(
                   height: 50,
                   decoration: BoxDecoration(
                     color: Colors.green,
                     shape: BoxShape.circle
                   ),
-                ),
-
-                Container(
-                 child: Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                   children: [
-                     Text('App development',
-                     style: TextStyle(
-                       fontSize: 20,
-                       fontWeight: FontWeight.bold
-                     )),
-                     SizedBox(height: 10,),
+                ),*/
+                      Icon(
+                        FontAwesomeIcons.pen,
+                        color: Colors.green,
+                        size: 50,
+                      ),
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('App development',
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold)),
+                            SizedBox(height: 10,),
                      Text(whatIDo),
                      SizedBox(height: 20,), ],
                  ),
@@ -56,25 +60,22 @@ class MobileViewScreen extends StatelessWidget {
               ),
                     TableRow(
                       children: <Widget>[
-                        Container(
-                          height: 50,
-                          decoration: BoxDecoration(
-                              color: Colors.green,
-                              shape: BoxShape.circle
-                          ),
-                        ),
-
-                        Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('App development',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold
-                                  )),
-                              SizedBox(height: 10,),
-                              Text(whatIDo),
+                      Icon(
+                        FontAwesomeIcons.laptop,
+                        color: kGreenColor,
+                        size: 50,
+                      ),
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('App development',
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold)),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(whatIDo),
                               SizedBox(height: 20,),
                             ],
                           ),
@@ -170,9 +171,10 @@ class MobileViewScreen extends StatelessWidget {
                     width: 100,
                     margin: EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                        color: Colors.green,
-                        shape: BoxShape.circle
-                    ),
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/user_2.png'),
+                        )),
                   ),
 
 
@@ -195,9 +197,9 @@ class MobileViewScreen extends StatelessWidget {
                 children: [
                   BorderButton(
                     onPressed: () {},
-                    borderColor: Colors.green,
-                    buttonText: 'DOWNLOAD CV',
-                  ),
+            borderColor: kGreenColor,
+            buttonText: 'DOWNLOAD CV',
+          ),
                   SizedBox(width: 20,),
                   BorderButton(
                     onPressed: () {},
@@ -321,6 +323,10 @@ class BorderButton extends StatelessWidget {
       onPressed: onPressed,
       hoverColor: Colors.green,
       elevation: 6,
+      shape: RoundedRectangleBorder(
+        side: BorderSide(color: borderColor, width: 2.0),
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+      ),
       child: Container(
           width: 150,
           height: 50,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/screen/mobile/mobile_view_screen.dart';
+import 'package:portfolio_app/screen/tablet/tablet_view_screen.dart';
 import 'package:portfolio_app/utils/responsive.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,7 +19,9 @@ class HomeScreen extends StatelessWidget {
 
       body:Responsive(
         mobile: MobileViewScreen(),
-      )
+          tablet: TabletViewScreen(),
+          desktop: TabletViewScreen(),
+        )
 
     );
   }
