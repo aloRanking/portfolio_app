@@ -4,6 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hovering/hovering.dart';
 import 'package:portfolio_app/utils/colors.dart';
 import 'package:portfolio_app/utils/strings.dart';
+import 'package:portfolio_app/widgets/subhead.dart';
+import 'package:universal_html/js.dart' as js;
 
 class TabletViewScreen extends StatelessWidget {
   @override
@@ -15,23 +17,32 @@ class TabletViewScreen extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: 20,
+                height: 50,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   buildImage(),
                   SizedBox(
-                    height: 20,
+                    width: 50,
                   ),
-                  Column(
-                    children: [
-                      buildProfile(),
-                      SizedBox(
-                        height: 20,
+                  Flexible(
+                    child: Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          buildProfile(),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          buildContactButtons(),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          buildSocialButtons()
+                        ],
                       ),
-                      buildContactButtons(),
-                    ],
+                    ),
                   ),
                 ],
               ),
@@ -42,6 +53,7 @@ class TabletViewScreen extends StatelessWidget {
                 headline: 'What i do',
               ),
               Container(
+                padding: EdgeInsets.only(left: 10, right: 20),
                 child: Table(columnWidths: {
                   0: FlexColumnWidth(1),
                   1: FlexColumnWidth(4),
@@ -51,9 +63,9 @@ class TabletViewScreen extends StatelessWidget {
                   TableRow(
                     children: <Widget>[
                       Icon(
-                        FontAwesomeIcons.pen,
+                        FontAwesomeIcons.mobile,
                         color: Colors.green,
-                        size: 50,
+                        size: 30,
                       ),
                       Container(
                         child: Column(
@@ -65,7 +77,10 @@ class TabletViewScreen extends StatelessWidget {
                             SizedBox(
                               height: 10,
                             ),
-                            Text(whatIDo),
+                            Text(
+                              whatIDo,
+                              style: TextStyle(wordSpacing: 3, height: 1.5),
+                            ),
                             SizedBox(
                               height: 20,
                             ),
@@ -75,7 +90,7 @@ class TabletViewScreen extends StatelessWidget {
                       Icon(
                         FontAwesomeIcons.laptop,
                         color: Colors.green,
-                        size: 50,
+                        size: 30,
                       ),
                       Container(
                         child: Column(
@@ -87,7 +102,10 @@ class TabletViewScreen extends StatelessWidget {
                             SizedBox(
                               height: 10,
                             ),
-                            Text(whatIDo),
+                            Text(
+                              whatIDo,
+                              style: TextStyle(wordSpacing: 3, height: 1.5),
+                            ),
                             SizedBox(
                               height: 20,
                             ),
@@ -99,9 +117,9 @@ class TabletViewScreen extends StatelessWidget {
                   TableRow(
                     children: <Widget>[
                       Icon(
-                        FontAwesomeIcons.laptop,
+                        FontAwesomeIcons.desktop,
                         color: kGreenColor,
-                        size: 50,
+                        size: 30,
                       ),
                       Container(
                         child: Column(
@@ -113,17 +131,20 @@ class TabletViewScreen extends StatelessWidget {
                             SizedBox(
                               height: 10,
                             ),
-                            Text(whatIDo),
+                            Text(
+                              whatIDo,
+                              style: TextStyle(wordSpacing: 3, height: 1.5),
+                            ),
                             SizedBox(
                               height: 20,
                             ),
                           ],
                         ),
                       ),
-                      Container(
-                        height: 50,
-                        decoration: BoxDecoration(
-                            color: Colors.green, shape: BoxShape.circle),
+                      Icon(
+                        FontAwesomeIcons.shoppingBag,
+                        color: kGreenColor,
+                        size: 30,
                       ),
                       Container(
                         child: Column(
@@ -135,7 +156,10 @@ class TabletViewScreen extends StatelessWidget {
                             SizedBox(
                               height: 10,
                             ),
-                            Text(whatIDo),
+                            Text(
+                              whatIDo,
+                              style: TextStyle(wordSpacing: 3, height: 1.5),
+                            ),
                             SizedBox(
                               height: 20,
                             ),
@@ -189,10 +213,50 @@ class TabletViewScreen extends StatelessWidget {
     );
   }
 
+  buildSocialButtons() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        IconButton(
+            icon: FaIcon(
+              FontAwesomeIcons.linkedin,
+              size: 30,
+              color: Colors.blue[700],
+            ),
+            onPressed: () {
+              js.context.callMethod('open', [linkedIn]);
+            }),
+        SizedBox(
+          width: 15,
+        ),
+        IconButton(
+            icon: FaIcon(
+              FontAwesomeIcons.twitter,
+              size: 30,
+              color: Colors.blue,
+            ),
+            onPressed: () {
+              js.context.callMethod('open', [twitter]);
+            }),
+        SizedBox(
+          width: 15,
+        ),
+        IconButton(
+            icon: FaIcon(
+              FontAwesomeIcons.github,
+              size: 30,
+            ),
+            onPressed: () {
+              js.context.callMethod('open', [github]);
+            })
+      ],
+    );
+  }
+
   Container buildContactButtons() {
     return Container(
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           BorderButton(
             onPressed: () {},
@@ -215,97 +279,55 @@ class TabletViewScreen extends StatelessWidget {
     );
   }
 
-  Container buildProfile() {
+  buildProfile() {
     return Container(
+      width: 400,
       padding: EdgeInsets.all(8),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             height: 15,
           ),
-          Text('Mobile App Developer', style: TextStyle(fontSize: 16)),
+          Text('Flutter Developer',
+              style: TextStyle(fontSize: 16, color: Color(0xFFCACACA))),
           SizedBox(
             height: 15,
           ),
           Text('ADIGUN ALO',
-              style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold)),
+              style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold)),
           SizedBox(
             height: 10,
           ),
           Container(
-              width: 310,
               child: Text(
-                aboutMe,
-                textAlign: TextAlign.center,
-              )),
+            aboutMe,
+            style: TextStyle(wordSpacing: 3, height: 1.5),
+          )),
         ],
       ),
     );
   }
 
-  Container buildImage() {
-    return Container(
-      height: 300,
-      width: 300,
-      decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white54),
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Container(
-          height: 250,
-          width: 250,
-          decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage('assets/images/aloranking.jpeg'),
-              )),
-        ),
-      ),
-    );
-  }
-}
-
-class SubProfileHeadline extends StatelessWidget {
-  const SubProfileHeadline({
-    Key key,
-    this.headline,
-  }) : super(key: key);
-
-  final String headline;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(30),
-      child: Row(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                headline.toUpperCase(),
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              Stack(
-                children: [
-                  Container(
-                    height: 5,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(20),
-                        ),
-                        color: Colors.white60),
-                  ),
-                  Container(
-                    height: 5,
-                    width: 40,
-                    color: Colors.green,
-                  ),
-                ],
-              ),
-            ],
+  buildImage() {
+    return Flexible(
+      child: Container(
+        height: 350,
+        width: 350,
+        decoration:
+            BoxDecoration(shape: BoxShape.circle, color: Colors.white54),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Container(
+            height: 250,
+            width: 250,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage('assets/images/aloranking.jpeg'),
+                )),
           ),
-        ],
+        ),
       ),
     );
   }

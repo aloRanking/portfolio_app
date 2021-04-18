@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio_app/utils/colors.dart';
+import 'package:portfolio_app/utils/constants.dart';
 import 'package:portfolio_app/utils/strings.dart';
+import 'package:portfolio_app/widgets/borderbutton.dart';
+import 'package:portfolio_app/widgets/social_buttons.dart';
+import 'package:portfolio_app/widgets/subhead.dart';
 
 class MobileViewScreen extends StatelessWidget {
   @override
@@ -13,128 +17,125 @@ class MobileViewScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               buildImage(),
               buildProfile(),
-              SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
               buildContactButtons(),
-              SizedBox(height: 10,),
+              SocialButtonWidgets(),
+              SizedBox(
+                height: 10,
+              ),
               SubProfileHeadline(
                 headline: 'What i do',
               ),
               Container(
-                child: Table(
-                    columnWidths: {
-                      0: FlexColumnWidth(1),
-                      1: FlexColumnWidth(4),
-
-                    },
-                    children: <TableRow>[
-                TableRow(
-                children: <Widget>[
-                      /*Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Colors.green,
-                    shape: BoxShape.circle
-                  ),
-                ),*/
+                padding: EdgeInsets.only(left: 10, right: 20),
+                child: Table(columnWidths: {
+                  0: FlexColumnWidth(1),
+                  1: FlexColumnWidth(4),
+                }, children: <TableRow>[
+                  TableRow(
+                    children: <Widget>[
                       Icon(
-                        FontAwesomeIcons.pen,
+                            FontAwesomeIcons.mobile,
                         color: Colors.green,
-                        size: 50,
+                        size: 30,
                       ),
-                      Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('App development',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold)),
-                            SizedBox(height: 10,),
-                     Text(whatIDo),
-                     SizedBox(height: 20,), ],
-                 ),
-                ),
-                ],
-              ),
-                    TableRow(
-                      children: <Widget>[
-                      Icon(
-                        FontAwesomeIcons.laptop,
-                        color: kGreenColor,
-                        size: 50,
-                      ),
-                      Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('App development',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold)),
+                          Container(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                            Text('App development', style: kTableRowTitleStyle),
                             SizedBox(
                               height: 10,
                             ),
-                            Text(whatIDo),
-                              SizedBox(height: 20,),
-                            ],
+                            Text(whatIDo, style: kTableRowTextStyle),
+                            SizedBox(
+                              height: 20,
+                            ),
+                          ],
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    TableRow(
-                      children: <Widget>[
-                        Container(
-                          height: 50,
-                          decoration: BoxDecoration(
-                              color: Colors.green,
-                              shape: BoxShape.circle
+                        ],
+                      ),
+                      TableRow(
+                        children: <Widget>[
+                          Icon(
+                            FontAwesomeIcons.laptop,
+                        color: kGreenColor,
+                        size: 30,
+                      ),
+                          Container(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                            Text('App development', style: kTableRowTitleStyle),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(whatIDo, style: kTableRowTextStyle),
+                            SizedBox(
+                              height: 20,
+                            ),
+                          ],
+                            ),
                           ),
+                        ],
+                      ),
+                      TableRow(
+                        children: <Widget>[
+                      Icon(
+                        FontAwesomeIcons.desktop,
+                        color: kGreenColor,
+                        size: 30,
+                      ),
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('App development', style: kTableRowTitleStyle),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(whatIDo, style: kTableRowTextStyle),
+                            SizedBox(
+                              height: 20,
+                            ),
+                          ],
                         ),
-
-                        Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('App development',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold
-                                  )),
-                              SizedBox(height: 10,),
-                              Text(whatIDo),
-                              SizedBox(height: 20,), ],
                           ),
+                        ],
+                      ),
+                      TableRow(
+                        children: <Widget>[
+                      Icon(
+                        FontAwesomeIcons.shoppingBag,
+                        color: kGreenColor,
+                        size: 30,
+                      ),
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('App development', style: kTableRowTitleStyle),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(whatIDo, style: kTableRowTextStyle),
+                            SizedBox(
+                              height: 20,
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    TableRow(
-                      children: <Widget>[
-                        Container(
-                          height: 50,
-                          decoration: BoxDecoration(
-                              color: Colors.green,
-                              shape: BoxShape.circle
-                          ),
-                        ),
-
-                        Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('App development',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold
-                                  )),
-                              SizedBox(height: 10,),
-                              Text(whatIDo),
-                              SizedBox(height: 20,), ],
-                          ),
-                        ),
-                      ],
-                    ),
-  ]),
+                      ),
+                        ],
+                      ),
+                    ]),
               ),
               SubProfileHeadline(
                 headline: 'My Selected Work',
@@ -213,129 +214,90 @@ class MobileViewScreen extends StatelessWidget {
 
   Container buildProfile() {
     return Container(
+      width: 300,
       padding: EdgeInsets.all(10),
-              child: Column(
-                children: [
-                  SizedBox(height: 15,),
-                  Text('Mobile App Developer',
-                  style:TextStyle(
-                    fontSize: 16
-
-                  )),
-                  SizedBox(height: 15,),
-                  Text('ADIGUN ALO',
-                      style:TextStyle(
-                          fontSize: 21,
-                        fontWeight: FontWeight.bold
-
-                      )),
-                  SizedBox(height: 10,),
-                  Text(aboutMe),
-                ],
-              ),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 15,
+          ),
+          Text('Flutter Developer',
+              style: TextStyle(
+                  letterSpacing: 2, fontSize: 16, color: Color(0xFFCACACA))),
+          SizedBox(
+            height: 15,
+          ),
+          Text('ADIGUN ALO',
+              style: TextStyle(fontSize: 45, fontWeight: FontWeight.bold)),
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+              child: Text(
+            aboutMe,
+            style: TextStyle(wordSpacing: 3, height: 1.5),
+          )),
+        ],
+      ),
             );
   }
 
   Container buildImage() {
     return Container(
-              height: 200,
-              width: 200,
-              decoration:
-                  BoxDecoration(shape: BoxShape.circle, color: Colors.white54),             child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Container(
-                  height: 150,
-                  width: 150,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/aloranking.jpeg'),
-                  )),
-                ),
-              ),
+      height: 300,
+      width: 300,
+      decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white54),
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Container(
+          height: 150,
+          width: 150,
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                image: AssetImage('assets/images/aloranking.jpeg'),
+              )),
+        ),
+      ),
             );
   }
 }
 
-class SubProfileHeadline extends StatelessWidget {
-  const SubProfileHeadline({
-    Key key, this.headline,
+class SocialButtonWidgets extends StatelessWidget {
+  const SocialButtonWidgets({
+    Key key,
   }) : super(key: key);
-
-  final String headline;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(30),
+    return Padding(
+      padding: const EdgeInsets.only(top: 20.0),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(headline.toUpperCase(),
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold
-              ),),
-              Stack(
-                children: [
-                  Container(
-                    height: 5,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(20),
-                        ),
-                        color: Colors.white60),
-                  ),
-                  Container(
-                    height: 5,
-                    width: 40,
-                    color: Colors.green,
-                  ),
-                ],
-              ),
-            ],
+          SocialButton(
+            url: linkedIn,
+            color: Colors.blue[700],
+            icon: FontAwesomeIcons.linkedin,
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          SocialButton(
+            url: twitter,
+            color: Colors.blue,
+            icon: FontAwesomeIcons.twitter,
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          SocialButton(
+            url: github,
+            color: Colors.black,
+            icon: FontAwesomeIcons.github,
           ),
         ],
       ),
-    );
-  }
-}
-
-class BorderButton extends StatelessWidget {
-  const BorderButton({
-    Key key,
-    this.hoverColor,
-    this.buttonText,
-    this.onPressed,
-    this.borderColor,
-  }) : super(key: key);
-  final Color hoverColor;
-  final Color borderColor;
-  final String buttonText;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      onPressed: onPressed,
-      hoverColor: Colors.green,
-      elevation: 6,
-      shape: RoundedRectangleBorder(
-        side: BorderSide(color: borderColor, width: 2.0),
-        borderRadius: BorderRadius.all(Radius.circular(20)),
-      ),
-      child: Container(
-          width: 150,
-          height: 50,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-            border: Border.all(color: borderColor, width: 2.0),
-            //color: Colors.black54
-          ),
-          child: Center(child: Text(buttonText))),
     );
   }
 }
