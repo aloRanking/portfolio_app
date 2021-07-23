@@ -12,7 +12,10 @@ class MobileViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    final PageController controller = PageController(initialPage: 0);
+    final PageController controller1 = PageController(initialPage: 0);
     return Scaffold(
+      backgroundColor: Colors.grey[100],
       body: Container(
         child: SingleChildScrollView(
           child: Column(
@@ -50,11 +53,12 @@ class MobileViewScreen extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                            Text('App development', style: kTableRowTitleStyle),
+                            Text('Mobile App development',
+                                style: kTableRowTitleStyle),
                             SizedBox(
                               height: 10,
                             ),
-                            Text(whatIDo, style: kTableRowTextStyle),
+                            Text(app_dev, style: kTableRowTextStyle),
                             SizedBox(
                               height: 20,
                             ),
@@ -74,11 +78,11 @@ class MobileViewScreen extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                            Text('App development', style: kTableRowTitleStyle),
+                            Text('Web development', style: kTableRowTitleStyle),
                             SizedBox(
                               height: 10,
                             ),
-                            Text(whatIDo, style: kTableRowTextStyle),
+                            Text(web_dev, style: kTableRowTextStyle),
                             SizedBox(
                               height: 20,
                             ),
@@ -140,49 +144,124 @@ class MobileViewScreen extends StatelessWidget {
               SubProfileHeadline(
                 headline: 'My Selected Work',
               ),
+              Container(
+                height: 300,
+                child: PageView(
+                  scrollDirection: Axis.horizontal,
+                  controller: controller1,
+                  children: [
+                    Image.asset('images/pjctsnap.jpg'),
+                    Image.asset('images/hagglexsnap.jpg'),
+                    Image.asset('images/lfdssnap.jpg'),
+                    Image.asset('images/foodsnap.jpg'),
+                    Image.asset('images/moviesnap.jpg'),
+                  ],
+                ),
+              ),
               SubProfileHeadline(
                 headline: 'testimonials',
               ),
 
-              Stack(
-                children: [
-                  Container(
-                    height: 300,
-                    width: size.width,
-                  ),
-
-                  Positioned(
-                    top: 50,
-                    left: 40,
-                    right: 20,
-                    child: Container(
-                      width: size.width -60,
-                      height: 200,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        border: Border.all(
-                          color: Colors.grey,
-                          width: 2
-                        )
-                      ),
+              Container(
+                height: 300,
+                child: PageView(
+                  scrollDirection: Axis.horizontal,
+                  controller: controller,
+                  children: [
+                    Stack(
+                      children: [
+                        Container(
+                          height: 300,
+                          width: size.width,
+                        ),
+                        Positioned(
+                          top: 50,
+                          left: 40,
+                          right: 20,
+                          child: Container(
+                            width: size.width - 60,
+                            height: 200,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(10)),
+                                border: Border.all(color: Colors.grey, width: 2)),
+                          ),
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          margin: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: AssetImage('assets/images/user_2.png'),
+                              )),
+                        ),
+                      ],
                     ),
-                  ),
-                  Container(
-                    height: 100,
-                    width: 100,
-                    margin: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/user_2.png'),
-                        )),
-                  ),
+                    Stack(
+                      children: [
+                        Container(
+                          height: 300,
+                          width: size.width,
+                        ),
+                        Positioned(
+                          top: 50,
+                          left: 40,
+                          right: 20,
+                          child: Container(
+                            width: size.width - 60,
+                            height: 200,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(10)),
+                                border: Border.all(color: Colors.grey, width: 2)),
+                          ),
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          margin: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: AssetImage('assets/images/user_2.png'),
+                              )),
+                        ),
+                      ],
+                    ),
+                    Stack(
+                      children: [
+                        Container(
+                          height: 300,
+                          width: size.width,
+                        ),
+                        Positioned(
+                          top: 50,
+                          left: 40,
+                          right: 20,
+                          child: Container(
+                            width: size.width - 60,
+                            height: 200,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(10)),
+                                border: Border.all(color: Colors.grey, width: 2)),
+                          ),
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          margin: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: AssetImage('assets/images/user_2.png'),
+                              )),
+                        ),
+                      ],
+                    ),
+                  ],
 
 
-
-
-
-                ],
+                ),
               )
             ],
           ),
@@ -234,7 +313,7 @@ class MobileViewScreen extends StatelessWidget {
           ),
           Container(
               child: Text(
-            aboutMe,
+            aboutMe_txt,
             style: TextStyle(wordSpacing: 3, height: 1.5),
           )),
         ],

@@ -7,7 +7,7 @@ import 'package:portfolio_app/utils/strings.dart';
 import 'package:portfolio_app/widgets/subhead.dart';
 import 'package:universal_html/js.dart' as js;
 
-class TabletViewScreen extends StatelessWidget {
+class DesktopViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -180,23 +180,23 @@ class TabletViewScreen extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    Image.asset('images/pjctsnap.jpg'),
+                    Image.asset( 'images/pjctsnap.jpg'),
                     SizedBox(
                       width: 20,
                     ),
-                    Image.asset('images/hagglexsnap.jpg'),
+                    Image.asset( 'images/hagglexsnap.jpg'),
                     SizedBox(
                       width: 20,
                     ),
-                    Image.asset('images/lfdssnap.jpg'),
+                    Image.asset( 'images/lfdssnap.jpg'),
                     SizedBox(
                       width: 20,
                     ),
-                    Image.asset('images/foodsnap.jpg'),
+                    Image.asset( 'images/foodsnap.jpg'),
                     SizedBox(
                       width: 20,
                     ),
-                    Image.asset('images/moviesnap.jpg'),
+                    Image.asset( 'images/moviesnap.jpg'),
                     SizedBox(
                       width: 20,
                     ),
@@ -208,68 +208,101 @@ class TabletViewScreen extends StatelessWidget {
               ),
               Container(
                 height: 300,
-                child: ListView(scrollDirection: Axis.horizontal, children: [
-                  Stack(
-                    children: [
-                        Container(
-                          height: 300,
-                          width: size.width/2,
-                        ),
-                        Positioned(
-                          top: 50,
-                          left: 40,
-                          right: 20,
-                          child: Container(
-                            width: size.width - 60,
-                            height: 200,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(10)),
-                                border: Border.all(color: Colors.grey, width: 2)),
+                child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children:[
+
+                      Stack(
+                        children: [
+                          Container(
+                            height: 300,
+                            width: size.width/3,
                           ),
-                        ),
-                        Container(
-                          height: 100,
-                          width: 100,
-                          margin: EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                image: AssetImage('assets/images/user_2.png'),
-                              )),
-                        ),
-                      ],
-                    ),
-                    Stack(
-                      children: [
-                        Container(
-                          height: 300,
-                          width: size.width/2,
-                        ),
-                        Positioned(
-                          top: 50,
-                          left: 40,
-                          right: 20,
-                          child: Container(
-                            width: size.width - 60,
-                            height: 200,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(10)),
-                                border: Border.all(color: Colors.grey, width: 2)),
+                          Positioned(
+                            top: 50,
+                            left: 40,
+                            right: 20,
+                            child: Container(
+                              width: size.width - 60,
+                              height: 200,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                                  border: Border.all(color: Colors.grey, width: 2)),
+                            ),
                           ),
-                        ),
-                        Container(
-                          height: 100,
-                          width: 100,
-                          margin: EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                image: AssetImage('assets/images/user_2.png'),
-                              )),
-                        ),
-                      ],
-                    ),
-                  ]
+                          Container(
+                            height: 100,
+                            width: 100,
+                            margin: EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/user_1.png'),
+                                )),
+                          ),
+                        ],
+                      ),
+                      Stack(
+                        children: [
+                          Container(
+                            height: 300,
+                            width: size.width/3,
+                          ),
+                          Positioned(
+                            top: 50,
+                            left: 40,
+                            right: 20,
+                            child: Container(
+                              width: size.width - 60,
+                              height: 200,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                                  border: Border.all(color: Colors.grey, width: 2)),
+                            ),
+                          ),
+                          Container(
+                            height: 100,
+                            width: 100,
+                            margin: EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/user_2.png'),
+                                )),
+                          ),
+                        ],
+                      ),
+                      Stack(
+                        children: [
+                          Container(
+                            height: 300,
+                            width: size.width/3,
+                          ),
+                          Positioned(
+                            top: 50,
+                            left: 40,
+                            right: 20,
+                            child: Container(
+                              width: size.width - 60,
+                              height: 200,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                                  border: Border.all(color: Colors.grey, width: 2)),
+                            ),
+                          ),
+                          Container(
+                            height: 100,
+                            width: 100,
+                            margin: EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/user_3.png'),
+                                )),
+                          ),
+                        ],
+                      ),
+                    ]
 
                 ),
               )
@@ -357,26 +390,20 @@ class TabletViewScreen extends StatelessWidget {
             height: 15,
           ),
           Text('Flutter Developer',
-              style: TextStyle(fontSize: 16,
-                  letterSpacing: 3,
-                  color: Color(0xFFCACACA))),
+              style: TextStyle(fontSize: 16,letterSpacing: 3, color: Color(0xFFCACACA))),
           SizedBox(
             height: 15,
           ),
           Text('ADIGUN ALO',
-              style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold)),
+              style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold)),
           SizedBox(
             height: 10,
           ),
           Container(
               child: Text(
-            aboutMe_txt,
-            textAlign: TextAlign.justify,
-            style: TextStyle(
-              wordSpacing: 3,
-              height: 1.5,
-            ),
-          )),
+                aboutMe_txt,
+                style: TextStyle(wordSpacing: 3, height: 1.5),
+              )),
         ],
       ),
     );
@@ -388,7 +415,7 @@ class TabletViewScreen extends StatelessWidget {
         height: 350,
         width: 350,
         decoration:
-            BoxDecoration(shape: BoxShape.circle, color: Colors.white54),
+        BoxDecoration(shape: BoxShape.circle, color: Colors.white54),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Container(
@@ -436,8 +463,8 @@ class BorderButton extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(20)),
       ),
       child: Container(
-          //width: 100,
-          // height: 30,
+        //width: 100,
+        // height: 30,
           child: Center(child: Text(buttonText))),
     );
   }
