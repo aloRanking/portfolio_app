@@ -1,15 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hovering/hovering.dart';
 import 'package:portfolio_app/model/selected_work.dart';
+import 'package:portfolio_app/widgets/testimonial_item.dart';
 import 'package:portfolio_app/utils/colors.dart';
 import 'package:portfolio_app/utils/strings.dart';
+import 'package:portfolio_app/widgets/contact_buttons.dart';
+import 'package:portfolio_app/widgets/projectItem.dart';
+import 'package:portfolio_app/widgets/social_button.dart';
 import 'package:portfolio_app/widgets/subhead.dart';
-import 'package:universal_html/js.dart' as js;
 import 'package:animate_do/animate_do.dart';
 
-class TabletViewScreen extends StatelessWidget {
+class TabletViewScreen extends StatefulWidget {
+  @override
+  _TabletViewScreenState createState() => _TabletViewScreenState();
+}
+
+class _TabletViewScreenState extends State<TabletViewScreen>
+    with TickerProviderStateMixin {
+  AnimationController animationController;
+
+  @override
+  void initState() {
+    animationController = AnimationController(
+        duration: const Duration(milliseconds: 8000), vsync: this);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -175,14 +198,20 @@ class TabletViewScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: selectedProjects.length,
                       itemBuilder: (context, index) {
-                        return SlideInRight(
-                          duration: Duration(milliseconds: 2600),
-                          delay: Duration(milliseconds: 800),
-                          child: FadeIn(
-                            child: WorkItem(
-                              project: selectedProjects[index],
-                            ),
-                          ),
+                        final int count = selectedProjects.length > 10
+                            ? 10
+                            : selectedProjects.length;
+                        final Animation<double> animation =
+                            Tween<double>(begin: 0.0, end: 1.0).animate(
+                                CurvedAnimation(
+                                    parent: animationController,
+                                    curve: Interval((1 / count) * index, 1.0,
+                                        curve: Curves.fastOutSlowIn)));
+                        animationController.forward();
+                        return WorkItem(
+                          project: selectedProjects[index],
+                          animation: animation,
+                          animationController: animationController,
                         );
                       })),
               SubProfileHeadline(
@@ -191,139 +220,21 @@ class TabletViewScreen extends StatelessWidget {
               Container(
                 height: 300,
                 child: ListView(scrollDirection: Axis.horizontal, children: [
-                  Stack(
-                    children: [
-                      Container(
-                        height: 300,
-                        width: size.width / 2,
-                      ),
-                      Positioned(
-                        top: 50,
-                        left: 40,
-                        right: 20,
-                        child: Container(
-                          width: size.width - 60,
-                          height: 200,
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              border: Border.all(color: Colors.grey, width: 2)),
-                        ),
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        margin: EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/user_2.png'),
-                            )),
-                      ),
-                    ],
+                  TestimonialItem(
+                    size: size,
+                    divideSize: 2,
+                    image: 'assets/images/user_2.png',
                   ),
-                  Stack(
-                    children: [
-                      Container(
-                        height: 300,
-                        width: size.width / 2,
-                      ),
-                      Positioned(
-                        top: 50,
-                        left: 40,
-                        right: 20,
-                        child: Container(
-                          width: size.width - 60,
-                          height: 200,
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              border: Border.all(color: Colors.grey, width: 2)),
-                        ),
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        margin: EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/user_2.png'),
-                            )),
-                      ),
-                    ],
+                  TestimonialItem(
+                    size: size,
+                    divideSize: 2,
+                    image: 'assets/images/user_2.png',
                   ),
                 ]),
               )
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  buildSocialButtons() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        IconButton(
-            icon: FaIcon(
-              FontAwesomeIcons.linkedin,
-              size: 30,
-              color: Colors.blue[700],
-            ),
-            onPressed: () {
-              js.context.callMethod('open', [linkedIn]);
-            }),
-        SizedBox(
-          width: 15,
-        ),
-        IconButton(
-            icon: FaIcon(
-              FontAwesomeIcons.twitter,
-              size: 30,
-              color: Colors.blue,
-            ),
-            onPressed: () {
-              js.context.callMethod('open', [twitter]);
-            }),
-        SizedBox(
-          width: 15,
-        ),
-        IconButton(
-            icon: FaIcon(
-              FontAwesomeIcons.github,
-              size: 30,
-            ),
-            onPressed: () {
-              js.context.callMethod('open', [github]);
-            })
-      ],
-    );
-  }
-
-  buildContactButtons() {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          BorderButton(
-            onPressed: () {},
-            borderColor: kGreenColor,
-            buttonText: 'DOWNLOAD CV',
-            hoverColor: kGreenColor,
-            hoverTextColor: kWhiteColor,
-          ),
-          SizedBox(
-            width: 13,
-          ),
-          BorderButton(
-              onPressed: () {},
-              hoverColor: kGreenColor,
-              borderColor: Colors.grey,
-              buttonText: 'Contact',
-              hoverTextColor: kWhiteColor),
-        ],
       ),
     );
   }
@@ -364,11 +275,11 @@ class TabletViewScreen extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            buildContactButtons(),
+            ContactButtons(),
             SizedBox(
               height: 20,
             ),
-            buildSocialButtons(),
+            SocialButtons(),
           ],
         ),
       ),
@@ -398,113 +309,6 @@ class TabletViewScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class WorkItem extends StatelessWidget {
-  final Project project;
-
-  const WorkItem({Key key, this.project}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-                width: 300,
-                decoration: BoxDecoration(
-                  color: Colors.white60,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Image.asset(
-                    project.image,
-                    //width: 300,
-                    //height: 250,
-                    fit: BoxFit.contain,
-                  ),
-                )),
-            SizedBox(
-              height: 15,
-            ),
-            Container(
-              width: 250,
-              child: Column(
-                children: [
-                  Text(
-                    project.title,
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Text(project.subtitle),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  TextButton(
-                      onPressed: () {
-                        js.context.callMethod('open', [project.url]);
-                      },
-                      child: Text(
-                        'Checkout',
-                        style: TextStyle(
-                            color: Colors.blue,
-                            decoration: TextDecoration.underline),
-                      ))
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-    // return Image.asset('images/pjctsnap.jpg');
-  }
-}
-
-class BorderButton extends StatelessWidget {
-  const BorderButton({
-    Key key,
-    this.hoverColor,
-    this.buttonText,
-    this.onPressed,
-    this.borderColor,
-    this.hoverTextColor,
-  }) : super(key: key);
-  final Color hoverColor;
-  final Color borderColor;
-  final Color hoverTextColor;
-  final String buttonText;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return HoverButton(
-      onpressed: onPressed,
-      hoverColor: hoverColor,
-      hoverTextColor: hoverTextColor,
-      height: 50,
-      hoverPadding: EdgeInsets.only(left: 15, right: 15),
-      minWidth: 100,
-      elevation: 2,
-      shape: RoundedRectangleBorder(
-        side: BorderSide(color: borderColor, width: 2.0),
-        borderRadius: BorderRadius.all(Radius.circular(20)),
-      ),
-      child: Container(
-          //width: 100,
-          // height: 30,
-          child: Center(child: Text(buttonText))),
     );
   }
 }
