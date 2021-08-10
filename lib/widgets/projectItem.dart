@@ -3,12 +3,12 @@ import 'package:flutter/widgets.dart';
 import 'package:portfolio_app/model/selected_work.dart';
 import 'package:universal_html/js.dart' as js;
 
-class WorkItem extends StatelessWidget {
+class ProjectItem extends StatelessWidget {
   final Project project;
    final AnimationController animationController;
   final Animation<dynamic> animation;
 
-  const WorkItem({Key key, this.project, this.animationController, this.animation}) : super(key: key);
+  const ProjectItem({Key key, this.project, this.animationController, this.animation}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

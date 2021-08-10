@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio_app/model/selected_work.dart';
+import 'package:portfolio_app/pages/homePage.dart';
+import 'package:portfolio_app/pages/portfolio.dart';
+import 'package:portfolio_app/pages/servicePage.dart';
+import 'package:portfolio_app/pages/testimonialPage.dart';
 import 'package:portfolio_app/widgets/testimonial_item.dart';
 import 'package:portfolio_app/utils/colors.dart';
 import 'package:portfolio_app/utils/strings.dart';
@@ -42,197 +46,10 @@ class _TabletViewScreenState extends State<TabletViewScreen>
         child: Scrollbar(
           child: ListView(
             children: [
-              SizedBox(
-                height: 50,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  buildImage(),
-                  SizedBox(
-                    width: 50,
-                  ),
-                  Flexible(
-                    child: Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          buildProfile(),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              SubProfileHeadline(
-                headline: 'What i do',
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 10, right: 20),
-                child: Table(columnWidths: {
-                  0: FlexColumnWidth(1),
-                  1: FlexColumnWidth(4),
-                  2: FlexColumnWidth(1),
-                  3: FlexColumnWidth(4),
-                }, children: <TableRow>[
-                  TableRow(
-                    children: <Widget>[
-                      Icon(
-                        FontAwesomeIcons.mobile,
-                        color: Colors.green,
-                        size: 30,
-                      ),
-                      Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Mobile App development',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold)),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              app_dev,
-                              style: TextStyle(wordSpacing: 3, height: 1.5),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Icon(
-                        FontAwesomeIcons.laptop,
-                        color: Colors.green,
-                        size: 30,
-                      ),
-                      Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Web development',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold)),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              web_dev,
-                              style: TextStyle(wordSpacing: 3, height: 1.5),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  TableRow(
-                    children: <Widget>[
-                      Icon(
-                        FontAwesomeIcons.desktop,
-                        color: kGreenColor,
-                        size: 30,
-                      ),
-                      Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('App development',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold)),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              whatIDo,
-                              style: TextStyle(wordSpacing: 3, height: 1.5),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Icon(
-                        FontAwesomeIcons.shoppingBag,
-                        color: kGreenColor,
-                        size: 30,
-                      ),
-                      Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('App development',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold)),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              whatIDo,
-                              style: TextStyle(wordSpacing: 3, height: 1.5),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ]),
-              ),
-              SubProfileHeadline(
-                headline: 'My Selected Work',
-              ),
-              Container(
-                  padding: EdgeInsets.all(8),
-                  height: 360,
-                  child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: selectedProjects.length,
-                      itemBuilder: (context, index) {
-                        final int count = selectedProjects.length > 10
-                            ? 10
-                            : selectedProjects.length;
-                        final Animation<double> animation =
-                            Tween<double>(begin: 0.0, end: 1.0).animate(
-                                CurvedAnimation(
-                                    parent: animationController,
-                                    curve: Interval((1 / count) * index, 1.0,
-                                        curve: Curves.fastOutSlowIn)));
-                        animationController.forward();
-                        return WorkItem(
-                          project: selectedProjects[index],
-                          animation: animation,
-                          animationController: animationController,
-                        );
-                      })),
-              SubProfileHeadline(
-                headline: 'testimonials',
-              ),
-              Container(
-                height: 300,
-                child: ListView(scrollDirection: Axis.horizontal, children: [
-                  TestimonialItem(
-                    size: size,
-                    divideSize: 2,
-                    image: 'assets/images/user_2.png',
-                  ),
-                  TestimonialItem(
-                    size: size,
-                    divideSize: 2,
-                    image: 'assets/images/user_2.png',
-                  ),
-                ]),
-              )
-            ],
+              HomePage(),
+              ServicesPage(),
+              PortfolioPage(),
+              TestimonialPage()],
           ),
         ),
       ),
