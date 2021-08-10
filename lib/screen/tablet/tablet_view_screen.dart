@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hovering/hovering.dart';
+import 'package:portfolio_app/model/selected_work.dart';
 import 'package:portfolio_app/utils/colors.dart';
 import 'package:portfolio_app/utils/strings.dart';
 import 'package:portfolio_app/widgets/subhead.dart';
 import 'package:universal_html/js.dart' as js;
+import 'package:animate_do/animate_do.dart';
 
 class TabletViewScreen extends StatelessWidget {
   @override
@@ -33,14 +35,6 @@ class TabletViewScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           buildProfile(),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          buildContactButtons(),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          buildSocialButtons()
                         ],
                       ),
                     ),
@@ -175,34 +169,22 @@ class TabletViewScreen extends StatelessWidget {
                 headline: 'My Selected Work',
               ),
               Container(
-                padding: EdgeInsets.all(8),
-                height: 300,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Image.asset('images/pjctsnap.jpg'),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Image.asset('images/hagglexsnap.jpg'),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Image.asset('images/lfdssnap.jpg'),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Image.asset('images/foodsnap.jpg'),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Image.asset('images/moviesnap.jpg'),
-                    SizedBox(
-                      width: 20,
-                    ),
-                  ],
-                ),
-              ),
+                  padding: EdgeInsets.all(8),
+                  height: 360,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: selectedProjects.length,
+                      itemBuilder: (context, index) {
+                        return SlideInRight(
+                          duration: Duration(milliseconds: 2600),
+                          delay: Duration(milliseconds: 800),
+                          child: FadeIn(
+                            child: WorkItem(
+                              project: selectedProjects[index],
+                            ),
+                          ),
+                        );
+                      })),
               SubProfileHeadline(
                 headline: 'testimonials',
               ),
@@ -211,67 +193,67 @@ class TabletViewScreen extends StatelessWidget {
                 child: ListView(scrollDirection: Axis.horizontal, children: [
                   Stack(
                     children: [
-                        Container(
-                          height: 300,
-                          width: size.width/2,
-                        ),
-                        Positioned(
-                          top: 50,
-                          left: 40,
-                          right: 20,
-                          child: Container(
-                            width: size.width - 60,
-                            height: 200,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(10)),
-                                border: Border.all(color: Colors.grey, width: 2)),
-                          ),
-                        ),
-                        Container(
-                          height: 100,
-                          width: 100,
-                          margin: EdgeInsets.all(8),
+                      Container(
+                        height: 300,
+                        width: size.width / 2,
+                      ),
+                      Positioned(
+                        top: 50,
+                        left: 40,
+                        right: 20,
+                        child: Container(
+                          width: size.width - 60,
+                          height: 200,
                           decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                image: AssetImage('assets/images/user_2.png'),
-                              )),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
+                              border: Border.all(color: Colors.grey, width: 2)),
                         ),
-                      ],
-                    ),
-                    Stack(
-                      children: [
-                        Container(
-                          height: 300,
-                          width: size.width/2,
-                        ),
-                        Positioned(
-                          top: 50,
-                          left: 40,
-                          right: 20,
-                          child: Container(
-                            width: size.width - 60,
-                            height: 200,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(10)),
-                                border: Border.all(color: Colors.grey, width: 2)),
-                          ),
-                        ),
-                        Container(
-                          height: 100,
-                          width: 100,
-                          margin: EdgeInsets.all(8),
+                      ),
+                      Container(
+                        height: 100,
+                        width: 100,
+                        margin: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/user_2.png'),
+                            )),
+                      ),
+                    ],
+                  ),
+                  Stack(
+                    children: [
+                      Container(
+                        height: 300,
+                        width: size.width / 2,
+                      ),
+                      Positioned(
+                        top: 50,
+                        left: 40,
+                        right: 20,
+                        child: Container(
+                          width: size.width - 60,
+                          height: 200,
                           decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                image: AssetImage('assets/images/user_2.png'),
-                              )),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
+                              border: Border.all(color: Colors.grey, width: 2)),
                         ),
-                      ],
-                    ),
-                  ]
-
-                ),
+                      ),
+                      Container(
+                        height: 100,
+                        width: 100,
+                        margin: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/user_2.png'),
+                            )),
+                      ),
+                    ],
+                  ),
+                ]),
               )
             ],
           ),
@@ -320,7 +302,7 @@ class TabletViewScreen extends StatelessWidget {
     );
   }
 
-  Container buildContactButtons() {
+  buildContactButtons() {
     return Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -347,62 +329,146 @@ class TabletViewScreen extends StatelessWidget {
   }
 
   buildProfile() {
-    return Container(
-      width: 400,
-      padding: EdgeInsets.all(8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 15,
-          ),
-          Text('Flutter Developer',
-              style: TextStyle(fontSize: 16,
-                  letterSpacing: 3,
-                  color: Color(0xFFCACACA))),
-          SizedBox(
-            height: 15,
-          ),
-          Text('ADIGUN ALO',
-              style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold)),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-              child: Text(
-            aboutMe_txt,
-            textAlign: TextAlign.justify,
-            style: TextStyle(
-              wordSpacing: 3,
-              height: 1.5,
+    return FadeIn(
+      delay: Duration(milliseconds: 1200),
+      duration: Duration(milliseconds: 1000),
+      child: Container(
+        width: 400,
+        padding: EdgeInsets.all(8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 15,
             ),
-          )),
-        ],
+            Text('Flutter Developer',
+                style: TextStyle(
+                    fontSize: 16, letterSpacing: 3, color: Color(0xFFCACACA))),
+            SizedBox(
+              height: 15,
+            ),
+            Text('ADIGUN ALO',
+                style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold)),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+                child: Text(
+              aboutMe_txt,
+              textAlign: TextAlign.justify,
+              style: TextStyle(
+                wordSpacing: 3,
+                height: 1.5,
+              ),
+            )),
+            SizedBox(
+              height: 20,
+            ),
+            buildContactButtons(),
+            SizedBox(
+              height: 20,
+            ),
+            buildSocialButtons(),
+          ],
+        ),
       ),
     );
   }
 
   buildImage() {
     return Flexible(
-      child: Container(
-        height: 350,
-        width: 350,
-        decoration:
-            BoxDecoration(shape: BoxShape.circle, color: Colors.white54),
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Container(
-            height: 250,
-            width: 250,
-            decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage('assets/images/aloranking.jpeg'),
-                )),
+      child: ZoomIn(
+        duration: Duration(milliseconds: 1190),
+        child: Container(
+          height: 350,
+          width: 350,
+          decoration:
+              BoxDecoration(shape: BoxShape.circle, color: Colors.white54),
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              height: 250,
+              width: 250,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/aloranking.jpeg'),
+                  )),
+            ),
           ),
         ),
       ),
     );
+  }
+}
+
+class WorkItem extends StatelessWidget {
+  final Project project;
+
+  const WorkItem({Key key, this.project}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+                width: 300,
+                decoration: BoxDecoration(
+                  color: Colors.white60,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.asset(
+                    project.image,
+                    //width: 300,
+                    //height: 250,
+                    fit: BoxFit.contain,
+                  ),
+                )),
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              width: 250,
+              child: Column(
+                children: [
+                  Text(
+                    project.title,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Text(project.subtitle),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  TextButton(
+                      onPressed: () {
+                        js.context.callMethod('open', [project.url]);
+                      },
+                      child: Text(
+                        'Checkout',
+                        style: TextStyle(
+                            color: Colors.blue,
+                            decoration: TextDecoration.underline),
+                      ))
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+    // return Image.asset('images/pjctsnap.jpg');
   }
 }
 

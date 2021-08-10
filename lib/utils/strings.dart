@@ -12,3 +12,9 @@ const web_dev =
 const String github = 'https://github.com/aloranking/';
 const String linkedIn = 'https://www.linkedin.com/in/adigun-abdul-lateef-02/';
 const String twitter = 'https://mobile.twitter.com/chuck8612';
+const String hagglex = 'https://github.com/aloRanking/haggle_x';
+const String lfds = 'https://github.com/aloRanking/lassa_fever_diagnostic_system';
+const String foodapp = 'https://github.com/aloRanking/flutter_ui_challenges';
+const String movieapp = 'https://github.com/aloRanking/movie_app';
+const String prjctN = 'https://play.google.com/store/apps/details?id=com.aloranking.projectnigeria';
+
