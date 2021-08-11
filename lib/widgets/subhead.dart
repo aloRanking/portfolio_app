@@ -21,7 +21,7 @@ class SubProfileHeadline extends StatelessWidget {
               Text(
                 headline.toUpperCase(),
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -34,7 +34,7 @@ class SubProfileHeadline extends StatelessWidget {
                         borderRadius: BorderRadius.all(
                           Radius.circular(20),
                         ),
-                        color: Colors.white24),
+                        color: Colors.white60),
                   ),
                   Container(
                     height: 5,

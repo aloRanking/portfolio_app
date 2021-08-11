@@ -50,8 +50,11 @@ class AboutProfile extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-           
-            SocialButtons(),
+            Bounce(
+              delay: Duration(milliseconds: 2500),
+              duration: Duration(milliseconds: 1000),
+              child: SocialButtons(),
+            ),
           ],
         ),
       ),
