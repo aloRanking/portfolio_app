@@ -27,15 +27,17 @@ class DesktopServicePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //TODO bottom overflow for tablet
+     var size = MediaQuery.of(context).size;
   return Container(
-    height: 500,
+    //height: 500,
     child: Column(
       children: [
         SubProfileHeadline(
           headline: 'What i do',
         ),
         Container(
-          padding: EdgeInsets.only(left: 10, right: 20),
+          padding: EdgeInsets.symmetric(horizontal: 10),
           child: Table(columnWidths: {
             0: FlexColumnWidth(1),
             1: FlexColumnWidth(4),
