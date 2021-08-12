@@ -6,28 +6,33 @@ import 'package:portfolio_app/pages/servicePage.dart';
 import 'package:portfolio_app/pages/testimonialPage.dart';
 import 'package:portfolio_app/pages/topNavbar.dart';
 
-
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ScrollController scrollController = ScrollController();
     return Scaffold(
       backgroundColor: Colors.grey[100],
-      body: Container(
-        child: Scrollbar(
-          child: ListView(
-            controller: scrollController,
-            physics: BouncingScrollPhysics(),
-            children: [
-              TopNavBar(controller:scrollController),
-             HomePage(),
-              ServicesPage(),
-              PortfolioPage(),
-             TestimonialPage(),
-             ContactPage(scrollController: scrollController,)
-            ],
+      body: Column(
+        children: [
+          Expanded(
+            child: Scrollbar(
+              child: ListView(
+                controller: scrollController,
+                physics: BouncingScrollPhysics(),
+                children: [
+                  TopNavBar(controller: scrollController),
+                  HomePage(),
+                  ServicesPage(),
+                  PortfolioPage(),
+                  TestimonialPage(),
+                  ContactPage(
+                    scrollController: scrollController,
+                  )
+                ],
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
