@@ -3,11 +3,11 @@ import 'package:portfolio_app/utils/colors.dart';
 
 class SubProfileHeadline extends StatelessWidget {
   const SubProfileHeadline({
-    Key key,
+    Key? key,
     this.headline,
   }) : super(key: key);
 
-  final String headline;
+  final String? headline;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class SubProfileHeadline extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                headline.toUpperCase(),
+                headline!.toUpperCase(),
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,

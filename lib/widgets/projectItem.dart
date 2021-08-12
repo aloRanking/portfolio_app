@@ -4,20 +4,20 @@ import 'package:portfolio_app/model/selected_work.dart';
 import 'package:universal_html/js.dart' as js;
 
 class ProjectItem extends StatelessWidget {
-  final Project project;
-   final AnimationController animationController;
-  final Animation<dynamic> animation;
+  final Project? project;
+   final AnimationController? animationController;
+  final Animation<dynamic>? animation;
 
-  const ProjectItem({Key key, this.project, this.animationController, this.animation}) : super(key: key);
+  const ProjectItem({Key? key, this.project, this.animationController, this.animation}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: animationController,
+      animation: animationController!,
       builder: (context, snapshot) {
         return Transform(
           transform: Matrix4.translationValues(
-                50 * (1.0 - animation.value), 0.0,  0.0),
+                50 * (1.0 - animation!.value), 0.0,  0.0),
           child: Padding(
             padding: const EdgeInsets.only(
                   left: 16, right: 16, top: 8, bottom: 8),
@@ -38,7 +38,7 @@ class ProjectItem extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.asset(
-                          project.image,
+                          project!.image,
                           //width: 300,
                           //height: 250,
                           fit: BoxFit.contain,
@@ -52,19 +52,19 @@ class ProjectItem extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          project.title,
+                          project!.title,
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         SizedBox(
                           height: 8,
                         ),
-                        Text(project.subtitle),
+                        Text(project!.subtitle),
                         SizedBox(
                           height: 8,
                         ),
                         TextButton(
                             onPressed: () {
-                              js.context.callMethod('open', [project.url]);
+                              js.context.callMethod('open', [project!.url]);
                             },
                             child: Text(
                               'Checkout',

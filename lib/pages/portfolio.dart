@@ -7,17 +7,17 @@ import 'package:portfolio_app/widgets/subhead.dart';
 
 class PortfolioPage extends StatefulWidget {
   const PortfolioPage({
-    Key key,
+    Key? key,
     this.controller1,
   }) : super(key: key);
-  final PageController controller1;
+  final PageController? controller1;
 
   @override
   _PortfolioPageState createState() => _PortfolioPageState();
 }
 
 class _PortfolioPageState extends State<PortfolioPage> with SingleTickerProviderStateMixin{
-   AnimationController animationController;
+   AnimationController? animationController;
    final PageController controller1 = PageController(initialPage: 0);
 
    @override
@@ -29,7 +29,7 @@ class _PortfolioPageState extends State<PortfolioPage> with SingleTickerProvider
 
      @override
        void dispose() {
-         animationController.dispose();
+         animationController!.dispose();
          controller1.dispose();
          super.dispose();
        }
@@ -45,10 +45,10 @@ class _PortfolioPageState extends State<PortfolioPage> with SingleTickerProvider
 
 class DesktopPortfolioPage extends StatelessWidget {
   const DesktopPortfolioPage({
-    Key key,
-    @required this.animationController,
+    Key? key,
+    required this.animationController,
   }) : super(key: key);
-  final AnimationController animationController;
+  final AnimationController? animationController;
 
   @override
   Widget build(BuildContext context) {
@@ -69,11 +69,11 @@ class DesktopPortfolioPage extends StatelessWidget {
                                 final Animation<double> animation =
                                     Tween<double>(begin: 0.0, end: 1.0).animate(
                                         CurvedAnimation(
-                                            parent: animationController,
+                                            parent: animationController!,
                                             curve: Interval(
                                                 (1 / count) * index, 1.0,
                                                 curve: Curves.fastOutSlowIn)));
-                                animationController.forward();
+                                animationController!.forward();
                           return ProjectItem(
                             project: selectedProjects[index],
                             animation: animation,
@@ -87,9 +87,9 @@ class DesktopPortfolioPage extends StatelessWidget {
 }
 
 class MobilePorfolioPage extends StatelessWidget {
- final PageController controller;
+ final PageController? controller;
 
-  const MobilePorfolioPage({Key key, this.controller}) : super(key: key);
+  const MobilePorfolioPage({Key? key, this.controller}) : super(key: key);
 
   
 

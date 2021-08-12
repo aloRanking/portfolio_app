@@ -53,7 +53,7 @@ class MobileViewScreen extends StatelessWidget {
 
 class SocialButtonWidgets extends StatelessWidget {
   const SocialButtonWidgets({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

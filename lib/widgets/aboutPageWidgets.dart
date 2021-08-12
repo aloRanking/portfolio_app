@@ -6,7 +6,7 @@ import 'package:portfolio_app/widgets/social_button.dart';
 
 class AboutProfile extends StatelessWidget {
   const AboutProfile({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -64,7 +64,7 @@ class AboutProfile extends StatelessWidget {
 
 class AboutImage extends StatelessWidget {
   const AboutImage({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

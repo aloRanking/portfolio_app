@@ -4,7 +4,7 @@ import 'package:portfolio_app/widgets/subhead.dart';
 import 'package:portfolio_app/widgets/testimonial_item.dart';
 
 class TestimonialPage extends StatelessWidget {
-  const TestimonialPage({ Key key }) : super(key: key);
+  const TestimonialPage({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class TestimonialPage extends StatelessWidget {
 }
 
 class DesktopTestimonialPage extends StatelessWidget {
-  const DesktopTestimonialPage({ Key key }) : super(key: key);
+  const DesktopTestimonialPage({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +69,7 @@ class DesktopTestimonialPage extends StatelessWidget {
 }
 
 class TabletTestimonialPage extends StatelessWidget {
-  const TabletTestimonialPage({ Key key }) : super(key: key);
+  const TabletTestimonialPage({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
