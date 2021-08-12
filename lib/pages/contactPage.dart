@@ -3,9 +3,9 @@ import 'package:portfolio_app/utils/responsive.dart';
 import 'package:portfolio_app/widgets/social_button.dart';
 
 class ContactPage extends StatelessWidget {
-  const ContactPage({ Key key, this.scrollController }) : super(key: key);
+  const ContactPage({ Key? key, this.scrollController }) : super(key: key);
 
-  final ScrollController scrollController;
+  final ScrollController? scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +20,8 @@ class ContactPage extends StatelessWidget {
 
 
 class MobileContactPage extends StatelessWidget {
-  const MobileContactPage({ Key key, this.controller }) : super(key: key);
-  final ScrollController controller;
+  const MobileContactPage({ Key? key, this.controller }) : super(key: key);
+  final ScrollController? controller;
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +54,8 @@ class MobileContactPage extends StatelessWidget {
 
 
 class TabletContactPage extends StatelessWidget {
-  const TabletContactPage({ Key key, this.controller }) : super(key: key);
-  final ScrollController controller;
+  const TabletContactPage({ Key? key, this.controller }) : super(key: key);
+  final ScrollController? controller;
 
   @override
   Widget build(BuildContext context) {
@@ -88,8 +88,8 @@ class TabletContactPage extends StatelessWidget {
 
 
 class DesktopContactPage extends StatelessWidget {
-    const DesktopContactPage({ Key key, this.controller }) : super(key: key);
-    final ScrollController controller;
+    const DesktopContactPage({ Key? key, this.controller }) : super(key: key);
+    final ScrollController? controller;
   
     @override
     Widget build(BuildContext context) {
@@ -122,7 +122,7 @@ class DesktopContactPage extends StatelessWidget {
 
 class FooterWidget extends StatelessWidget {
   const FooterWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -156,12 +156,12 @@ class FooterWidget extends StatelessWidget {
 
 class ContactCard extends StatelessWidget {
   const ContactCard({
-    Key key, this.greetingTxtSize, this.emailTxtSize, this.width,
+    Key? key, this.greetingTxtSize, this.emailTxtSize, this.width,
   }) : super(key: key);
 
-  final double greetingTxtSize;
-  final double emailTxtSize;
-  final double width;
+  final double? greetingTxtSize;
+  final double? emailTxtSize;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
@@ -196,10 +196,10 @@ class ContactCard extends StatelessWidget {
 
   class BottomNavBar extends StatelessWidget {
   BottomNavBar({
-    Key key,
-    @required this.controller,
+    Key? key,
+    required this.controller,
   }) : super(key: key);
-  final ScrollController controller;
+  final ScrollController? controller;
 
   @override
   Widget build(BuildContext context) {
@@ -218,8 +218,8 @@ class ContactCard extends StatelessWidget {
                     title: 'About',
                     position: 1,
                     function: () {
-                      controller.animateTo(
-                        controller.position.minScrollExtent + 120,
+                      controller!.animateTo(
+                        controller!.position.minScrollExtent + 120,
                         duration: Duration(seconds: 1),
                         curve: Curves.ease,
                       );
@@ -228,8 +228,8 @@ class ContactCard extends StatelessWidget {
                     title: 'Service',
                     position: 1,
                     function: () {
-                      controller.animateTo(
-                        0.30 * controller.position.maxScrollExtent,
+                      controller!.animateTo(
+                        0.30 * controller!.position.maxScrollExtent,
                         duration: Duration(seconds: 1),
                         curve: Curves.ease,
                       );
@@ -238,8 +238,8 @@ class ContactCard extends StatelessWidget {
                     title: 'Portfolio',
                     position: 1,
                     function: () {
-                      controller.animateTo(
-                         0.60 * controller.position.maxScrollExtent,
+                      controller!.animateTo(
+                         0.60 * controller!.position.maxScrollExtent,
                         duration: Duration(seconds: 1),
                         curve: Curves.ease,
                       );
@@ -248,8 +248,8 @@ class ContactCard extends StatelessWidget {
                     title: 'Testimonial',
                     position: 1,
                     function: () {
-                      controller.animateTo(
-                        0.8 * controller.position.maxScrollExtent,
+                      controller!.animateTo(
+                        0.8 * controller!.position.maxScrollExtent,
                          //controller.position.minScrollExtent +10,
                         duration: Duration(seconds: 1),
                         curve: Curves.ease,
@@ -265,9 +265,9 @@ class ContactCard extends StatelessWidget {
 }
 
 
-  Widget navBarOptions({String title, int position, Function function}) {
+  Widget navBarOptions({required String title, int? position, Function? function}) {
   return InkWell(
-    onTap: function,
+    onTap: function as void Function()?,
     // hoverColor: Colors.grey[200],
     borderRadius: BorderRadius.circular(16),
     child: Container(

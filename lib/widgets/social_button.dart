@@ -5,7 +5,7 @@ import 'package:universal_html/js.dart' as js;
 
 class SocialButtons extends StatelessWidget {
   const SocialButtons({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

@@ -8,7 +8,7 @@ import 'hover_button.dart';
 
 class ContactButtons extends StatelessWidget {
   const ContactButtons({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

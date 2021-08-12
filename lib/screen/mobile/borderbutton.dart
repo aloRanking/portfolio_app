@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 class BorderButton extends StatelessWidget {
   const BorderButton({
-    Key key,
+    Key? key,
     this.hoverColor,
     this.buttonText,
     this.onPressed,
     this.borderColor,
   }) : super(key: key);
-  final Color hoverColor;
-  final Color borderColor;
-  final String buttonText;
-  final VoidCallback onPressed;
+  final Color? hoverColor;
+  final Color? borderColor;
+  final String? buttonText;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class BorderButton extends StatelessWidget {
       hoverColor: Colors.green,
       elevation: 6,
       shape: RoundedRectangleBorder(
-        side: BorderSide(color: borderColor, width: 2.0),
+        side: BorderSide(color: borderColor!, width: 2.0),
         borderRadius: BorderRadius.all(Radius.circular(20)),
       ),
       child: Container(
@@ -28,10 +28,10 @@ class BorderButton extends StatelessWidget {
           height: 50,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(20)),
-            border: Border.all(color: borderColor, width: 2.0),
+            border: Border.all(color: borderColor!, width: 2.0),
             //color: Colors.black54
           ),
-          child: Center(child: Text(buttonText))),
+          child: Center(child: Text(buttonText!))),
     );
   }
 }

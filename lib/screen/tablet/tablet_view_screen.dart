@@ -22,7 +22,7 @@ class TabletViewScreen extends StatefulWidget {
 
 class _TabletViewScreenState extends State<TabletViewScreen>
     with TickerProviderStateMixin {
-  AnimationController animationController;
+  late AnimationController animationController;
 
   @override
   void initState() {

@@ -6,12 +6,12 @@ class Project {
   String image;
   String title;
   String subtitle;
-  String url;
+  String? url;
   Color bgColor;
   Project({
-    @required this.image,
-    @required this.title,
-    @required this.subtitle,
+    required this.image,
+    required this.title,
+    required this.subtitle,
      this.url,
      this.bgColor = Colors.white
   });

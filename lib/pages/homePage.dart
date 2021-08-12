@@ -6,7 +6,7 @@ import 'package:portfolio_app/widgets/aboutPageWidgets.dart';
 import 'package:portfolio_app/widgets/social_button.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({ Key key }) : super(key: key);
+  const HomePage({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
 }
 
 class DesktopHomPage extends StatelessWidget {
-  const DesktopHomPage({ Key key }) : super(key: key);
+  const DesktopHomPage({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +67,7 @@ class DesktopHomPage extends StatelessWidget {
 
 
 class MobileHomePage extends StatelessWidget {
-  const MobileHomePage({ Key key }) : super(key: key);
+  const MobileHomePage({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

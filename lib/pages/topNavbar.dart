@@ -4,8 +4,8 @@ import 'package:portfolio_app/utils/responsive.dart';
 
 class TopNavBar extends StatelessWidget {
   const TopNavBar({
-    Key key,
-    @required this.controller,
+    Key? key,
+    required this.controller,
   }) : super(key: key);
   final ScrollController controller;
 
@@ -24,8 +24,8 @@ class TopNavBar extends StatelessWidget {
 
 class TabletTopNavBar extends StatelessWidget {
   TabletTopNavBar({
-    Key key,
-    @required this.controller,
+    Key? key,
+    required this.controller,
   }) : super(key: key);
   final ScrollController controller;
 
@@ -96,8 +96,8 @@ class TabletTopNavBar extends StatelessWidget {
 
 class MobileTopNavBar extends StatelessWidget {
   MobileTopNavBar({
-    Key key,
-    @required this.controller,
+    Key? key,
+    required this.controller,
   }) : super(key: key);
   final ScrollController controller;
 
@@ -165,9 +165,9 @@ class MobileTopNavBar extends StatelessWidget {
     );
   }
 }
-Widget navBarOptions({String title, int position, Function function}) {
+Widget navBarOptions({required String title, int? position, Function? function}) {
   return InkWell(
-    onTap: function,
+    onTap: function as void Function()?,
     // hoverColor: Colors.grey[200],
     borderRadius: BorderRadius.circular(16),
     child: Container(

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 class TestimonialItem extends StatelessWidget {
   const TestimonialItem({
-    Key key,
-    @required this.size, this.image, this.divideSize,
+    Key? key,
+    required this.size, this.image, this.divideSize,
   }) : super(key: key);
 
   final Size size;
-  final String image;
-  final int divideSize;
+  final String? image;
+  final int? divideSize;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class TestimonialItem extends StatelessWidget {
       children: [
         Container(
           height: 300,
-          width: size.width/divideSize,
+          width: size.width/divideSize!,
         ),
         Positioned(
           top: 50,
@@ -38,7 +38,7 @@ class TestimonialItem extends StatelessWidget {
           decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
-                image: AssetImage(image),
+                image: AssetImage(image!),
               )),
         ),
       ],

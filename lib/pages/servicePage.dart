@@ -8,7 +8,7 @@ import 'package:portfolio_app/widgets/subhead.dart';
 
 class ServicesPage extends StatelessWidget {
   const ServicesPage({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -23,7 +23,7 @@ class ServicesPage extends StatelessWidget {
 }
 
 class DesktopServicePage extends StatelessWidget {
-  const DesktopServicePage({ Key key }) : super(key: key);
+  const DesktopServicePage({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -162,7 +162,7 @@ class DesktopServicePage extends StatelessWidget {
 }
 
 class MobileServicePage extends StatelessWidget {
-  const MobileServicePage({ Key key }) : super(key: key);
+  const MobileServicePage({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
