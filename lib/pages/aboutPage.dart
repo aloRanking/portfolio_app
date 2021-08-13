@@ -5,8 +5,8 @@ import 'package:portfolio_app/utils/strings.dart';
 import 'package:portfolio_app/widgets/aboutPageWidgets.dart';
 import 'package:portfolio_app/widgets/social_button.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({ Key? key }) : super(key: key);
+class AboutPage extends StatelessWidget {
+  const AboutPage({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +71,7 @@ class MobileHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
      return Column(
              children: [
                 SizedBox(
@@ -160,7 +161,7 @@ class MobileHomePage extends StatelessWidget {
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  image: AssetImage('assets/images/aloranking.jpeg'),
+                  image: AssetImage(kProfileImageUrl),
                 )),
           ),
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_app/utils/responsive.dart';
+import 'package:portfolio_app/utils/strings.dart';
 import 'package:portfolio_app/widgets/subhead.dart';
 import 'package:portfolio_app/widgets/testimonial_item.dart';
 
@@ -45,17 +46,17 @@ class DesktopTestimonialPage extends StatelessWidget {
                     TestimonialItem(
                       size: size,
                       divideSize: 3,
-                      image: 'assets/images/user_2.png',
+                      image: ktestimonialImageUrl1,
                     ),
                      TestimonialItem(
                       size: size,
                       divideSize: 3,
-                      image: 'assets/images/user_2.png',
+                      image: ktestimonialImageUrl2,
                     ),
                     TestimonialItem(
                       size: size,
                       divideSize: 3,
-                      image: 'assets/images/user_2.png',
+                      image: ktestimonialImageUrl1,
                     ),
                  
                  
@@ -87,22 +88,22 @@ class TabletTestimonialPage extends StatelessWidget {
                          TestimonialItem(
                       size: size,
                       divideSize: 2,
-                      image: 'assets/images/user_2.png',
+                      image: ktestimonialImageUrl1,
                     ),
                     TestimonialItem(
                       size: size,
                       divideSize: 2,
-                      image: 'assets/images/user_2.png',
+                      image: ktestimonialImageUrl2,
                     ),
                      TestimonialItem(
                       size: size,
                       divideSize: 2,
-                      image: 'assets/images/user_2.png',
+                      image: ktestimonialImageUrl1,
                     ),
                     TestimonialItem(
                       size: size,
                       divideSize: 3,
-                      image: 'assets/images/user_2.png',
+                      image: ktestimonialImageUrl1,
                     ),
                  
                  
@@ -142,13 +143,13 @@ class MobileTestimonial extends StatelessWidget {
             children: [
               TestimonialItem(size: size,
               divideSize: 1,
-              image: 'assets/images/user_2.png'),
+              image: ktestimonialImageUrl2),
                TestimonialItem(size: size,
               divideSize: 1,
-              image: 'assets/images/user_3.png'),
+              image: ktestimonialImageUrl1),
                TestimonialItem(size: size,
               divideSize: 1,
-              image: 'assets/images/user_2.png')],
+              image: ktestimonialImageUrl2)],
           ),
         ),
       ],

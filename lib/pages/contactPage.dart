@@ -1,5 +1,8 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio_app/utils/responsive.dart';
+import 'package:portfolio_app/widgets/contact_buttons.dart';
 import 'package:portfolio_app/widgets/social_button.dart';
 
 class ContactPage extends StatelessWidget {
@@ -144,8 +147,19 @@ class FooterWidget extends StatelessWidget {
 
                SizedBox(height: 10,),
 
-              Text('Made with Flutter ',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),),
+              Row(
+                children: [
+                  Text('Made with ',
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),),
+
+                  FaIcon(FontAwesomeIcons.solidHeart, color: Colors.red,),
+
+                  Text(' Flutter ',
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),),
+
+                  
+                ],
+              ),
             ],
           )
         ],
@@ -173,20 +187,32 @@ class ContactCard extends StatelessWidget {
         onTap: () {
           print('Card tapped.');
         },
-        child: Container(
-          height: 200,
-          width: width,
-          padding: EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,  
-            children: [
-              Text('Hii, you can hit me up @',
-              style: TextStyle(fontSize: greetingTxtSize),),
-              SizedBox(height: 20,),
-              SelectableText('alobently@outlook.com',
-              style: TextStyle(fontSize: emailTxtSize,
-              fontWeight: FontWeight.bold),)
-            ],
+        child: Flash(
+          delay: Duration(milliseconds: 1000),
+          duration: Duration(milliseconds: 1200),
+          child: Container(
+            height: 200,
+            width: width,
+            padding: EdgeInsets.all(20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,  
+              children: [
+                Text('Hii, you can hit me up @',
+                style: TextStyle(fontSize: greetingTxtSize),),
+                SizedBox(height: 20,),
+                SelectableText('alobently@outlook.com',
+                style: TextStyle(fontSize: emailTxtSize,
+                fontWeight: FontWeight.bold),),
+                 SizedBox(height: 20,),
+
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   children: [
+                     ContactButtons(),
+                   ],
+                 ),
+              ],
+            ),
           ),
         ),
       ),
@@ -225,7 +251,7 @@ class ContactCard extends StatelessWidget {
                       );
                     }),
                 navBarOptions(
-                    title: 'Service',
+                    title: 'Services',
                     position: 1,
                     function: () {
                       controller!.animateTo(
@@ -245,11 +271,22 @@ class ContactCard extends StatelessWidget {
                       );
                     }),
                 navBarOptions(
-                    title: 'Testimonial',
+                    title: 'Testimonials',
                     position: 1,
                     function: () {
                       controller!.animateTo(
                         0.8 * controller!.position.maxScrollExtent,
+                         //controller.position.minScrollExtent +10,
+                        duration: Duration(seconds: 1),
+                        curve: Curves.ease,
+                      );
+                    }),
+                    navBarOptions(
+                    title: 'Contact',
+                    position: 1,
+                    function: () {
+                      controller!.animateTo(
+                        1 * controller!.position.maxScrollExtent,
                          //controller.position.minScrollExtent +10,
                         duration: Duration(seconds: 1),
                         curve: Curves.ease,

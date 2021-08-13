@@ -101,7 +101,7 @@ class DesktopServicePage extends StatelessWidget {
             TableRow(
               children: <Widget>[
                 Icon(
-                  FontAwesomeIcons.desktop,
+                  FontAwesomeIcons.tools,
                   color: kGreenColor,
                   size: 30,
                 ),
@@ -109,14 +109,14 @@ class DesktopServicePage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('App development',
+                      Text('Training',
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold)),
                       SizedBox(
                         height: 10,
                       ),
                       Text(
-                        whatIDo,
+                        train_dev,
                         style: TextStyle(wordSpacing: 3, height: 1.5),
                       ),
                       SizedBox(
@@ -134,7 +134,7 @@ class DesktopServicePage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('App development',
+                      Text('Watch Anime',
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold)),
                       SizedBox(

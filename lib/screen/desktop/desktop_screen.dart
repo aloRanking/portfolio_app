@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/pages/homePage.dart';
+import 'package:portfolio_app/pages/aboutPage.dart';
 import 'package:portfolio_app/pages/portfolio.dart';
 import 'package:portfolio_app/pages/servicePage.dart';
 import 'package:portfolio_app/pages/testimonialPage.dart';
@@ -23,7 +23,7 @@ class _DesktopViewScreenState extends State<DesktopViewScreen>  {
         child: Scrollbar(
           child: ListView(
             children: [
-             HomePage(),
+             AboutPage(),
               ServicesPage(),
               PortfolioPage(),
              TestimonialPage()

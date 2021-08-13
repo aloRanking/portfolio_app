@@ -69,7 +69,7 @@ class TabletTopNavBar extends StatelessWidget {
                     position: 1,
                     function: () {
                       controller.animateTo(
-                         0.80 * controller.position.maxScrollExtent,
+                         0.75 * controller.position.maxScrollExtent,
                         duration: Duration(seconds: 1),
                         curve: Curves.ease,
                       );
@@ -80,6 +80,17 @@ class TabletTopNavBar extends StatelessWidget {
                     function: () {
                       controller.animateTo(
                         1 * controller.position.maxScrollExtent,
+                        duration: Duration(seconds: 1),
+                        curve: Curves.ease,
+                      );
+                    }),
+                    navBarOptions(
+                    title: 'Contact',
+                    position: 1,
+                    function: () {
+                      controller.animateTo(
+                        1.1 * controller.position.maxScrollExtent,
+                         //controller.position.minScrollExtent +10,
                         duration: Duration(seconds: 1),
                         curve: Curves.ease,
                       );

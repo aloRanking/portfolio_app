@@ -2,7 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio_app/pages/homePage.dart';
+import 'package:portfolio_app/pages/aboutPage.dart';
 import 'package:portfolio_app/pages/portfolio.dart';
 import 'package:portfolio_app/pages/servicePage.dart';
 import 'package:portfolio_app/pages/testimonialPage.dart';
@@ -38,7 +38,7 @@ class MobileViewScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-             HomePage()            ,
+             AboutPage()            ,
               ServicesPage(),
               PortfolioPage(),
              TestimonialPage()
