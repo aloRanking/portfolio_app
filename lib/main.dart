@@ -17,8 +17,10 @@ class MyApp extends StatelessWidget {
 
 
       ),
-      home:Scrollbar(
-        child: HomeScreen()),
+      home:Scaffold(
+        body: Scrollbar(
+          child: HomeScreen()),
+      ),
     );
   }
 }
