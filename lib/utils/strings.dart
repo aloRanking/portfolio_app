@@ -1,8 +1,7 @@
 const whatIDo =
     'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex';
 const aboutMe_txt =
-    '''I am an application software developer with over 4 years hands-on experience using Android sdk,Dart + Flutter to develop mobile applications. I am highly skilled in designing, developing and testing softwares. 
-I have the understanding of data structures and algorithms, the knowledge of back-end development best practices, state management, integrating restful APIs, Firebase, version control systems etc and  also hands-on software troubleshooting experience.''';
+    '''I am an application software developer with over 4 years hands-on experience using Android sdk, Dart + Flutter to develop mobile applications. I am highly skilled in designing, developing and testing softwares. I have the understanding of data structures and algorithms, the knowledge of back-end development best practices, state management, integrating restful APIs, Firebase, version control systems etc and  also hands-on software troubleshooting experience.''';
 
 const app_dev =
     'I specialize in developing efficient apps that are beautiful and work across all platform (Andriod, iOS and Web)';
