@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/utils/strings.dart';
 import 'package:portfolio_app/widgets/contact_buttons.dart';
 import 'package:portfolio_app/widgets/social_button.dart';
@@ -30,7 +31,10 @@ class AboutProfile extends StatelessWidget {
               height: 15,
             ),
             Text('ADIGUN ALO',
-                style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold)),
+                style: GoogleFonts.lobster(
+                  textStyle: TextStyle(fontSize: 50, fontWeight: FontWeight.bold))
+
+                ),
             SizedBox(
               height: 10,
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:portfolio_app/utils/responsive.dart';
 
@@ -39,7 +40,11 @@ class TabletTopNavBar extends StatelessWidget {
           children: [
             Text(
               'AloBently',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              style: GoogleFonts.lobster(
+                textStyle: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 20
+                )
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -115,14 +120,18 @@ class MobileTopNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 48.0, vertical: 32),
+      padding: const EdgeInsets.symmetric(vertical: 32),
       child: Container(
         child: Column(
           
           children: [
             Text(
               'AloBently',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              style: GoogleFonts.lobster(
+                textStyle: TextStyle(
+                  fontWeight: FontWeight.w600, fontSize: 18
+                )
+              ),
             ),
             SizedBox(height: 20,),
             Row(
@@ -164,6 +173,17 @@ class MobileTopNavBar extends StatelessWidget {
                     function: () {
                       controller.animateTo(
                         1 * controller.position.maxScrollExtent,
+                        duration: Duration(seconds: 1),
+                        curve: Curves.ease,
+                      );
+                    }),
+                    navBarOptions(
+                    title: 'Contact',
+                    position: 1,
+                    function: () {
+                      controller.animateTo(
+                        1.1 * controller.position.maxScrollExtent,
+                         //controller.position.minScrollExtent +10,
                         duration: Duration(seconds: 1),
                         curve: Curves.ease,
                       );
