@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio_app/utils/strings.dart';
@@ -32,7 +33,12 @@ class SocialButtons extends StatelessWidget {
               color: Colors.blue,
             ),
             onPressed: () {
-              js.context.callMethod('open', [twitter]);
+                 js.context.callMethod('open', [twitter]);
+                 return;
+
+              
+              
+             
             }),
         SizedBox(
           width: 15,

@@ -134,7 +134,7 @@ class DesktopServicePage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Watch Anime',
+                      Text('Project Management',
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold)),
                       SizedBox(
@@ -229,7 +229,7 @@ class MobileServicePage extends StatelessWidget {
                     TableRow(
                       children: <Widget>[
                         Icon(
-                          FontAwesomeIcons.desktop,
+                          FontAwesomeIcons.tools,
                           color: kGreenColor,
                           size: 30,
                         ),
@@ -237,11 +237,11 @@ class MobileServicePage extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('App development', style: kTableRowTitleStyle),
+                              Text('Professional Traning', style: kTableRowTitleStyle),
                               SizedBox(
                                 height: 10,
                               ),
-                              Text(whatIDo, style: kTableRowTextStyle),
+                              Text(train_dev, style: kTableRowTextStyle),
                               SizedBox(
                                 height: 20,
                               ),
@@ -261,7 +261,7 @@ class MobileServicePage extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('App development', style: kTableRowTitleStyle),
+                              Text('Project Management', style: kTableRowTitleStyle),
                               SizedBox(
                                 height: 10,
                               ),

@@ -1,7 +1,9 @@
+import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import 'package:flutter/material.dart';
 
 import 'package:portfolio_app/model/selected_work.dart';
 import 'package:portfolio_app/utils/responsive.dart';
+import 'package:portfolio_app/utils/strings.dart';
 import 'package:portfolio_app/widgets/projectItem.dart';
 import 'package:portfolio_app/widgets/subhead.dart';
 
@@ -19,6 +21,7 @@ class PortfolioPage extends StatefulWidget {
 class _PortfolioPageState extends State<PortfolioPage> with SingleTickerProviderStateMixin{
    AnimationController? animationController;
    final PageController controller1 = PageController(initialPage: 0);
+  
 
    @override
      void initState() {
@@ -44,11 +47,12 @@ class _PortfolioPageState extends State<PortfolioPage> with SingleTickerProvider
 }
 
 class DesktopPortfolioPage extends StatelessWidget {
-  const DesktopPortfolioPage({
+   DesktopPortfolioPage({
     Key? key,
     required this.animationController,
   }) : super(key: key);
   final AnimationController? animationController;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -95,23 +99,32 @@ class MobilePorfolioPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return Column(
               children: [
                 SubProfileHeadline(
                   headline: 'My Selected Work',
                 ),
                 Container(
-                  height: 300,
-                  child: PageView(
+                  height: 400,
+                  width: width-100,
+                  child: PageView.builder(
                     scrollDirection: Axis.horizontal,
                     controller: controller,
-                    children: [
-                      Image.asset('images/pjctsnap.jpg'),
-                      Image.asset('images/hagglexsnap.jpg'),
-                      Image.asset('images/lfdssnap.jpg'),
-                      Image.asset('images/foodsnap.jpg'),
-                      Image.asset('images/moviesnap.jpg'),
-                    ],
+                    itemCount: selectedProjects.length,
+                    itemBuilder: (context, index){
+                      return MobileProjectItem(
+                        project:selectedProjects[index] ,
+                      );
+
+                    }
+                   /*  children: [
+                      Image.asset(kProjectImageUrl1),
+                      Image.asset(kProjectImageUrl2),
+                      Image.asset(kProjectImageUrl3),
+                      Image.asset(kProjectImageUrl4),
+                      Image.asset(kProjectImageUrl5),
+                    ], */
                   ),
                 ),
               ],

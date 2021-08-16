@@ -230,8 +230,9 @@ class ContactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 48.0, vertical: 32),
+      padding: const EdgeInsets.symmetric(vertical: 32),
       child: Container(
+      //width: 300,
         child: Column(
           
           children: [

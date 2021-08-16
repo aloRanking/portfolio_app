@@ -25,6 +25,7 @@ class SubProfileHeadline extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              SizedBox(height: 5,),
               Stack(
                 children: [
                   Container(

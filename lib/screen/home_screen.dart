@@ -1,3 +1,4 @@
+import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -95,6 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
     precacheImage(tst2Image.image, context);
   }
 
+
   @override
   Widget build(BuildContext context) {
     //ScrollController scrollController = ScrollController();
@@ -107,7 +109,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
         
          
-        child: Scrollbar(
+        child: DraggableScrollbar.rrect(
+          controller: _scrollController,
           child: ListView(
           controller: _scrollController,
           //physics: BouncingScrollPhysics(),
