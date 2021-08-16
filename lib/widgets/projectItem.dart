@@ -96,7 +96,7 @@ class MobileProjectItem extends StatelessWidget {
       padding: const EdgeInsets.only(
                   left: 16, right: 16, top: 8, bottom: 8),
       child: Container(
-        width: 150,
+        //width: 150,
         child: Card(
                   elevation: 8,
                   shape: RoundedRectangleBorder(
@@ -127,7 +127,7 @@ class MobileProjectItem extends StatelessWidget {
                         height: 15,
                       ),
                       Container(
-                        width: 250,
+                        //width: 250,
                         child: Column(
                           children: [
                             Text(
@@ -137,7 +137,8 @@ class MobileProjectItem extends StatelessWidget {
                             SizedBox(
                               height: 8,
                             ),
-                            Text(project!.subtitle),
+                            Text(project!.subtitle,
+                            textAlign: TextAlign.center,),
                             SizedBox(
                               height: 8,
                             ),

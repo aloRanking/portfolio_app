@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:portfolio_app/utils/colors.dart';
+import 'package:portfolio_app/utils/strings.dart';
 
 import 'hover_button.dart';
+import 'package:universal_html/js.dart' as js;
 
 
 
@@ -18,7 +20,9 @@ class ContactButtons extends StatelessWidget {
         //mainAxisAlignment: MainAxisAlignment.start,
         children: [
           HoverBtn(
-            onPressed: () {},
+            onPressed: () {
+               js.context.callMethod('open', [downloadCV]);
+            },
             borderColor: kGreenColor,
             buttonText: 'DOWNLOAD CV',
             hoverColor: kGreenColor,

@@ -1,17 +1,18 @@
 const whatIDo =
     'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat. Vivamus blandit, dolor vitae lacinia maximus, risus velit vehicula odio, a tincidunt turpis turpis tempus ex';
 const aboutMe_txt =
-    '''I am an application software developer with over 4 years hands-on experience using Android sdk, Dart + Flutter to develop mobile applications. I am highly skilled in designing, developing and testing softwares. I have the understanding of data structures and algorithms, the knowledge of back-end development best practices, state management, integrating restful APIs, Firebase, version control systems etc and  also hands-on software troubleshooting experience.''';
+    '''I am an application software developer with over 3 years hands-on experience using Android sdk, Dart + Flutter to develop mobile applications. I am highly skilled in designing, developing and testing softwares. I have the understanding of data structures and algorithms, the knowledge of back-end development best practices, state management, integrating restful APIs, Firebase, version control systems etc and  also hands-on software troubleshooting experience.''';
 
 const app_dev =
     'I specialize in developing efficient apps that are beautiful and work across all platform (Andriod, iOS and Web)';
 const web_dev =
     'Web applications are software developed for a specific purpose, hosted on a web server. I can also develop website, web apps using Flutter framework or the HTML,CSS and Javascript.';
 
-const train_dev = 'I also tutor people on web development and mobile app development.';
-const anime_dev = '';
+const train_dev = 'I share my knowledge with people through trainings on web development and mobile app development.';
+const projMgt = 'I use my knowledge, skills, techniques and tools to ensure the project meets its stated goals and requirements ';
 
 //links
+const String downloadCV = 'https://drive.google.com/file/d/1VWMBD-jWo01zfaSHDBofXBArAzH2gwVU/view?usp=sharing';
 const String github = 'https://github.com/aloranking/';
 const String linkedIn = 'https://www.linkedin.com/in/adigun-abdul-lateef-02/';
 const String twitter = 'https://mobile.twitter.com/chuck8612';

@@ -1,11 +1,13 @@
-import 'package:draggable_scrollbar/draggable_scrollbar.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:portfolio_app/model/selected_work.dart';
+import 'package:portfolio_app/utils/colors.dart';
 import 'package:portfolio_app/utils/responsive.dart';
 import 'package:portfolio_app/utils/strings.dart';
 import 'package:portfolio_app/widgets/projectItem.dart';
 import 'package:portfolio_app/widgets/subhead.dart';
+import 'package:universal_html/js.dart' as js;
 
 class PortfolioPage extends StatefulWidget {
   const PortfolioPage({
@@ -58,8 +60,32 @@ class DesktopPortfolioPage extends StatelessWidget {
   Widget build(BuildContext context) {
    return Column(
               children: [
-                SubProfileHeadline(
-                  headline: 'My Selected Work',
+               Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SubProfileHeadline(
+                      headline: 'My Selected Work',
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.only(right:16.0),
+                      child: GestureDetector(
+                        onTap: (){
+                          js.context.callMethod('open', [github]);
+                          
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: Colors.red[900]
+                          ),
+                          child: Text('View all Work',
+                          style: TextStyle(color: kWhiteColor),),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
                 Container(
                     padding: EdgeInsets.all(8),
@@ -102,12 +128,35 @@ class MobilePorfolioPage extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return Column(
               children: [
-                SubProfileHeadline(
-                  headline: 'My Selected Work',
-                ),
-                Container(
-                  height: 400,
-                  width: width-100,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SubProfileHeadline(
+                      headline: 'My Selected Work',
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.only(right:16.0),
+                      child: GestureDetector(
+                        onTap: (){
+                          js.context.callMethod('open', [github]);
+                          
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: Colors.red[900]
+                          ),
+                          child: Text('View all Work',
+                          style: TextStyle(color: kWhiteColor),),
+                        ),
+                      ),
+                    )
+                  ],
+                ),Container(
+                  height: 450,
+                  width: width-50,
                   child: PageView.builder(
                     scrollDirection: Axis.horizontal,
                     controller: controller,

@@ -109,7 +109,7 @@ class DesktopServicePage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Training',
+                      Text('Professinonal Training',
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold)),
                       SizedBox(
@@ -141,7 +141,7 @@ class DesktopServicePage extends StatelessWidget {
                         height: 10,
                       ),
                       Text(
-                        whatIDo,
+                        projMgt,
                         style: TextStyle(wordSpacing: 3, height: 1.5),
                       ),
                       SizedBox(
@@ -265,7 +265,7 @@ class MobileServicePage extends StatelessWidget {
                               SizedBox(
                                 height: 10,
                               ),
-                              Text(whatIDo, style: kTableRowTextStyle),
+                              Text(projMgt, style: kTableRowTextStyle),
                               SizedBox(
                                 height: 20,
                               ),
