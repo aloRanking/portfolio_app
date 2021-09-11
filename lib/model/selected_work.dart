@@ -33,7 +33,7 @@ List<Project> selectedProjects = [
   url: movieapp ),
   
   Project(image:kProjectImageUrl4, title: 'FoodApp', 
-  subtitle: foodapp,
+  subtitle: 'A food ordering app',
   url: foodapp ),
   Project(image:kProjectImageUrl5, title: 'LasserFever Diagnostic System', 
   subtitle: 'LasserFever Diagnostic system',
