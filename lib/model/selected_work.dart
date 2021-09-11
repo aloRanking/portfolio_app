@@ -32,10 +32,10 @@ List<Project> selectedProjects = [
   subtitle: 'A movie App',
   url: movieapp ),
   
-  Project(image:kProjectImageUrl3, title: 'FoodApp', 
+  Project(image:kProjectImageUrl4, title: 'FoodApp', 
   subtitle: foodapp,
   url: foodapp ),
-  Project(image:kProjectImageUrl4, title: 'LasserFever Diagnostic System', 
+  Project(image:kProjectImageUrl5, title: 'LasserFever Diagnostic System', 
   subtitle: 'LasserFever Diagnostic system',
   url: lfds ),
 ];

@@ -193,7 +193,7 @@ class ContactCard extends StatelessWidget {
           child: Container(
             height: 200,
             width: width,
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,  
               children: [

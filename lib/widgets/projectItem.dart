@@ -118,9 +118,9 @@ class MobileProjectItem extends StatelessWidget {
                             ),
                             child: Image.asset(
                               project!.image,
-                              //width: 300,
-                              //height: 250,
-                              //fit: BoxFit.contain,
+                              //width: 300,```````````````````````````````````````
+                              height: 187,
+                              fit: BoxFit.fitHeight,
                             ),
                           )),
                       SizedBox(
@@ -128,6 +128,7 @@ class MobileProjectItem extends StatelessWidget {
                       ),
                       Container(
                         //width: 250,
+                        
                         child: Column(
                           children: [
                             Text(
@@ -137,8 +138,11 @@ class MobileProjectItem extends StatelessWidget {
                             SizedBox(
                               height: 8,
                             ),
-                            Text(project!.subtitle,
-                            textAlign: TextAlign.center,),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 16),
+                              child: Text(project!.subtitle,
+                              textAlign: TextAlign.center,),
+                            ),
                             SizedBox(
                               height: 8,
                             ),

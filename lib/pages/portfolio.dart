@@ -128,34 +128,41 @@ class MobilePorfolioPage extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SubProfileHeadline(
-                      headline: 'My Selected Work',
-                    ),
-
-                    Padding(
-                      padding: const EdgeInsets.only(right:16.0),
-                      child: GestureDetector(
-                        onTap: (){
-                          js.context.callMethod('open', [github]);
-                          
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: Colors.red[900]
-                          ),
-                          child: Text('View all Work',
-                          style: TextStyle(color: kWhiteColor),),
+                Container(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        flex: 3,
+                        child: SubProfileHeadline(
+                          headline: 'My Selected Work',
                         ),
                       ),
-                    )
-                  ],
+
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: (){
+                            js.context.callMethod('open', [github]);
+                            
+                          },
+                          child: Container(
+                            alignment: Alignment.center,
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: Colors.red[900]
+                            ),
+                            child: Text('View all\nWork',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: kWhiteColor),),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),Container(
-                  height: 450,
+                  height: 360,
                   width: width-50,
                   child: PageView.builder(
                     scrollDirection: Axis.horizontal,
