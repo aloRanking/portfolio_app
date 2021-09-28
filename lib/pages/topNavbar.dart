@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:portfolio_app/utils/responsive.dart';
+import 'package:portfolio_app/utils/strings.dart';
 
 class TopNavBar extends StatelessWidget {
   const TopNavBar({
@@ -39,12 +39,10 @@ class TabletTopNavBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'AloBently',
+              nav_title,
               style: GoogleFonts.lobster(
-                textStyle: TextStyle(
-                  fontWeight: FontWeight.w600, fontSize: 20
-                )
-              ),
+                  textStyle:
+                      TextStyle(fontWeight: FontWeight.w600, fontSize: 20)),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -126,12 +124,10 @@ class MobileTopNavBar extends StatelessWidget {
           
           children: [
             Text(
-              'AloBently',
+              nav_title,
               style: GoogleFonts.lobster(
-                textStyle: TextStyle(
-                  fontWeight: FontWeight.w600, fontSize: 18
-                )
-              ),
+                  textStyle:
+                      TextStyle(fontWeight: FontWeight.w600, fontSize: 18)),
             ),
             SizedBox(height: 20,),
             Row(

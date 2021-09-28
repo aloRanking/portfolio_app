@@ -13,18 +13,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return MaterialApp(
-      title: 'Alobently',
+      title: 'AloRanking',
       debugShowCheckedModeBanner: false,
       //darkTheme: ,
       theme: ThemeData(
-       textTheme: GoogleFonts.latoTextTheme(textTheme).copyWith(
-      bodyText1: GoogleFonts.oswald(textStyle: textTheme.bodyText1),
-    ),
-
-
+        textTheme: GoogleFonts.latoTextTheme(textTheme).copyWith(
+          bodyText1: GoogleFonts.oswald(textStyle: textTheme.bodyText1),
+        ),
       ),
       home: HomeScreen(),
-      
     );
   }
 }

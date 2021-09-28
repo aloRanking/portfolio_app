@@ -96,17 +96,16 @@ class MobileHomePage extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            Text('Flutter Developer',
+            Text(flutter_dev_txt,
                 style: TextStyle(
                     letterSpacing: 2, fontSize: 16, color: Color(0xFFCACACA))),
             SizedBox(
               height: 15,
             ),
-            Text('ADIGUN ALO',
+            Text(user_name,
                 style: GoogleFonts.lobster(
-                  textStyle: TextStyle(fontSize: 45, fontWeight: FontWeight.bold))
-
-              ),
+                    textStyle:
+                        TextStyle(fontSize: 45, fontWeight: FontWeight.bold))),
             SizedBox(
               height: 10,
             ),

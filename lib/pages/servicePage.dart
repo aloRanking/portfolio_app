@@ -141,9 +141,9 @@ class DesktopServicePage extends StatelessWidget {
                         height: 10,
                       ),
                       Text(
-                        projMgt,
-                        style: TextStyle(wordSpacing: 3, height: 1.5),
-                      ),
+                        project_dev,
+                          style: TextStyle(wordSpacing: 3, height: 1.5),
+                        ),
                       SizedBox(
                         height: 20,
                       ),
@@ -261,15 +261,15 @@ class MobileServicePage extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Project Management', style: kTableRowTitleStyle),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(projMgt, style: kTableRowTextStyle),
-                              SizedBox(
-                                height: 20,
-                              ),
-                            ],
+                      Text('Project Management', style: kTableRowTitleStyle),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(project_dev, style: kTableRowTextStyle),
+                      SizedBox(
+                        height: 20,
+                      ),
+                    ],
                           ),
                         ),
                       ],

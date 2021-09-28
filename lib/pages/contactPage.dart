@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio_app/utils/responsive.dart';
+import 'package:portfolio_app/utils/strings.dart';
 import 'package:portfolio_app/widgets/contact_buttons.dart';
 import 'package:portfolio_app/widgets/social_button.dart';
 
@@ -142,8 +143,10 @@ class FooterWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height: 10,),
-              Text('@ Alobently 2021. All rights reserved',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),),
+              Text(
+                copyright_txt,
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
+              ),
 
                SizedBox(height: 10,),
 
@@ -200,9 +203,11 @@ class ContactCard extends StatelessWidget {
                 Text('Hii, you can hit me up @',
                 style: TextStyle(fontSize: greetingTxtSize),),
                 SizedBox(height: 20,),
-                SelectableText('alobently@outlook.com',
-                style: TextStyle(fontSize: emailTxtSize,
-                fontWeight: FontWeight.bold),),
+                SelectableText(
+                  contact_email,
+                  style: TextStyle(
+                      fontSize: emailTxtSize, fontWeight: FontWeight.bold),
+                ),
                  SizedBox(height: 20,),
 
                  Row(

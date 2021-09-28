@@ -21,21 +21,31 @@ class Project {
 }
 
 List<Project> selectedProjects = [
-
-  Project(image:kProjectImageUrl1, title: 'ProjectsNigeria', 
-  subtitle: 'This app allows undergraduate students to have easy access to project materials',
-  url: '' ),
-  Project(image:kProjectImageUrl2, title: 'HaggleX', 
-  subtitle: 'This is an Hagglex app Mock',
-  url: hagglex, ),
-   Project(image:kProjectImageUrl3, title: 'Movie App', 
-  subtitle: 'A movie App',
-  url: movieapp ),
-  
-  Project(image:kProjectImageUrl4, title: 'FoodApp', 
-  subtitle: 'A food ordering app',
-  url: foodapp ),
-  Project(image:kProjectImageUrl5, title: 'LasserFever Diagnostic System', 
-  subtitle: 'LasserFever Diagnostic system',
-  url: lfds ),
+  Project(
+      image: kProjectImageUrl1,
+      title: 'ProjectsNigeria',
+      subtitle:
+          'This app allows undergraduate students to have easy access to project materials',
+      url: ''),
+  Project(
+    image: kProjectImageUrl2,
+    title: 'HaggleX',
+    subtitle: 'This is an Hagglex app Mock',
+    url: hagglex,
+  ),
+  Project(
+      image: kProjectImageUrl3,
+      title: 'Movie App',
+      subtitle: 'A movie App',
+      url: movieapp),
+  Project(
+      image: kProjectImageUrl4,
+      title: 'Covid Tracker',
+      subtitle: 'A covid 19 tracker app',
+      url: foodapp),
+  Project(
+      image: kProjectImageUrl5,
+      title: 'LasserFever Diagnostic System',
+      subtitle: 'LasserFever Diagnostic system',
+      url: lfds),
 ];
