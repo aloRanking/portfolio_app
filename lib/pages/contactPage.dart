@@ -152,15 +152,18 @@ class FooterWidget extends StatelessWidget {
 
               Row(
                 children: [
-                  Text('Made with ',
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),),
-
-                  FaIcon(FontAwesomeIcons.solidHeart, color: Colors.red,),
-
-                  Text(' Flutter ',
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),),
-
-                  
+                  Text(
+                    'Made with ',
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
+                  ),
+                  FaIcon(
+                    FontAwesomeIcons.solidHeart,
+                    color: Colors.blue,
+                  ),
+                  Text(
+                    ' Flutter ',
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
+                  ),
                 ],
               ),
             ],

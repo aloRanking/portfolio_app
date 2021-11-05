@@ -1,10 +1,10 @@
 const String nav_title = 'AloRanking';
 const String user_name = 'ADIGUN ALO';
 const String flutter_dev_txt = 'Flutter Developer';
-const copyright_txt = '&copy; Aloranking 2021. All rights reserved';
+const copyright_txt = '\u00a9 aloranking 2021. All rights reserved';
 
 const aboutMe_txt =
-    '''I am Adigun Abdul-Lateef Olatunji (Alo) a mobile developer with over 3 years hands-on experience using Android sdk, Dart + Flutter to develop mobile applications. I am highly skilled in designing, developing and testing softwares. I have the understanding of data structures and algorithms, the knowledge of back-end development best practices, state management, integrating restful APIs, Firebase, version control systems etc and  also hands-on software troubleshooting experience.''';
+    '''I am a mobile app developer with over 3 years hands-on experience using Android sdk, Dart + Flutter to develop mobile applications. I am highly skilled in designing, developing and testing softwares. I have the understanding of data structures and algorithms, the knowledge of back-end development best practices, state management, integrating restful APIs, Firebase, version control systems etc and  also hands-on software troubleshooting experience.''';
 
 const app_dev =
     'I specialize in developing efficient apps that are pleasant to people and that work across all platform (Andriod, iOS and Web)';

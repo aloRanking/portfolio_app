@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return MaterialApp(
-      title: 'AloRanking',
+      title: 'aloRanking',
       debugShowCheckedModeBanner: false,
       //darkTheme: ,
       theme: ThemeData(

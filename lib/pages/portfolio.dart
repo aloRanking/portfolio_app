@@ -90,30 +90,26 @@ class DesktopPortfolioPage extends StatelessWidget {
         Container(
             padding: EdgeInsets.all(8),
             height: 380,
-            child: Scrollbar(
-              scrollbarOrientation: ScrollbarOrientation.bottom,
-              isAlwaysShown: true,
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: selectedProjects.length,
-                  itemBuilder: (context, index) {
-                    final int count = selectedProjects.length > 10
-                        ? 10
-                        : selectedProjects.length;
-                    final Animation<double> animation =
-                        Tween<double>(begin: 0.0, end: 1.0).animate(
-                            CurvedAnimation(
-                                parent: animationController!,
-                                curve: Interval((1 / count) * index, 1.0,
-                                    curve: Curves.fastOutSlowIn)));
-                    animationController!.forward();
-                    return ProjectItem(
-                      project: selectedProjects[index],
-                      animation: animation,
-                      animationController: animationController,
-                    );
-                  }),
-            )),
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: selectedProjects.length,
+                itemBuilder: (context, index) {
+                  final int count = selectedProjects.length > 10
+                      ? 10
+                      : selectedProjects.length;
+                  final Animation<double> animation =
+                      Tween<double>(begin: 0.0, end: 1.0).animate(
+                          CurvedAnimation(
+                              parent: animationController!,
+                              curve: Interval((1 / count) * index, 1.0,
+                                  curve: Curves.fastOutSlowIn)));
+                  animationController!.forward();
+                  return ProjectItem(
+                    project: selectedProjects[index],
+                    animation: animation,
+                    animationController: animationController,
+                  );
+                })),
       ],
             );
   }
@@ -218,7 +214,7 @@ class _MobilePorfolioPageState extends State<MobilePorfolioPage> {
                     style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.all(16), primary: kGreenColor),
                     onPressed: () {
-                      _pageController?.previousPage(
+                      _pageController.previousPage(
                           duration: Duration(milliseconds: 700),
                           curve: Curves.ease);
                     },
@@ -232,7 +228,7 @@ class _MobilePorfolioPageState extends State<MobilePorfolioPage> {
                     style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.all(16), primary: kGreenColor),
                     onPressed: () {
-                      _pageController?.nextPage(
+                      _pageController.nextPage(
                           duration: Duration(milliseconds: 700),
                           curve: Curves.ease);
                     },
