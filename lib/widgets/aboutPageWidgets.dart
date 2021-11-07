@@ -2,7 +2,6 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/utils/strings.dart';
-import 'package:portfolio_app/widgets/contact_buttons.dart';
 import 'package:portfolio_app/widgets/social_button.dart';
 
 class AboutProfile extends StatelessWidget {
@@ -79,8 +78,16 @@ class AboutImage extends StatelessWidget {
         child: Container(
           height: 350,
           width: 350,
-          decoration:
-              BoxDecoration(shape: BoxShape.circle, color: Colors.white54),
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    offset: Offset(0, 10),
+                    blurRadius: 40,
+                    spreadRadius: 2)
+              ],
+              color: Colors.white54),
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Container(
