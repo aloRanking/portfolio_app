@@ -26,6 +26,7 @@ const String hagglex = 'https://github.com/aloRanking/haggle_x';
 const String lfds =
     'https://github.com/aloRanking/lassa_fever_diagnostic_system';
 const String foodapp = 'https://github.com/aloRanking/flutter_ui_challenges';
+const String foodapp1 = 'https://github.com/aloRanking/food_app1';
 const String movieapp = 'https://github.com/aloRanking/movie_app';
 const String prjctN =
     'https://play.google.com/store/apps/details?id=com.aloranking.projectnigeria';
@@ -33,11 +34,14 @@ const String contact_email = 'adigunalo21@gmail.com';
 
 //add optimized images for better load time and smooth scroll
 const String kProfileImageUrl = 'assets/images/aloranking.jpeg';
-final String kProjectImageUrl1 = 'assets/images/pjctsnap.jpg';
-final String kProjectImageUrl2 = 'assets/images/hagglexsnap.jpg';
+final String kProjectImageUrl1 = 'assets/images/pj.png';
+final String kProjectImageUrl2 = 'assets/images/hagx.png';
 final String kProjectImageUrl3 = 'assets/images/moviesnap.jpg';
-final String kProjectImageUrl4 = 'assets/images/covidsnap.jpg';
+final String kProjectImageUrl4 = 'assets/images/covidapp.png';
 final String kProjectImageUrl5 = 'assets/images/lfdssnap.jpg';
+final String kProjectImageUrl6 = 'assets/images/recipe.png';
+final String kProjectImageUrl7 = 'assets/images/resapp.png';
 
-const String ktestimonialImageUrl1 = 'assets/images/user_2.png';
+
+const String ktestimonialImageUrl1 = 'assets/images/user_4.png';
 const String ktestimonialImageUrl2 = 'assets/images/user_3.png';

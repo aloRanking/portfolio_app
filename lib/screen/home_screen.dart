@@ -22,6 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
   late Image work3Image;
   late Image work4Image;
   late Image work5Image;
+  late Image work6Image;
+  late Image work7Image;
   late Image tst1Image;
   late Image tst2Image;
   late Image profleImage;
@@ -66,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     super.initState();
   }
-
+//init images
   void initImages() {
     profleImage = Image.asset(kProfileImageUrl);
     work1Image = Image.asset(kProjectImageUrl1);
@@ -74,6 +76,8 @@ class _HomeScreenState extends State<HomeScreen> {
     work3Image = Image.asset(kProjectImageUrl3);
     work4Image = Image.asset(kProjectImageUrl4);
     work5Image = Image.asset(kProjectImageUrl5);
+    work6Image = Image.asset(kProjectImageUrl6);
+    work7Image = Image.asset(kProjectImageUrl7);
     tst1Image = Image.asset(ktestimonialImageUrl1);
     tst2Image = Image.asset(ktestimonialImageUrl2);
   }
@@ -91,6 +95,8 @@ class _HomeScreenState extends State<HomeScreen> {
     precacheImage(work3Image.image, context);
     precacheImage(work4Image.image, context);
     precacheImage(work5Image.image, context);
+    precacheImage(work6Image.image, context);
+    precacheImage(work7Image.image, context);
     precacheImage(tst1Image.image, context);
     precacheImage(tst1Image.image, context);
     precacheImage(tst2Image.image, context);

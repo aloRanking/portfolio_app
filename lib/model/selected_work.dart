@@ -34,14 +34,19 @@ List<Project> selectedProjects = [
     url: hagglex,
   ),
   Project(
-      image: kProjectImageUrl3,
-      title: 'Movie App',
-      subtitle: 'A movie App',
-      url: movieapp),
+      image: kProjectImageUrl6,
+      title: 'Recipe App',
+      subtitle: 'A reecipe App',
+      url: foodapp1),
   Project(
       image: kProjectImageUrl4,
       title: 'Covid Tracker',
       subtitle: 'A covid 19 tracker app',
+      url: foodapp),
+      Project(
+      image: kProjectImageUrl7,
+      title: 'Restuarant App',
+      subtitle: 'A restuarant app',
       url: foodapp),
   Project(
       image: kProjectImageUrl5,

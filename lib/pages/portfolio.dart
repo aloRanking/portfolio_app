@@ -22,6 +22,8 @@ class PortfolioPage extends StatefulWidget {
 class _PortfolioPageState extends State<PortfolioPage> with SingleTickerProviderStateMixin{
    AnimationController? animationController;
 
+   
+
   @override
      void initState() {
        animationController = AnimationController(
@@ -55,6 +57,7 @@ class DesktopPortfolioPage extends StatelessWidget {
     required this.animationController,
   }) : super(key: key);
   final AnimationController? animationController;
+  final ScrollController _scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -91,6 +94,7 @@ class DesktopPortfolioPage extends StatelessWidget {
             padding: EdgeInsets.all(8),
             height: 380,
             child: ListView.builder(
+              controller: _scrollController,
                 scrollDirection: Axis.horizontal,
                 itemCount: selectedProjects.length,
                 itemBuilder: (context, index) {
@@ -123,7 +127,7 @@ class MobilePorfolioPage extends StatefulWidget {
 }
 
 class _MobilePorfolioPageState extends State<MobilePorfolioPage> {
-  final PageController _pageController = PageController();
+  final PageController _pageController = PageController(viewportFraction: 0.8);
   int currentPage = 0;
 
   @override
@@ -182,8 +186,8 @@ class _MobilePorfolioPageState extends State<MobilePorfolioPage> {
           ),
         ),
         Container(
-          height: 360,
-          width: width - 50,
+          height: 350,
+          //width: width - 50,
           child: PageView.builder(
               scrollDirection: Axis.horizontal,
               controller: _pageController,
