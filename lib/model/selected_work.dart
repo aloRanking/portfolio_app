@@ -22,11 +22,16 @@ class Project {
 
 List<Project> selectedProjects = [
   Project(
+      image: kProjectImageUrl8,
+      title: 'Foodelo',
+      subtitle: 'A food ordering and delivering app',
+      url: foodeloURL),
+  Project(
       image: kProjectImageUrl1,
       title: 'ProjectsNigeria',
       subtitle:
           'This app allows undergraduate students to have easy access to project materials',
-      url: ''),
+      url: prjctN),
   Project(
     image: kProjectImageUrl2,
     title: 'HaggleX',

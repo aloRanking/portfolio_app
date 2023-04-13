@@ -30,6 +30,8 @@ const String foodapp1 = 'https://github.com/aloRanking/food_app1';
 const String movieapp = 'https://github.com/aloRanking/movie_app';
 const String prjctN =
     'https://play.google.com/store/apps/details?id=com.aloranking.projectnigeria';
+const String foodeloURL =
+    'https://play.google.com/store/apps/details?id=africa.foodelo.hybrid';
 const String contact_email = 'adigunalo21@gmail.com';
 
 //add optimized images for better load time and smooth scroll
@@ -41,7 +43,7 @@ final String kProjectImageUrl4 = 'assets/images/covidapp.png';
 final String kProjectImageUrl5 = 'assets/images/lfdssnap.jpg';
 final String kProjectImageUrl6 = 'assets/images/recipe.png';
 final String kProjectImageUrl7 = 'assets/images/resapp.png';
-
+final String kProjectImageUrl8 = 'assets/images/foodelo.png';
 
 const String ktestimonialImageUrl1 = 'assets/images/user_4.png';
 const String ktestimonialImageUrl2 = 'assets/images/user_3.png';
