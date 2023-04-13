@@ -22,7 +22,7 @@ dependencies:
   universal_html: ^2.0.4
   animate_do: ^2.0.0
   draggable_scrollbar: ^0.1.0
-  google_fonts: ^2.1.0
+  google_fonts: ^4.0.3
 
 
 dev_dependencies:
