@@ -43,7 +43,7 @@ final String kProjectImageUrl4 = 'assets/images/covidapp.png';
 final String kProjectImageUrl5 = 'assets/images/lfdssnap.jpg';
 final String kProjectImageUrl6 = 'assets/images/recipe.png';
 final String kProjectImageUrl7 = 'assets/images/resapp.png';
-final String kProjectImageUrl8 = 'assets/images/foodelo.png';
+final String kProjectImageUrl8 = 'assets/images/foodelo2.png';
 
 const String ktestimonialImageUrl1 = 'assets/images/user_4.png';
 const String ktestimonialImageUrl2 = 'assets/images/user_3.png';
