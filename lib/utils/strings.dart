@@ -32,6 +32,8 @@ const String prjctN =
     'https://play.google.com/store/apps/details?id=com.aloranking.projectnigeria';
 const String foodeloURL =
     'https://play.google.com/store/apps/details?id=africa.foodelo.hybrid';
+const String foodeloRiderURL =
+    'https://play.google.com/store/apps/details?id=ng.com.riders.foodelo';
 const String contact_email = 'adigunalo21@gmail.com';
 
 //add optimized images for better load time and smooth scroll
@@ -44,6 +46,11 @@ final String kProjectImageUrl5 = 'assets/images/lfdssnap.jpg';
 final String kProjectImageUrl6 = 'assets/images/recipe.png';
 final String kProjectImageUrl7 = 'assets/images/resapp.png';
 final String kProjectImageUrl8 = 'assets/images/foodelo2.png';
+final String kProjectImageUrl9 = 'assets/images/foodelo_rider.png';
 
 const String ktestimonialImageUrl1 = 'assets/images/user_4.png';
-const String ktestimonialImageUrl2 = 'assets/images/user_3.png';
+const String ktestimonialImageUrl2 = 'assets/images/user_4.png';
+const String ktestimonialImageUrl3 = 'assets/images/foodelo_logo.png';
+
+const String kProjectTestimonialText =
+    'We had a great experience working with Alo. He is reliable and efficient. He met project deliverable dates and worked very collaboratively with members of our team. We look forward to continue to work him in the future';

@@ -22,6 +22,11 @@ class Project {
 
 List<Project> selectedProjects = [
   Project(
+      image: kProjectImageUrl9,
+      title: 'Foodelo for Riders',
+      subtitle: 'A food ordering and delivering app',
+      url: foodeloRiderURL),
+  Project(
       image: kProjectImageUrl8,
       title: 'Foodelo',
       subtitle: 'A food ordering and delivering app',
