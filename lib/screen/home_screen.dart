@@ -12,18 +12,18 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     ScrollController scrollController = ScrollController();
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Color(0xFF191D23),
       body: Container(
         child: Scrollbar(
           child: ListView(
             controller: scrollController,
             physics: BouncingScrollPhysics(),
             children: [
-              TopNavBar(controller:scrollController),
-             HomePage(),
+              TopNavBar(controller: scrollController),
+              HomePage(),
               ServicesPage(),
               PortfolioPage(),
-             TestimonialPage(),
+              TestimonialPage(),
              ContactPage(scrollController: scrollController,)
             ],
           ),
