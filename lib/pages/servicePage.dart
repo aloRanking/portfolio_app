@@ -30,131 +30,14 @@ class DesktopServicePage extends StatelessWidget {
     //TODO bottom overflow for tablet
      var size = MediaQuery.of(context).size;
   return Container(
-    //height: 500,
-    child: Column(
+   // height: 500,
+      child: Column(
       children: [
-        SubProfileHeadline(
-          headline: 'What i do',
-        ),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          child: Table(columnWidths: {
-            0: FlexColumnWidth(1),
-            1: FlexColumnWidth(4),
-            2: FlexColumnWidth(1),
-            3: FlexColumnWidth(4),
-          }, children: <TableRow>[
-            TableRow(
-              children: <Widget>[
-                Icon(
-                  FontAwesomeIcons.mobile,
-                  color: Colors.green,
-                  size: 30,
-                ),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Mobile App development',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        app_dev,
-                        style: TextStyle(wordSpacing: 3, height: 1.5),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                    ],
-                  ),
-                ),
-                Icon(
-                  FontAwesomeIcons.laptop,
-                  color: Colors.green,
-                  size: 30,
-                ),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Web development',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        web_dev,
-                        style: TextStyle(wordSpacing: 3, height: 1.5),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            TableRow(
-              children: <Widget>[
-                Icon(
-                  FontAwesomeIcons.desktop,
-                  color: kGreenColor,
-                  size: 30,
-                ),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('App development',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        whatIDo,
-                        style: TextStyle(wordSpacing: 3, height: 1.5),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                    ],
-                  ),
-                ),
-                Icon(
-                  FontAwesomeIcons.shoppingBag,
-                  color: kGreenColor,
-                  size: 30,
-                ),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('App development',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        whatIDo,
-                        style: TextStyle(wordSpacing: 3, height: 1.5),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ]),
-        ),
-      ],
+          /* SvgPicture.asset(
+      'icons/userr.svg',
+
+    ),*/
+        ],
     ),
   );
  

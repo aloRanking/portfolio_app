@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/utils/responsive.dart';
 import 'package:portfolio_app/widgets/social_button.dart';
 
 class ContactPage extends StatelessWidget {
-  const ContactPage({ Key? key, this.scrollController }) : super(key: key);
+  const ContactPage({Key? key, this.scrollController}) : super(key: key);
 
   final ScrollController? scrollController;
 
@@ -60,10 +62,80 @@ class TabletContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-      
-      return Column(
+
+    return Column(
+      children: [
+        SizedBox(
+          height: 50,
+        ),
+        Text('Let’s work together',
+            style: GoogleFonts.manuale(
+              color: Color(0xFFFFEFCD),
+              fontSize: 60,
+              fontWeight: FontWeight.w800,
+            )),
+        SizedBox(
+          height: 24,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 80.0),
+          child: Column(
+            children: [
+              Divider(
+                color: Color(0xFFFFEFCD),
+              ),
+              Gap(48),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      child: Text(
+                        'My inbox is always open, if you have an offer or want to say hello',
+                        style: GoogleFonts.judson(
+                          color: Color(0xFFFFEFCD),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Text(
+                    'aloadigun@gmail.com',
+                    style: GoogleFonts.judson(
+                      color: Color(0xFF11CDF6),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400,
+                      decoration: TextDecoration.underline,
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
+        BottomNavBar(controller: controller),
+        SizedBox(
+          height: 20,
+        ),
+        FooterWidget()
+      ],
+    );
+    /* return Column(
         children: [
           SizedBox(height: 50,),
+          SizedBox(
+            width:  0.73*size.width,
+            height: 157,
+            child: Text(
+              'Let’s work together ',
+              style: GoogleFonts.manuale(
+                color: Color(0xFFFFEFCD),
+                fontSize: 128,
+                fontWeight: FontWeight.w800,
+              )
+            ),
+          ),
           ContactCard(
             width: 0.8*size.width,
             greetingTxtSize: 18,
@@ -82,7 +154,7 @@ class TabletContactPage extends StatelessWidget {
            FooterWidget()
 
         ],
-      );
+      );*/
   }
 }
 
@@ -94,28 +166,67 @@ class DesktopContactPage extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
       var size = MediaQuery.of(context).size;
-      
-      return Column(
+
+    return Column(
         children: [
-          SizedBox(height: 50,),
-          ContactCard(
-            width: 0.6*size.width,
-            greetingTxtSize: 20,
-            emailTxtSize: 35,
-          ),
-          SizedBox(height: 20,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+        SizedBox(
+          height: 50,
+        ),
+        SizedBox(
+          width: 1063,
+          height: 157,
+          child: Text('Let’s work together ',
+              style: GoogleFonts.manuale(
+                color: Color(0xFFFFEFCD),
+                fontSize: 128,
+                fontWeight: FontWeight.w800,
+              )),
+        ),
+        SizedBox(
+          height: 24,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 141.0),
+          child: Column(
             children: [
-              SocialButtons(),
+              Divider(
+                color: Color(0xFFFFEFCD),
+              ),
+              Gap(48),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    width: 574,
+                    child: Text(
+                      'My inbox is always open, if you have an offer or want to say hello',
+                      style: GoogleFonts.judson(
+                        color: Color(0xFFFFEFCD),
+                        fontSize: 32,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    'aloadigun@gmail.com',
+                    style: GoogleFonts.judson(
+                      color: Color(0xFF11CDF6),
+                      fontSize: 32,
+                      fontWeight: FontWeight.w400,
+                      decoration: TextDecoration.underline,
+                    ),
+                  )
+                ],
+              ),
             ],
           ),
-          BottomNavBar(controller: controller),
-           SizedBox(height: 20,),
-
-           FooterWidget()
-
-        ],
+        ),
+        BottomNavBar(controller: controller),
+        SizedBox(
+          height: 20,
+        ),
+        FooterWidget()
+      ],
       );
     }
   }

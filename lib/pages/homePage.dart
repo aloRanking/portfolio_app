@@ -134,7 +134,7 @@ class TabletHomPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 140, right: 133),
+      padding: const EdgeInsets.only(left: 100, right: 100),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -153,7 +153,7 @@ class TabletHomPage extends StatelessWidget {
           Text('I’m Adigun Alo',
               style: GoogleFonts.manuale(
                 color: Color(0xFFFFEFCD),
-                fontSize: 80,
+                fontSize: 60,
                 fontWeight: FontWeight.w800,
               )),
           SizedBox(
@@ -183,7 +183,7 @@ class TabletHomPage extends StatelessWidget {
                 'Dedicated Flutter Developer committed to\ndelivering exceptional user applications &\nmaximizing revenue for organizations.',
                 style: GoogleFonts.judson(
                   color: Color(0xFF11CDF6),
-                  fontSize: 30,
+                  fontSize: 25,
                 )),
           ),
           SizedBox(
@@ -193,7 +193,7 @@ class TabletHomPage extends StatelessWidget {
             'About Me',
             style: GoogleFonts.manuale(
                 color: Color(0xFFFFEFCD),
-                fontSize: 80,
+                fontSize: 60,
                 fontWeight: FontWeight.w800,
                 height: 1.4),
           ),
