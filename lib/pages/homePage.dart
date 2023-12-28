@@ -1,10 +1,14 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/utils/responsive.dart';
 import 'package:portfolio_app/utils/strings.dart';
 import 'package:portfolio_app/widgets/social_button.dart';
+import 'package:universal_html/js.dart' as js;
+
+import '../utils/colors.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -24,25 +28,33 @@ class DesktopHomPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 140, right: 133),
+      padding: const EdgeInsets.only(
+        left: 140,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text('Hello,',
-                  style: GoogleFonts.marckScript(
-                    color: Color(0xFFFFEFCD),
-                    fontSize: 128,
-                  )),
-              SocialButtons(),
-            ],
+          SizedBox(
+            height: 50,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 133.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Hello,',
+                    style: GoogleFonts.marckScript(
+                      color: kCreamColor,
+                      fontSize: 128,
+                    )),
+                SocialButtons(),
+              ],
+            ),
           ),
           Text('I’m Adigun Alo',
               style: GoogleFonts.manuale(
-                color: Color(0xFFFFEFCD),
+                color: kCreamColor,
                 fontSize: 128,
                 fontWeight: FontWeight.w800,
               )),
@@ -61,7 +73,7 @@ class DesktopHomPage extends StatelessWidget {
                     side: BorderSide(
                       width: 1,
                       strokeAlign: BorderSide.strokeAlignCenter,
-                      color: Color(0xFFFFEFCD),
+                      color: kCreamColor,
                     ),
                   ),
                 ),
@@ -69,16 +81,14 @@ class DesktopHomPage extends StatelessWidget {
               const SizedBox(
                 width: 30,
               ),
-              Expanded(
-                child: SizedBox(
-                  // width: 723,
-                  child: Text(
-                      'Dedicated Flutter Developer committed to delivering exceptional user applications & maximizing revenue for organizations.',
-                      style: GoogleFonts.judson(
-                        color: Color(0xFF11CDF6),
-                        fontSize: 40,
-                      )),
-                ),
+              SizedBox(
+                width: 723,
+                child: Text(
+                    'Dedicated Flutter Developer committed to delivering exceptional user applications & maximizing revenue for organizations.',
+                    style: GoogleFonts.judson(
+                      color: Color(0xFF11CDF6),
+                      fontSize: 40,
+                    )),
               )
             ],
           ),
@@ -88,7 +98,7 @@ class DesktopHomPage extends StatelessWidget {
           Text(
             'About Me',
             style: GoogleFonts.manuale(
-                color: Color(0xFFFFEFCD),
+                color: kCreamColor,
                 fontSize: 128,
                 fontWeight: FontWeight.w800,
                 height: 1.4),
@@ -101,7 +111,7 @@ class DesktopHomPage extends StatelessWidget {
             child: Text(
               aboutMe_txt,
               style: GoogleFonts.manuale(
-                color: Color(0xFFFFEFCD),
+                color: kCreamColor,
                 fontSize: 24,
               ),
             ),
@@ -138,13 +148,16 @@ class TabletHomPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(
+            height: 50,
+          ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Hello,',
                   style: GoogleFonts.marckScript(
-                    color: Color(0xFFFFEFCD),
+                    color: kCreamColor,
                     fontSize: 80,
                   )),
               SocialButtons(),
@@ -152,7 +165,7 @@ class TabletHomPage extends StatelessWidget {
           ),
           Text('I’m Adigun Alo',
               style: GoogleFonts.manuale(
-                color: Color(0xFFFFEFCD),
+                color: kCreamColor,
                 fontSize: 60,
                 fontWeight: FontWeight.w800,
               )),
@@ -169,7 +182,7 @@ class TabletHomPage extends StatelessWidget {
                     side: BorderSide(
                       width: 1,
                       strokeAlign: BorderSide.strokeAlignCenter,
-                      color: Color(0xFFFFEFCD),
+                      color: kCreamColor,
                     ),
                   ),
                 ),
@@ -192,7 +205,7 @@ class TabletHomPage extends StatelessWidget {
           Text(
             'About Me',
             style: GoogleFonts.manuale(
-                color: Color(0xFFFFEFCD),
+                color: kCreamColor,
                 fontSize: 60,
                 fontWeight: FontWeight.w800,
                 height: 1.4),
@@ -205,7 +218,7 @@ class TabletHomPage extends StatelessWidget {
             child: Text(
               aboutMe_txt,
               style: GoogleFonts.manuale(
-                color: Color(0xFFFFEFCD),
+                color: kCreamColor,
                 fontSize: 18,
               ),
             ),
@@ -240,7 +253,7 @@ class MobileHomePage extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 20,
+          height: 50,
         ),
         // buildImageMobile(),
         buildProfileMobile(),
@@ -264,7 +277,34 @@ class MobileHomePage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      SocialButtons(),
+                      Row(
+                        children: [
+                          InkWell(
+                              onTap: () {
+                                js.context.callMethod('open', [linkedIn]);
+                              },
+                              child: SvgPicture.asset(
+                                'assets/icons/bi_linkedin.svg',
+                                width: 24,
+                                height: 24,
+                              )),
+                          SizedBox(
+                            width: 14,
+                          ),
+                          InkWell(
+                              onTap: () {
+                                js.context.callMethod('open', [linkedIn]);
+                              },
+                              child: SvgPicture.asset(
+                                'assets/icons/github.svg',
+                                width: 24,
+                                height: 24,
+                              )),
+                          SizedBox(
+                            width: 14,
+                          ),
+                        ],
+                      )
                     ],
                   ),
                   Gap(57),
@@ -275,14 +315,14 @@ class MobileHomePage extends StatelessWidget {
                         children: [
                           Text('Hello,',
                               style: GoogleFonts.marckScript(
-                                color: Color(0xFFFFEFCD),
-                                fontSize: 64,
+                                color: kCreamColor,
+                                fontSize: 84,
                                 height: 1.04,
                               )),
                           Text('I’m Adigun Alo',
                               style: GoogleFonts.manuale(
-                                color: Color(0xFFFFEFCD),
-                                fontSize: 36,
+                                color: kCreamColor,
+                                fontSize: 46,
                                 fontWeight: FontWeight.w800,
                                 height: 1.4,
                               )),
@@ -303,7 +343,7 @@ class MobileHomePage extends StatelessWidget {
                               side: BorderSide(
                                 width: 1,
                                 strokeAlign: BorderSide.strokeAlignCenter,
-                                color: Color(0xFFFFEFCD),
+                                color: kCreamColor,
                               ),
                             ),
                           ),
@@ -325,52 +365,55 @@ class MobileHomePage extends StatelessWidget {
                   )),
             ),
             Gap(48),
-            Padding(
-              padding: EdgeInsets.only(left: 24, right: 24),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        'About Me',
-                        style: GoogleFonts.manuale(
-                          color: Color(0xFFFFEFCD),
-                          fontSize: 48,
-                          fontWeight: FontWeight.w800,
+            ZoomIn(
+              duration: Duration(milliseconds: 1190),
+              child: Padding(
+                padding: EdgeInsets.only(left: 24, right: 24),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'About Me',
+                          style: GoogleFonts.manuale(
+                            color: kCreamColor,
+                            fontSize: 48,
+                            fontWeight: FontWeight.w800,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                  Gap(24),
-                  Text(
-                    aboutMe_txt,
-                    style: GoogleFonts.manuale(
-                      color: Color(0xFFFFEFCD),
-                      fontSize: 16,
+                      ],
                     ),
-                  ),
-                  SizedBox(
-                    height: 32,
-                  ),
-                  Swing(
-                      delay: Duration(milliseconds: 2500),
-                      duration: Duration(milliseconds: 1000),
-                      child: Container(
-                        //margin: EdgeInsets.symmetric(horizontal: 24),
-                        width: double.infinity,
-                        height: 64,
-                        alignment: Alignment.center,
-                        // padding: const EdgeInsets.symmetric(horizontal: 61, vertical: 20),
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(color: Color(0xFF11CDF6)),
-                        child: Text('Download my Resume',
-                            style: GoogleFonts.judson(
-                              color: Color(0xFF000501),
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                            )),
-                      )),
-                ],
+                    Gap(24),
+                    Text(
+                      aboutMe_txt,
+                      style: GoogleFonts.manuale(
+                        color: kCreamColor,
+                        fontSize: 16,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 32,
+                    ),
+                    Swing(
+                        delay: Duration(milliseconds: 2500),
+                        duration: Duration(milliseconds: 1000),
+                        child: Container(
+                          //margin: EdgeInsets.symmetric(horizontal: 24),
+                          width: double.infinity,
+                          height: 64,
+                          alignment: Alignment.center,
+                          // padding: const EdgeInsets.symmetric(horizontal: 61, vertical: 20),
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(color: Color(0xFF11CDF6)),
+                          child: Text('Download my Resume',
+                              style: GoogleFonts.judson(
+                                color: Color(0xFF000501),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                              )),
+                        )),
+                  ],
+                ),
               ),
             ),
             SizedBox(

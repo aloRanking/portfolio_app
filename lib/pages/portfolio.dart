@@ -3,7 +3,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/utils/responsive.dart';
-import 'package:portfolio_app/widgets/subhead.dart';
+import 'package:portfolio_app/utils/strings.dart';
+import 'package:universal_html/js.dart' as js;
+
+import '../utils/colors.dart';
 
 class PortfolioPage extends StatefulWidget {
   const PortfolioPage({
@@ -17,7 +20,7 @@ class PortfolioPage extends StatefulWidget {
 }
 
 class _PortfolioPageState extends State<PortfolioPage> with SingleTickerProviderStateMixin{
-   AnimationController? animationController;
+  /* AnimationController? animationController;
    final PageController controller1 = PageController(initialPage: 0);
 
    @override
@@ -32,17 +35,18 @@ class _PortfolioPageState extends State<PortfolioPage> with SingleTickerProvider
          animationController!.dispose();
          controller1.dispose();
          super.dispose();
-       }
+       }*/
 
   @override
   Widget build(BuildContext context) {
     return Responsive(
-        mobile: MobilePorfolioPage(controller: controller1),
+        mobile: MobilePorfolioPage(),
         tablet: TabletPortfolioPage(
-          animationController: animationController,
-        ),
-        desktop:
-            DesktopPortfolioPage(animationController: animationController));
+            //animationController: animationController,
+            ),
+        desktop: DesktopPortfolioPage(
+            //animationController: animationController
+            ));
   }
 
 }
@@ -50,9 +54,10 @@ class _PortfolioPageState extends State<PortfolioPage> with SingleTickerProvider
 class DesktopPortfolioPage extends StatelessWidget {
   const DesktopPortfolioPage({
     Key? key,
-    required this.animationController,
+    //required this.animationController,
   }) : super(key: key);
-  final AnimationController? animationController;
+
+  //final AnimationController? animationController;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +66,7 @@ class DesktopPortfolioPage extends StatelessWidget {
         Text('Selected Projects',
             textAlign: TextAlign.center,
             style: GoogleFonts.manuale(
-              color: Color(0xFFFFEFCD),
+              color: kCreamColor,
               fontSize: 128,
               fontWeight: FontWeight.w700,
             )),
@@ -69,7 +74,7 @@ class DesktopPortfolioPage extends StatelessWidget {
         Text('Deploying outstanding user applications ',
             textAlign: TextAlign.center,
             style: GoogleFonts.judson(
-              color: Color(0xFFFFEFCD),
+              color: kCreamColor,
               fontSize: 40,
               fontWeight: FontWeight.w400,
             )),
@@ -80,7 +85,7 @@ class DesktopPortfolioPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 100, vertical: 78),
           decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
-              side: BorderSide(width: 1, color: Color(0xFFFFEFCD)),
+              side: BorderSide(width: 1, color: kCreamColor),
             ),
           ),
           child: Column(
@@ -90,7 +95,7 @@ class DesktopPortfolioPage extends StatelessWidget {
                 children: [
                   Text('Foodelo - Hybrid Mobile App',
                       style: GoogleFonts.judson(
-                        color: Color(0xFFFFEFCD),
+                        color: kCreamColor,
                         fontSize: 48,
                         fontWeight: FontWeight.w400,
                       )),
@@ -100,7 +105,7 @@ class DesktopPortfolioPage extends StatelessWidget {
                     child: Text(
                         'Foodelo is an online food delivery solution that allows people to order food online and get it delivered to their homes',
                         style: GoogleFonts.judson(
-                          color: Color(0xFFFFEFCD),
+                          color: kCreamColor,
                           fontSize: 20,
                           fontWeight: FontWeight.w400,
                         )),
@@ -110,82 +115,20 @@ class DesktopPortfolioPage extends StatelessWidget {
               Gap(24),
               Row(
                 children: [
-                  Container(
-                    width: 229.08,
-                    height: 64,
-                    padding: const EdgeInsets.all(15.89),
-                    decoration: ShapeDecoration(
-                      color: Color(0xFF191D23),
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(width: 0.66, color: Color(0xFFFFEFCD)),
-                        borderRadius: BorderRadius.circular(132.42),
-                      ),
-                    ),
-                    child: Container(
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SvgPicture.asset(
-                            'icons/playstore.svg',
-                            width: 31.78,
-                            height: 31.78,
-                          ),
-                          const SizedBox(width: 10.59),
-                          Text(
-                            'Get on Android',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.89,
-                              fontFamily: 'Judson',
-                              fontWeight: FontWeight.w700,
-                              height: 0.09,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                  DesktopAppstoreItem(
+                    image: 'icons/playstore.svg',
+                    title: 'Get on Android',
+                    onTapped: () {
+                      js.context.callMethod('open', [foodeloPlaystore]);
+                    },
                   ),
                   Gap(22),
-                  Container(
-                    width: 229.08,
-                    height: 64,
-                    padding: const EdgeInsets.all(15.89),
-                    decoration: ShapeDecoration(
-                      color: Color(0xFF191D23),
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(width: 0.66, color: Color(0xFFFFEFCD)),
-                        borderRadius: BorderRadius.circular(132.42),
-                      ),
-                    ),
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        // textBaseline: TextBaseline.ideographic,
-                        //crossAxisAlignment: CrossAxisAlignment.baseline,
-                        children: [
-                          SvgPicture.asset(
-                            'icons/apple_logo.svg',
-                            //width: 31.78,
-                            // height: 31.78,
-                          ),
-                          const SizedBox(width: 10.59),
-                          Text(
-                            'Get on iOS',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.89,
-                              fontFamily: 'Judson',
-                              fontWeight: FontWeight.w700,
-                              height: 0.09,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                  DesktopAppstoreItem(
+                    image: 'icons/apple_logo.svg',
+                    title: 'Get on iOS',
+                    onTapped: () {
+                      js.context.callMethod('open', [foodeloAppstore]);
+                    },
                   ),
                 ],
               ),
@@ -195,7 +138,7 @@ class DesktopPortfolioPage extends StatelessWidget {
                 children: [
                   Text('Foodelo For delivery Riders',
                       style: GoogleFonts.judson(
-                        color: Color(0xFFFFEFCD),
+                        color: kCreamColor,
                         fontSize: 48,
                         fontWeight: FontWeight.w400,
                       )),
@@ -205,7 +148,7 @@ class DesktopPortfolioPage extends StatelessWidget {
                     child: Text(
                         'Foodelo is an online food delivery solution that allows people to order food online and get it delivered to their homes',
                         style: GoogleFonts.judson(
-                          color: Color(0xFFFFEFCD),
+                          color: kCreamColor,
                           fontSize: 20,
                           fontWeight: FontWeight.w400,
                         )),
@@ -215,82 +158,20 @@ class DesktopPortfolioPage extends StatelessWidget {
               Gap(24),
               Row(
                 children: [
-                  Container(
-                    width: 229.08,
-                    height: 64,
-                    padding: const EdgeInsets.all(15.89),
-                    decoration: ShapeDecoration(
-                      color: Color(0xFF191D23),
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(width: 0.66, color: Color(0xFFFFEFCD)),
-                        borderRadius: BorderRadius.circular(132.42),
-                      ),
-                    ),
-                    child: Container(
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SvgPicture.asset(
-                            'icons/playstore.svg',
-                            width: 31.78,
-                            height: 31.78,
-                          ),
-                          const SizedBox(width: 10.59),
-                          Text(
-                            'Get on Android',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.89,
-                              fontFamily: 'Judson',
-                              fontWeight: FontWeight.w700,
-                              height: 0.09,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                  DesktopAppstoreItem(
+                    image: 'icons/playstore.svg',
+                    title: 'Get on Android',
+                    onTapped: () {
+                      js.context.callMethod('open', [foodeloRider]);
+                    },
                   ),
                   Gap(22),
-                  Container(
-                    width: 229.08,
-                    height: 64,
-                    padding: const EdgeInsets.all(15.89),
-                    decoration: ShapeDecoration(
-                      color: Color(0xFF191D23),
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(width: 0.66, color: Color(0xFFFFEFCD)),
-                        borderRadius: BorderRadius.circular(132.42),
-                      ),
-                    ),
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        // textBaseline: TextBaseline.ideographic,
-                        //crossAxisAlignment: CrossAxisAlignment.baseline,
-                        children: [
-                          SvgPicture.asset(
-                            'icons/apple_logo.svg',
-                            //width: 31.78,
-                            // height: 31.78,
-                          ),
-                          const SizedBox(width: 10.59),
-                          Text(
-                            'Get on iOS',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.89,
-                              fontFamily: 'Judson',
-                              fontWeight: FontWeight.w700,
-                              height: 0.09,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                  DesktopAppstoreItem(
+                    image: 'icons/apple_logo.svg',
+                    title: 'Get on iOS',
+                    onTapped: () {
+                      js.context.callMethod('open', [foodeloRider]);
+                    },
                   ),
                 ],
               ),
@@ -302,12 +183,75 @@ class DesktopPortfolioPage extends StatelessWidget {
   }
 }
 
+class DesktopAppstoreItem extends StatelessWidget {
+  const DesktopAppstoreItem({
+    super.key,
+    required this.image,
+    required this.title,
+    this.onTapped,
+  });
+
+  final String image;
+  final String title;
+  final Function()? onTapped;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTapped,
+      child: Container(
+        width: 229.08,
+        height: 64,
+        padding: const EdgeInsets.all(15.89),
+        decoration: ShapeDecoration(
+          color: Color(0xFF191D23),
+          shape: RoundedRectangleBorder(
+            side: BorderSide(width: 0.66, color: kCreamColor),
+            borderRadius: BorderRadius.circular(132.42),
+          ),
+        ),
+        child: Container(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                image,
+                width: 31.78,
+                height: 31.78,
+              ),
+              const SizedBox(width: 10.59),
+              Column(
+                children: [
+                  Gap(20),
+                  Text(
+                    title,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15.89,
+                      fontFamily: 'Judson',
+                      fontWeight: FontWeight.w700,
+                      height: 0.09,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class TabletPortfolioPage extends StatelessWidget {
   const TabletPortfolioPage({
     Key? key,
-    required this.animationController,
+    //required this.animationController,
   }) : super(key: key);
-  final AnimationController? animationController;
+
+  //final AnimationController? animationController;
 
   @override
   Widget build(BuildContext context) {
@@ -316,7 +260,7 @@ class TabletPortfolioPage extends StatelessWidget {
         Text('Selected Projects',
             textAlign: TextAlign.center,
             style: GoogleFonts.manuale(
-              color: Color(0xFFFFEFCD),
+              color: kCreamColor,
               fontSize: 60,
               fontWeight: FontWeight.w700,
             )),
@@ -324,7 +268,7 @@ class TabletPortfolioPage extends StatelessWidget {
         Text('Deploying outstanding user applications ',
             textAlign: TextAlign.center,
             style: GoogleFonts.judson(
-              color: Color(0xFFFFEFCD),
+              color: kCreamColor,
               fontSize: 25,
               fontWeight: FontWeight.w400,
             )),
@@ -335,7 +279,7 @@ class TabletPortfolioPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 100, vertical: 78),
           decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
-              side: BorderSide(width: 1, color: Color(0xFFFFEFCD)),
+              side: BorderSide(width: 1, color: kCreamColor),
             ),
           ),
           child: Column(
@@ -345,7 +289,7 @@ class TabletPortfolioPage extends StatelessWidget {
                 children: [
                   Text('Foodelo - Hybrid Mobile App',
                       style: GoogleFonts.judson(
-                        color: Color(0xFFFFEFCD),
+                        color: kCreamColor,
                         fontSize: 38,
                         fontWeight: FontWeight.w400,
                       )),
@@ -355,92 +299,30 @@ class TabletPortfolioPage extends StatelessWidget {
                     child: Text(
                         'Foodelo is an online food delivery solution that allows people to order food online and get it delivered to their homes',
                         style: GoogleFonts.judson(
-                          color: Color(0xFFFFEFCD),
+                          color: kCreamColor,
                           fontSize: 18,
                           fontWeight: FontWeight.w400,
                         )),
                   ),
-                ],
-              ),
-              Gap(24),
-              Row(
-                children: [
-                  Container(
-                    width: 200.08,
-                    height: 54,
-                    padding: const EdgeInsets.all(15.89),
-                    decoration: ShapeDecoration(
-                      color: Color(0xFF191D23),
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(width: 0.66, color: Color(0xFFFFEFCD)),
-                        borderRadius: BorderRadius.circular(132.42),
+                  Gap(24),
+                  Row(
+                    children: [
+                      TabletAppStoreItem(
+                        image: 'icons/playstore.svg',
+                        title: 'Get on Android',
+                        onTapped: () {
+                          js.context.callMethod('open', [foodeloPlaystore]);
+                        },
                       ),
-                    ),
-                    child: Container(
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SvgPicture.asset(
-                            'icons/playstore.svg',
-                            width: 31.78,
-                            height: 31.78,
-                          ),
-                          const SizedBox(width: 10.59),
-                          Text(
-                            'Get on Android',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.89,
-                              fontFamily: 'Judson',
-                              fontWeight: FontWeight.w700,
-                              height: 0.09,
-                            ),
-                          ),
-                        ],
+                      Gap(22),
+                      TabletAppStoreItem(
+                        image: 'icons/apple_logo.svg',
+                        title: 'Get on iOS',
+                        onTapped: () {
+                          js.context.callMethod('open', [foodeloAppstore]);
+                        },
                       ),
-                    ),
-                  ),
-                  Gap(22),
-                  Container(
-                    width: 200.08,
-                    height: 54,
-                    padding: const EdgeInsets.all(15.89),
-                    decoration: ShapeDecoration(
-                      color: Color(0xFF191D23),
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(width: 0.66, color: Color(0xFFFFEFCD)),
-                        borderRadius: BorderRadius.circular(132.42),
-                      ),
-                    ),
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        // textBaseline: TextBaseline.ideographic,
-                        //crossAxisAlignment: CrossAxisAlignment.baseline,
-                        children: [
-                          SvgPicture.asset(
-                            'icons/apple_logo.svg',
-                            //width: 31.78,
-                            // height: 31.78,
-                          ),
-                          const SizedBox(width: 10.59),
-                          Text(
-                            'Get on iOS',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.89,
-                              fontFamily: 'Judson',
-                              fontWeight: FontWeight.w700,
-                              height: 0.09,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    ],
                   ),
                 ],
               ),
@@ -450,8 +332,8 @@ class TabletPortfolioPage extends StatelessWidget {
                 children: [
                   Text('Foodelo For delivery Riders',
                       style: GoogleFonts.judson(
-                        color: Color(0xFFFFEFCD),
-                        fontSize: 48,
+                        color: kCreamColor,
+                        fontSize: 38,
                         fontWeight: FontWeight.w400,
                       )),
                   Gap(8),
@@ -460,92 +342,30 @@ class TabletPortfolioPage extends StatelessWidget {
                     child: Text(
                         'Foodelo is an online food delivery solution that allows people to order food online and get it delivered to their homes',
                         style: GoogleFonts.judson(
-                          color: Color(0xFFFFEFCD),
-                          fontSize: 20,
+                          color: kCreamColor,
+                          fontSize: 18,
                           fontWeight: FontWeight.w400,
                         )),
                   ),
-                ],
-              ),
-              Gap(24),
-              Row(
-                children: [
-                  Container(
-                    width: 200.08,
-                    height: 54,
-                    padding: const EdgeInsets.all(15.89),
-                    decoration: ShapeDecoration(
-                      color: Color(0xFF191D23),
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(width: 0.66, color: Color(0xFFFFEFCD)),
-                        borderRadius: BorderRadius.circular(132.42),
+                  Gap(24),
+                  Row(
+                    children: [
+                      TabletAppStoreItem(
+                        image: 'icons/playstore.svg',
+                        title: 'Get on Android',
+                        onTapped: () {
+                          js.context.callMethod('open', [foodeloRider]);
+                        },
                       ),
-                    ),
-                    child: Container(
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SvgPicture.asset(
-                            'icons/playstore.svg',
-                            width: 31.78,
-                            height: 31.78,
-                          ),
-                          const SizedBox(width: 10.59),
-                          Text(
-                            'Get on Android',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.89,
-                              fontFamily: 'Judson',
-                              fontWeight: FontWeight.w700,
-                              height: 0.09,
-                            ),
-                          ),
-                        ],
+                      Gap(22),
+                      TabletAppStoreItem(
+                        image: 'icons/apple_logo.svg',
+                        title: 'Get on iOS',
+                        onTapped: () {
+                          js.context.callMethod('open', [foodeloRider]);
+                        },
                       ),
-                    ),
-                  ),
-                  Gap(22),
-                  Container(
-                    width: 200.08,
-                    height: 54,
-                    padding: const EdgeInsets.all(15.89),
-                    decoration: ShapeDecoration(
-                      color: Color(0xFF191D23),
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(width: 0.66, color: Color(0xFFFFEFCD)),
-                        borderRadius: BorderRadius.circular(132.42),
-                      ),
-                    ),
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        // textBaseline: TextBaseline.ideographic,
-                        //crossAxisAlignment: CrossAxisAlignment.baseline,
-                        children: [
-                          SvgPicture.asset(
-                            'icons/apple_logo.svg',
-                            //width: 31.78,
-                            // height: 31.78,
-                          ),
-                          const SizedBox(width: 10.59),
-                          Text(
-                            'Get on iOS',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.89,
-                              fontFamily: 'Judson',
-                              fontWeight: FontWeight.w700,
-                              height: 0.09,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    ],
                   ),
                 ],
               ),
@@ -557,33 +377,250 @@ class TabletPortfolioPage extends StatelessWidget {
   }
 }
 
-class MobilePorfolioPage extends StatelessWidget {
-  final PageController? controller;
+class TabletAppStoreItem extends StatelessWidget {
+  const TabletAppStoreItem({
+    super.key,
+    required this.image,
+    required this.title,
+    this.onTapped,
+  });
 
-  const MobilePorfolioPage({Key? key, this.controller}) : super(key: key);
+  final String image;
+  final String title;
+  final Function()? onTapped;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTapped,
+      child: Container(
+        width: 200.08,
+        height: 54,
+        // padding: const EdgeInsets.all(15.89),
+        decoration: ShapeDecoration(
+          color: Color(0xFF191D23),
+          shape: RoundedRectangleBorder(
+            side: BorderSide(width: 0.66, color: kCreamColor),
+            borderRadius: BorderRadius.circular(132.42),
+          ),
+        ),
+        child: Container(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                image,
+                width: 31.78,
+                height: 31.78,
+              ),
+              const SizedBox(width: 10.59),
+              Column(
+                children: [
+                  Gap(32),
+                  Text(
+                    title,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15.89,
+                      fontFamily: 'Judson',
+                      fontWeight: FontWeight.w700,
+                      height: 0.09,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class MobilePorfolioPage extends StatelessWidget {
+  const MobilePorfolioPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
-              children: [
-                SubProfileHeadline(
-                  headline: 'My Selected Work',
-                ),
-                Container(
-                  height: 300,
-                  child: PageView(
-                    scrollDirection: Axis.horizontal,
-                    controller: controller,
+      children: [
+        Text('Selected Projects',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.manuale(
+              color: kCreamColor,
+              fontSize: 32,
+              fontWeight: FontWeight.w700,
+            )),
+        Gap(16),
+        Text('Deploying outstanding user applications ',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.judson(
+              color: kCreamColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w400,
+            )),
+        Gap(24),
+        Container(
+          //width: 700,
+          //height: 636,
+          margin: EdgeInsets.symmetric(horizontal: 24),
+          padding: EdgeInsets.symmetric(horizontal: 14, vertical: 43),
+          decoration: ShapeDecoration(
+            shape: RoundedRectangleBorder(
+              side: BorderSide(width: 1, color: kCreamColor),
+            ),
+          ),
+          child: Column(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Foodelo - Hybrid Mobile App',
+                      style: GoogleFonts.judson(
+                        color: kCreamColor,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400,
+                      )),
+                  Gap(4),
+                  SizedBox(
+                    width: 316.58,
+                    child: Text(
+                        'Foodelo is an online food delivery solution that allows people to order food online and get it delivered to their homes',
+                        style: GoogleFonts.judson(
+                          color: kCreamColor,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        )),
+                  ),
+                  Gap(24),
+                  Row(
                     children: [
-                      Image.asset('images/pjctsnap.jpg'),
-                      Image.asset('images/hagglexsnap.jpg'),
-                      Image.asset('images/lfdssnap.jpg'),
-                      Image.asset('images/foodsnap.jpg'),
-                      Image.asset('images/moviesnap.jpg'),
+                      MobilePlaystoreItem(
+                        image: 'assets/icons/playstore.svg',
+                        title: 'Get on Android',
+                        onTapped: () {
+                          js.context.callMethod('open', [foodeloPlaystore]);
+                        },
+                      ),
+                      Gap(22),
+                      MobilePlaystoreItem(
+                        image: 'assets/icons/apple_logo.svg',
+                        title: 'Get on iOS',
+                        onTapped: () {
+                          js.context.callMethod('open', [foodeloAppstore]);
+                        },
+                      ),
                     ],
                   ),
+                ],
+              ),
+              Gap(32),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Foodelo For delivery Riders',
+                      style: GoogleFonts.judson(
+                        color: kCreamColor,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400,
+                      )),
+                  Gap(4),
+                  SizedBox(
+                    width: 316.58,
+                    child: Text(
+                        'Foodelo is an online food delivery solution that allows people to order food online and get it delivered to their homes',
+                        style: GoogleFonts.judson(
+                          color: kCreamColor,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        )),
+                  ),
+                  Gap(24),
+                  Row(
+                    children: [
+                      MobilePlaystoreItem(
+                        image: 'assets/icons/playstore.svg',
+                        title: 'Get on Android',
+                        onTapped: () {
+                          js.context.callMethod('open', [foodeloRider]);
+                        },
+                      ),
+                      Gap(22),
+                      MobilePlaystoreItem(
+                        image: 'assets/icons/apple_logo.svg',
+                        title: 'Get on iOS',
+                        onTapped: () {
+                          js.context.callMethod('open', [foodeloRider]);
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class MobilePlaystoreItem extends StatelessWidget {
+  const MobilePlaystoreItem({
+    super.key,
+    required this.image,
+    required this.title,
+    this.onTapped,
+  });
+
+  final String image;
+  final String title;
+  final Function()? onTapped;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTapped,
+      child: Container(
+        width: 128,
+        height: 36,
+        //padding: const EdgeInsets.all(15.89),
+        decoration: ShapeDecoration(
+          color: Color(0xFF191D23),
+          shape: RoundedRectangleBorder(
+            side: BorderSide(width: 0.66, color: kCreamColor),
+            borderRadius: BorderRadius.circular(132.42),
+          ),
+        ),
+        child: Container(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                image,
+                width: 17.84,
+                height: 17.84,
+              ),
+              const SizedBox(width: 6),
+              Text(
+                title,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 10,
+                  fontFamily: 'Judson',
+                  fontWeight: FontWeight.w700,
                 ),
-              ],
-            );
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

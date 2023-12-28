@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/utils/responsive.dart';
-import 'package:portfolio_app/widgets/social_button.dart';
+
+import '../utils/colors.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({Key? key, this.scrollController}) : super(key: key);
@@ -12,8 +13,10 @@ class ContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Responsive(
-      mobile: MobileContactPage(controller: scrollController,), 
-      tablet: TabletContactPage(controller: scrollController,), 
+        mobile: MobileContactPage(
+          controller: scrollController,
+        ),
+        tablet: TabletContactPage(controller: scrollController,),
       desktop: DesktopContactPage(controller: scrollController,));   
     
   }
@@ -28,29 +31,84 @@ class MobileContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-      
-      return Column(
-        children: [
-          SizedBox(height: 50,),
-          ContactCard(
-            width: 0.8*size.width,
-            greetingTxtSize: 16,
-            emailTxtSize: 20,
-          ),
-          SizedBox(height: 20,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+
+    return Column(
+      children: [
+        SizedBox(
+          height: 50,
+        ),
+        Text('Let’s work together',
+            style: GoogleFonts.manuale(
+              color: kCreamColor,
+              fontSize: 32,
+              fontWeight: FontWeight.w800,
+            )),
+        SizedBox(
+          height: 24,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              SocialButtons(),
+              Divider(
+                color: kCreamColor,
+              ),
+              Gap(32),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: 295,
+                    child: Text(
+                      'My inbox is always open, if you have an offer or want to say hello',
+                      style: GoogleFonts.judson(
+                        color: kCreamColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                  Gap(16),
+                  SelectableText(
+                    'alobently@outlook.com',
+                    style: GoogleFonts.judson(
+                      color: Color(0xFF11CDF6),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
-          BottomNavBar(controller: controller),
-           SizedBox(height: 20,),
-
-           FooterWidget()
-
-        ],
-      );
+        ),
+        //  BottomNavBar(controller: controller),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            IconButton(
+                onPressed: () {
+                  controller!.animateTo(
+                    controller!.position.minScrollExtent + 120,
+                    duration: Duration(seconds: 1),
+                    curve: Curves.ease,
+                  );
+                },
+                icon: Icon(
+                  Icons.arrow_upward,
+                  color: kCreamColor,
+                )),
+            Gap(24),
+          ],
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        FooterWidget()
+      ],
+    );
   }
 }
 
@@ -70,7 +128,7 @@ class TabletContactPage extends StatelessWidget {
         ),
         Text('Let’s work together',
             style: GoogleFonts.manuale(
-              color: Color(0xFFFFEFCD),
+              color: kCreamColor,
               fontSize: 60,
               fontWeight: FontWeight.w800,
             )),
@@ -82,26 +140,25 @@ class TabletContactPage extends StatelessWidget {
           child: Column(
             children: [
               Divider(
-                color: Color(0xFFFFEFCD),
+                color: kCreamColor,
               ),
-              Gap(48),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Gap(40),
+              Column(
+                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
-                    child: SizedBox(
-                      child: Text(
-                        'My inbox is always open, if you have an offer or want to say hello',
-                        style: GoogleFonts.judson(
-                          color: Color(0xFFFFEFCD),
-                          fontSize: 18,
-                          fontWeight: FontWeight.w400,
-                        ),
+                  SizedBox(
+                    child: Text(
+                      'My inbox is always open, if you have an offer or want to say hello',
+                      style: GoogleFonts.judson(
+                        color: kCreamColor,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
-                  Text(
-                    'aloadigun@gmail.com',
+                  Gap(16),
+                  SelectableText(
+                    'alobently@outlook.com',
                     style: GoogleFonts.judson(
                       color: Color(0xFF11CDF6),
                       fontSize: 18,
@@ -114,7 +171,25 @@ class TabletContactPage extends StatelessWidget {
             ],
           ),
         ),
-        BottomNavBar(controller: controller),
+        //BottomNavBar(controller: controller),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            IconButton(
+                onPressed: () {
+                  controller!.animateTo(
+                    controller!.position.minScrollExtent + 120,
+                    duration: Duration(seconds: 1),
+                    curve: Curves.ease,
+                  );
+                },
+                icon: Icon(
+                  Icons.arrow_upward,
+                  color: kCreamColor,
+                )),
+            Gap(30),
+          ],
+        ),
         SizedBox(
           height: 20,
         ),
@@ -130,7 +205,7 @@ class TabletContactPage extends StatelessWidget {
             child: Text(
               'Let’s work together ',
               style: GoogleFonts.manuale(
-                color: Color(0xFFFFEFCD),
+                color: kCreamColor,
                 fontSize: 128,
                 fontWeight: FontWeight.w800,
               )
@@ -177,7 +252,7 @@ class DesktopContactPage extends StatelessWidget {
           height: 157,
           child: Text('Let’s work together ',
               style: GoogleFonts.manuale(
-                color: Color(0xFFFFEFCD),
+                color: kCreamColor,
                 fontSize: 128,
                 fontWeight: FontWeight.w800,
               )),
@@ -190,7 +265,7 @@ class DesktopContactPage extends StatelessWidget {
           child: Column(
             children: [
               Divider(
-                color: Color(0xFFFFEFCD),
+                color: kCreamColor,
               ),
               Gap(48),
               Row(
@@ -201,14 +276,14 @@ class DesktopContactPage extends StatelessWidget {
                     child: Text(
                       'My inbox is always open, if you have an offer or want to say hello',
                       style: GoogleFonts.judson(
-                        color: Color(0xFFFFEFCD),
+                        color: kCreamColor,
                         fontSize: 32,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
-                  Text(
-                    'aloadigun@gmail.com',
+                  SelectableText(
+                    'alobently@outlook.com',
                     style: GoogleFonts.judson(
                       color: Color(0xFF11CDF6),
                       fontSize: 32,
@@ -221,10 +296,30 @@ class DesktopContactPage extends StatelessWidget {
             ],
           ),
         ),
-        BottomNavBar(controller: controller),
+        //  BottomNavBar(controller: controller),
+        Gap(32),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            IconButton(
+                onPressed: () {
+                  controller!.animateTo(
+                    controller!.position.minScrollExtent + 60,
+                    duration: Duration(seconds: 1),
+                    curve: Curves.ease,
+                  );
+                },
+                icon: Icon(
+                  Icons.arrow_upward,
+                  color: kCreamColor,
+                )),
+            Gap(30),
+          ],
+        ),
         SizedBox(
           height: 20,
         ),
+
         FooterWidget()
       ],
       );
@@ -239,7 +334,7 @@ class FooterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blueGrey[300],
+      //color: Colors.blueGrey[300],
 
       height: 70,
       child: Row(
@@ -249,14 +344,26 @@ class FooterWidget extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 10,),
-              Text('@ Alobently 2021. All rights reserved',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),),
-
-               SizedBox(height: 10,),
-
-              Text('Made with Flutter ',
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                '@ Alobently 2023. All rights reserved',
+                style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    color: kCreamColor,
+                    fontSize: 12),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                'Made with Flutter ',
+                style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xFF11CDF6),
+                    fontSize: 12),
+              ),
             ],
           )
         ],

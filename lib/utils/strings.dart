@@ -25,3 +25,9 @@ const String foodapp = 'https://github.com/aloRanking/flutter_ui_challenges';
 const String movieapp = 'https://github.com/aloRanking/movie_app';
 const String prjctN =
     'https://play.google.com/store/apps/details?id=com.aloranking.projectnigeria';
+const String foodeloPlaystore =
+    'https://play.google.com/store/apps/details?id=africa.foodelo.hybrid';
+const String foodeloAppstore =
+    'https://apps.apple.com/us/app/foodelo-food-delivery/id1645133706';
+const String foodeloRider =
+    'https://play.google.com/store/apps/details?id=ng.com.riders.foodelo';

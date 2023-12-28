@@ -3,7 +3,6 @@ import 'package:portfolio_app/pages/contactPage.dart';
 import 'package:portfolio_app/pages/homePage.dart';
 import 'package:portfolio_app/pages/portfolio.dart';
 import 'package:portfolio_app/pages/servicePage.dart';
-import 'package:portfolio_app/pages/topNavbar.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -18,11 +17,13 @@ class HomeScreen extends StatelessWidget {
             controller: scrollController,
             physics: BouncingScrollPhysics(),
             children: [
-              TopNavBar(controller: scrollController),
               HomePage(),
               ServicesPage(),
               PortfolioPage(),
-              ContactPage(scrollController: scrollController,)
+              //TestimonialPage(),
+              ContactPage(
+                scrollController: scrollController,
+              )
             ],
           ),
         ),
