@@ -110,6 +110,7 @@ class DesktopHomPage extends StatelessWidget {
             ),
             ZoomIn(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'About Me',
