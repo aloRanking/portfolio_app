@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio_app/utils/colors.dart';
-import 'package:portfolio_app/utils/constants.dart';
 import 'package:portfolio_app/utils/responsive.dart';
-import 'package:portfolio_app/utils/strings.dart';
-import 'package:portfolio_app/widgets/subhead.dart';
 
 class ServicesPage extends StatelessWidget {
   const ServicesPage({
@@ -14,10 +10,9 @@ class ServicesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Responsive(
-    mobile: MobileServicePage(), 
-    tablet: DesktopServicePage(), 
-    desktop: DesktopServicePage()
-    );
+    mobile: MobileServicePage(),
+        tablet: TabletServicePage(),
+        desktop: DesktopServicePage());
   }
 
 }
@@ -30,134 +25,67 @@ class DesktopServicePage extends StatelessWidget {
     //TODO bottom overflow for tablet
      var size = MediaQuery.of(context).size;
   return Container(
-    //height: 500,
-    child: Column(
+   // height: 500,
+      child: Column(
       children: [
-        SubProfileHeadline(
-          headline: 'What i do',
-        ),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          child: Table(columnWidths: {
-            0: FlexColumnWidth(1),
-            1: FlexColumnWidth(4),
-            2: FlexColumnWidth(1),
-            3: FlexColumnWidth(4),
-          }, children: <TableRow>[
-            TableRow(
-              children: <Widget>[
-                Icon(
-                  FontAwesomeIcons.mobile,
-                  color: Colors.green,
-                  size: 30,
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 56, horizontal: 140),
+            child: Container(
+              width: 1171,
+              height: 599,
+
+              //margin: EdgeInsets.symmetric(vertical: 56, horizontal: 140),
+              decoration: ShapeDecoration(
+                color: kCreamColor,
+                image: DecorationImage(
+                  image: AssetImage("images/random.png"),
+                  fit: BoxFit.fill,
                 ),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Mobile App development',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        app_dev,
-                        style: TextStyle(wordSpacing: 3, height: 1.5),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                    ],
-                  ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.97),
                 ),
-                Icon(
-                  FontAwesomeIcons.laptop,
-                  color: Colors.green,
-                  size: 30,
-                ),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Web development',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        web_dev,
-                        style: TextStyle(wordSpacing: 3, height: 1.5),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+              ),
             ),
-            TableRow(
-              children: <Widget>[
-                Icon(
-                  FontAwesomeIcons.tools,
-                  color: kGreenColor,
-                  size: 30,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class TabletServicePage extends StatelessWidget {
+  const TabletServicePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    //TODO bottom overflow for tablet
+    var size = MediaQuery.of(context).size;
+    return Container(
+      // height: 500,
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 56, horizontal: 140),
+            child: Container(
+              width: 971,
+              height: 350,
+
+              //margin: EdgeInsets.symmetric(vertical: 56, horizontal: 140),
+              decoration: ShapeDecoration(
+                color: kCreamColor,
+                image: DecorationImage(
+                  image: AssetImage("images/random.png"),
+                  fit: BoxFit.fill,
                 ),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Professinonal Training',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        train_dev,
-                        style: TextStyle(wordSpacing: 3, height: 1.5),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                    ],
-                  ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.97),
                 ),
-                Icon(
-                  FontAwesomeIcons.shoppingBag,
-                  color: kGreenColor,
-                  size: 30,
-                ),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Project Management',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold)),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        project_dev,
-                          style: TextStyle(wordSpacing: 3, height: 1.5),
-                        ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+              ),
             ),
-          ]),
-        ),
-      ],
-    ),
-  );
- 
+          )
+        ],
+      ),
+    );
   }
 }
 
@@ -167,117 +95,23 @@ class MobileServicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-              children: [
-                SubProfileHeadline(
-                  headline: 'What i do',
-                ),
-                Container(
-                  padding: EdgeInsets.only(left: 10, right: 20),
-                  child: Table(columnWidths: {
-                    0: FlexColumnWidth(1),
-                    1: FlexColumnWidth(4),
-                  }, children: <TableRow>[
-                    TableRow(
-                      children: <Widget>[
-                        Icon(
-                          FontAwesomeIcons.mobile,
-                          color: Colors.green,
-                          size: 30,
-                        ),
-                        Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Mobile App development',
-                                  style: kTableRowTitleStyle),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(app_dev, style: kTableRowTextStyle),
-                              SizedBox(
-                                height: 20,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    TableRow(
-                      children: <Widget>[
-                        Icon(
-                          FontAwesomeIcons.laptop,
-                          color: kGreenColor,
-                          size: 30,
-                        ),
-                        Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Web development', style: kTableRowTitleStyle),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(web_dev, style: kTableRowTextStyle),
-                              SizedBox(
-                                height: 20,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    TableRow(
-                      children: <Widget>[
-                        Icon(
-                          FontAwesomeIcons.tools,
-                          color: kGreenColor,
-                          size: 30,
-                        ),
-                        Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Professional Traning', style: kTableRowTitleStyle),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(train_dev, style: kTableRowTextStyle),
-                              SizedBox(
-                                height: 20,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    TableRow(
-                      children: <Widget>[
-                        Icon(
-                          FontAwesomeIcons.shoppingBag,
-                          color: kGreenColor,
-                          size: 30,
-                        ),
-                        Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                      Text('Project Management', style: kTableRowTitleStyle),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(project_dev, style: kTableRowTextStyle),
-                      SizedBox(
-                        height: 20,
-                      ),
-                    ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ]),
-                ),
-              ],
-            );
- 
+      children: [
+        Container(
+          width: 328.32,
+          height: 167.94,
+          margin: EdgeInsets.symmetric(vertical: 56, horizontal: 24),
+          decoration: ShapeDecoration(
+            image: DecorationImage(
+              image: AssetImage("images/random.png"),
+              fit: BoxFit.fill,
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8.97),
+            ),
+          ),
+        )
+        /* Image.asset('icons/userr.png')*/
+      ],
+    );
   }
 }

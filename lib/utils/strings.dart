@@ -4,7 +4,13 @@ const String flutter_dev_txt = 'Flutter Developer';
 const copyright_txt = '\u00a9 aloranking 2021. All rights reserved';
 
 const aboutMe_txt =
-    '''I am a mobile app developer with over 3 years hands-on experience using Android sdk, Dart + Flutter to develop mobile applications. I am highly skilled in designing, developing and testing softwares. I have the understanding of data structures and algorithms, the knowledge of back-end development best practices, state management, integrating restful APIs, Firebase, version control systems etc and  also hands-on software troubleshooting experience.''';
+    '''Experienced Flutter Developer with a proven track record of three years in crafting high-quality, cross-platform mobile applications. Proficient in leveraging the Flutter framework and Dart language to create visually appealing and efficient solutions.
+    
+ Adept at collaborating with multidisciplinary teams, I bring a blend of technical expertise, innovation, and commitment to delivering outstanding user experiences.
+     
+ Known for adapting quickly to evolving project requirements and staying abreast of industry trends, I am poised to contribute my skills to drive the success of future development endeavors.
+     
+ Outside work, I like to read books - Fiction precisely, enjoy good times with family & friends. Pretty interesting?''';
 
 const app_dev =
     'I specialize in developing efficient apps that are pleasant to people and that work across all platform (Andriod, iOS and Web)';
@@ -20,7 +26,7 @@ const project_dev =
 const String downloadCV =
     'https://drive.google.com/file/d/1VWMBD-jWo01zfaSHDBofXBArAzH2gwVU/view?usp=sharing';
 const String github = 'https://github.com/aloranking/';
-const String linkedIn = 'https://www.linkedin.com/in/abdul-lateef-adigun02/';
+const String linkedIn = 'https://www.linkedin.com/in/adigun-abdul-lateef-02/';
 const String twitter = 'https://mobile.twitter.com/chuck8612';
 const String hagglex = 'https://github.com/aloRanking/haggle_x';
 const String lfds =
@@ -28,6 +34,14 @@ const String lfds =
 const String foodapp = 'https://github.com/aloRanking/flutter_ui_challenges';
 const String foodapp1 = 'https://github.com/aloRanking/food_app1';
 const String movieapp = 'https://github.com/aloRanking/movie_app';
+const String prjctN =
+    'https://play.google.com/store/apps/details?id=com.aloranking.projectnigeria';
+const String foodeloPlaystore =
+    'https://play.google.com/store/apps/details?id=africa.foodelo.hybrid';
+const String foodeloAppstore =
+    'https://apps.apple.com/us/app/foodelo-food-delivery/id1645133706';
+const String foodeloRider =
+    'https://play.google.com/store/apps/details?id=ng.com.riders.foodelo';
 const String prjctN =
     'https://play.google.com/store/apps/details?id=com.aloranking.projectnigeria';
 const String foodeloURL =

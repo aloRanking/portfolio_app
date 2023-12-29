@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:portfolio_app/utils/strings.dart';
 import 'package:universal_html/js.dart' as js;
 
@@ -14,7 +14,24 @@ class SocialButtons extends StatelessWidget {
     return Row(
       
       children: [
-        IconButton(
+        InkWell(
+            onTap: () {
+              js.context.callMethod('open', [linkedIn]);
+            },
+            child: SvgPicture.asset('assets/icons/bi_linkedin.svg')),
+        SizedBox(
+          width: 24,
+        ),
+        InkWell(
+            onTap: () {
+              js.context.callMethod('open', [linkedIn]);
+            },
+            child: SvgPicture.asset('assets/icons/github.svg')),
+        SizedBox(
+          width: 24,
+        ),
+
+        /*IconButton(
             icon: FaIcon(
               FontAwesomeIcons.linkedin,
               size: 30,
@@ -50,7 +67,7 @@ class SocialButtons extends StatelessWidget {
             ),
             onPressed: () {
               js.context.callMethod('open', [github]);
-            })
+            })*/
       ],
     );
   }

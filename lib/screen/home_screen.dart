@@ -107,29 +107,28 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     //ScrollController scrollController = ScrollController();
     return Scaffold(
-      backgroundColor: Colors.grey[100],
-      body: RawKeyboardListener(
+      backgroundColor: Color(0xFF191D23),
+      body:  RawKeyboardListener(
         onKey: _handleKeyEvent,
         focusNode: _focusNode,
         autofocus: true,
 
-        
-         
+
+
         child: DraggableScrollbar.rrect(
           controller: _scrollController,
           child: ListView(
-          controller: _scrollController,
-          //physics: BouncingScrollPhysics(),
-          children: [
-            TopNavBar(controller: _scrollController),
-            AboutPage(),
-            ServicesPage(),
-            PortfolioPage(),
-            TestimonialPage(),
-            ContactPage(
-              scrollController: _scrollController,
-            )
-          ],
+            controller: scrollController,
+            physics: BouncingScrollPhysics(),
+            children: [
+              HomePage(),
+              ServicesPage(),
+              PortfolioPage(),
+              //TestimonialPage(),
+              ContactPage(
+                scrollController: _scrollController,
+              )
+            ],
           ),
         ),
       ),
