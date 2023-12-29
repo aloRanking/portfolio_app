@@ -32,7 +32,7 @@ List<Project> selectedProjects = [
       subtitle: 'A food ordering and delivering app',
       url: foodeloURL),
   Project(
-      image: kProjectImageUrl1,
+      image: kServiceImageUrl1,
       title: 'ProjectsNigeria',
       subtitle:
           'This app allows undergraduate students to have easy access to project materials',

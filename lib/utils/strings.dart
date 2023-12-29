@@ -1,7 +1,7 @@
 const String nav_title = 'AloRanking';
 const String user_name = 'ADIGUN ALO';
 const String flutter_dev_txt = 'Flutter Developer';
-const copyright_txt = '\u00a9 aloranking 2021. All rights reserved';
+const copyright_txt = '\u00a9 Alobently 2024. All rights reserved';
 
 const aboutMe_txt =
     '''Experienced Flutter Developer with a proven track record of three years in crafting high-quality, cross-platform mobile applications. Proficient in leveraging the Flutter framework and Dart language to create visually appealing and efficient solutions.
@@ -42,8 +42,6 @@ const String foodeloAppstore =
     'https://apps.apple.com/us/app/foodelo-food-delivery/id1645133706';
 const String foodeloRider =
     'https://play.google.com/store/apps/details?id=ng.com.riders.foodelo';
-const String prjctN =
-    'https://play.google.com/store/apps/details?id=com.aloranking.projectnigeria';
 const String foodeloURL =
     'https://play.google.com/store/apps/details?id=africa.foodelo.hybrid';
 const String foodeloRiderURL =
@@ -52,7 +50,7 @@ const String contact_email = 'adigunalo21@gmail.com';
 
 //add optimized images for better load time and smooth scroll
 const String kProfileImageUrl = 'assets/images/aloranking.jpeg';
-final String kProjectImageUrl1 = 'assets/images/pj.png';
+final String kServiceImageUrl1 = 'assets/images/random.png';
 final String kProjectImageUrl2 = 'assets/images/hagx.png';
 final String kProjectImageUrl3 = 'assets/images/moviesnap.jpg';
 final String kProjectImageUrl4 = 'assets/images/covidapp.png';

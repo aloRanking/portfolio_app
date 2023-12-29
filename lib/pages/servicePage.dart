@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/utils/colors.dart';
 import 'package:portfolio_app/utils/responsive.dart';
+
+import '../utils/strings.dart';
 
 class ServicesPage extends StatelessWidget {
   const ServicesPage({
@@ -10,7 +11,7 @@ class ServicesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Responsive(
-    mobile: MobileServicePage(),
+        mobile: MobileServicePage(),
         tablet: TabletServicePage(),
         desktop: DesktopServicePage());
   }
@@ -36,9 +37,8 @@ class DesktopServicePage extends StatelessWidget {
 
               //margin: EdgeInsets.symmetric(vertical: 56, horizontal: 140),
               decoration: ShapeDecoration(
-                color: kCreamColor,
                 image: DecorationImage(
-                  image: AssetImage("images/random.png"),
+                  image: AssetImage(kServiceImageUrl1),
                   fit: BoxFit.fill,
                 ),
                 shape: RoundedRectangleBorder(
@@ -72,9 +72,8 @@ class TabletServicePage extends StatelessWidget {
 
               //margin: EdgeInsets.symmetric(vertical: 56, horizontal: 140),
               decoration: ShapeDecoration(
-                color: kCreamColor,
                 image: DecorationImage(
-                  image: AssetImage("images/random.png"),
+                  image: AssetImage(kServiceImageUrl1),
                   fit: BoxFit.fill,
                 ),
                 shape: RoundedRectangleBorder(
@@ -102,7 +101,7 @@ class MobileServicePage extends StatelessWidget {
           margin: EdgeInsets.symmetric(vertical: 56, horizontal: 24),
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: AssetImage("images/random.png"),
+              image: AssetImage(kServiceImageUrl1),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(

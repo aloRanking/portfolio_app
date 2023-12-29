@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/model/selected_work.dart';
-import 'package:portfolio_app/utils/colors.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_app/utils/colors.dart';
 import 'package:portfolio_app/utils/responsive.dart';
 import 'package:portfolio_app/utils/strings.dart';
 import 'package:universal_html/js.dart' as js;
-
-import '../utils/colors.dart';
-import 'package:portfolio_app/utils/strings.dart';
-import 'package:portfolio_app/widgets/projectItem.dart';
-import 'package:portfolio_app/widgets/subhead.dart';
 
 class PortfolioPage extends StatefulWidget {
   const PortfolioPage({
@@ -474,12 +468,14 @@ class MobilePorfolioPage extends StatelessWidget {
           //height: 636,
           margin: EdgeInsets.symmetric(horizontal: 24),
           padding: EdgeInsets.symmetric(horizontal: 14, vertical: 43),
+          alignment: Alignment.center,
           decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
               side: BorderSide(width: 1, color: kCreamColor),
             ),
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

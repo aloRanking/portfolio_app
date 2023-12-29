@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
@@ -27,112 +28,132 @@ class DesktopHomPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
-        left: 140,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 50,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 133.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Hello,',
-                    style: GoogleFonts.marckScript(
-                      color: kCreamColor,
-                      fontSize: 128,
-                    )),
-                SocialButtons(),
-              ],
+    return FadeIn(
+      delay: Duration(milliseconds: 1000),
+      duration: Duration(milliseconds: 1000),
+      child: Padding(
+        padding: const EdgeInsets.only(
+          left: 140,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 50,
             ),
-          ),
-          Text('I’m Adigun Alo',
-              style: GoogleFonts.manuale(
-                color: kCreamColor,
-                fontSize: 128,
-                fontWeight: FontWeight.w800,
-              )),
-          SizedBox(
-            height: 24,
-          ),
-          Row(
-            children: [
-              SizedBox(
-                width: 100,
+            Padding(
+              padding: const EdgeInsets.only(right: 133.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  AnimatedTextKit(animatedTexts: [
+                    TypewriterAnimatedText('Hello,',
+                        textStyle: GoogleFonts.marckScript(
+                          color: kCreamColor,
+                          fontSize: 128,
+                        ))
+                  ]),
+                  /* Text('Hello,',
+                      style: GoogleFonts.marckScript(
+                        color: kCreamColor,
+                        fontSize: 128,
+                      )),*/
+                  SocialButtons(),
+                ],
               ),
-              Container(
-                width: 265,
-                decoration: ShapeDecoration(
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                      width: 1,
-                      strokeAlign: BorderSide.strokeAlignCenter,
-                      color: kCreamColor,
+            ),
+            AnimatedTextKit(animatedTexts: [
+              TypewriterAnimatedText('I’m Adigun Alo,',
+                  textStyle: GoogleFonts.manuale(
+                    color: kCreamColor,
+                    fontSize: 128,
+                    fontWeight: FontWeight.w800,
+                  ))
+            ]),
+            SizedBox(
+              height: 24,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 100,
+                ),
+                Container(
+                  width: 265,
+                  decoration: ShapeDecoration(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        width: 1,
+                        strokeAlign: BorderSide.strokeAlignCenter,
+                        color: kCreamColor,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                width: 30,
-              ),
-              SizedBox(
-                width: 723,
-                child: Text(
-                    'Dedicated Flutter Developer committed to delivering exceptional user applications & maximizing revenue for organizations.',
-                    style: GoogleFonts.judson(
-                      color: Color(0xFF11CDF6),
-                      fontSize: 40,
-                    )),
-              )
-            ],
-          ),
-          SizedBox(
-            height: 48,
-          ),
-          Text(
-            'About Me',
-            style: GoogleFonts.manuale(
-                color: kCreamColor,
-                fontSize: 128,
-                fontWeight: FontWeight.w800,
-                height: 1.4),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          SizedBox(
-            width: 799,
-            child: Text(
-              aboutMe_txt,
-              style: GoogleFonts.manuale(
-                color: kCreamColor,
-                fontSize: 24,
-              ),
+                const SizedBox(
+                  width: 30,
+                ),
+                SizedBox(
+                  width: 723,
+                  child: Text(
+                      'Dedicated Flutter Developer committed to delivering exceptional user applications & maximizing revenue for organizations.',
+                      style: GoogleFonts.judson(
+                        color: Color(0xFF11CDF6),
+                        fontSize: 40,
+                      )),
+                )
+              ],
             ),
-          ),
-          SizedBox(
-            height: 32,
-          ),
-          Container(
-            width: 297,
-            height: 64,
-            padding: const EdgeInsets.symmetric(horizontal: 61, vertical: 20),
-            clipBehavior: Clip.antiAlias,
-            decoration: BoxDecoration(color: Color(0xFF11CDF6)),
-            child: Text('Download my Resume',
-                style: GoogleFonts.judson(
-                  color: Color(0xFF000501),
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
-                )),
-          )
-        ],
+            SizedBox(
+              height: 48,
+            ),
+            ZoomIn(
+              child: Column(
+                children: [
+                  Text(
+                    'About Me',
+                    style: GoogleFonts.manuale(
+                        color: kCreamColor,
+                        fontSize: 128,
+                        fontWeight: FontWeight.w800,
+                        height: 1.4),
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  SizedBox(
+                    width: 799,
+                    child: Text(
+                      aboutMe_txt,
+                      style: GoogleFonts.manuale(
+                        color: kCreamColor,
+                        fontSize: 24,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 32,
+                  ),
+                  Container(
+                    width: 297,
+                    height: 64,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 61, vertical: 20),
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(color: Color(0xFF11CDF6)),
+                    child: Text('Download my Resume',
+                        style: GoogleFonts.judson(
+                          color: Color(0xFF000501),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                        )),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -143,103 +164,111 @@ class TabletHomPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 100, right: 100),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 50,
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text('Hello,',
-                  style: GoogleFonts.marckScript(
+    return FadeIn(
+      delay: Duration(milliseconds: 1000),
+      duration: Duration(milliseconds: 1000),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 100, right: 100),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 50,
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AnimatedTextKit(animatedTexts: [
+                  TypewriterAnimatedText('Hello',
+                      textStyle: GoogleFonts.marckScript(
+                        color: kCreamColor,
+                        fontSize: 80,
+                      ))
+                ]),
+                SocialButtons(),
+              ],
+            ),
+            AnimatedTextKit(animatedTexts: [
+              TypewriterAnimatedText('I’m Adigun Alo,',
+                  textStyle: GoogleFonts.manuale(
                     color: kCreamColor,
-                    fontSize: 80,
-                  )),
-              SocialButtons(),
-            ],
-          ),
-          Text('I’m Adigun Alo',
-              style: GoogleFonts.manuale(
-                color: kCreamColor,
-                fontSize: 60,
-                fontWeight: FontWeight.w800,
-              )),
-          SizedBox(
-            height: 24,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Container(
-                width: 350,
-                decoration: ShapeDecoration(
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                      width: 1,
-                      strokeAlign: BorderSide.strokeAlignCenter,
-                      color: kCreamColor,
+                    fontSize: 60,
+                    fontWeight: FontWeight.w800,
+                  ))
+            ]),
+            SizedBox(
+              height: 24,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                  width: 350,
+                  decoration: ShapeDecoration(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        width: 1,
+                        strokeAlign: BorderSide.strokeAlignCenter,
+                        color: kCreamColor,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          Gap(48),
-          SizedBox(
-            // width: 723,
-            child: Text(
-                'Dedicated Flutter Developer committed to\ndelivering exceptional user applications &\nmaximizing revenue for organizations.',
-                style: GoogleFonts.judson(
-                  color: Color(0xFF11CDF6),
-                  fontSize: 25,
-                )),
-          ),
-          SizedBox(
-            height: 48,
-          ),
-          Text(
-            'About Me',
-            style: GoogleFonts.manuale(
-                color: kCreamColor,
-                fontSize: 60,
-                fontWeight: FontWeight.w800,
-                height: 1.4),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          SizedBox(
-            width: 799,
-            child: Text(
-              aboutMe_txt,
+              ],
+            ),
+            Gap(48),
+            SizedBox(
+              // width: 723,
+              child: Text(
+                  'Dedicated Flutter Developer committed to\ndelivering exceptional user applications &\nmaximizing revenue for organizations.',
+                  style: GoogleFonts.judson(
+                    color: Color(0xFF11CDF6),
+                    fontSize: 25,
+                  )),
+            ),
+            SizedBox(
+              height: 48,
+            ),
+            Text(
+              'About Me',
               style: GoogleFonts.manuale(
-                color: kCreamColor,
-                fontSize: 18,
+                  color: kCreamColor,
+                  fontSize: 60,
+                  fontWeight: FontWeight.w800,
+                  height: 1.4),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            SizedBox(
+              width: 799,
+              child: Text(
+                aboutMe_txt,
+                style: GoogleFonts.manuale(
+                  color: kCreamColor,
+                  fontSize: 18,
+                ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 32,
-          ),
-          Container(
-            width: 297,
-            height: 64,
-            padding: const EdgeInsets.symmetric(horizontal: 61, vertical: 20),
-            clipBehavior: Clip.antiAlias,
-            decoration: BoxDecoration(color: Color(0xFF11CDF6)),
-            child: Text('Download my Resume',
-                style: GoogleFonts.judson(
-                  color: Color(0xFF000501),
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
-                )),
-          )
-        ],
+            SizedBox(
+              height: 32,
+            ),
+            Container(
+              width: 297,
+              height: 64,
+              padding: const EdgeInsets.symmetric(horizontal: 61, vertical: 20),
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(color: Color(0xFF11CDF6)),
+              child: Text('Download my Resume',
+                  style: GoogleFonts.judson(
+                    color: Color(0xFF000501),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                  )),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -313,19 +342,36 @@ class MobileHomePage extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Hello,',
+                          AnimatedTextKit(animatedTexts: [
+                            TypewriterAnimatedText('Hello,',
+                                textStyle: GoogleFonts.marckScript(
+                                  color: kCreamColor,
+                                  fontSize: 84,
+                                  height: 1.04,
+                                ))
+                          ]),
+                          /* Text('Hello,',
                               style: GoogleFonts.marckScript(
                                 color: kCreamColor,
                                 fontSize: 84,
                                 height: 1.04,
-                              )),
-                          Text('I’m Adigun Alo',
+                              )),*/
+                          AnimatedTextKit(animatedTexts: [
+                            TypewriterAnimatedText('I’m Adigun Alo,',
+                                textStyle: GoogleFonts.manuale(
+                                  color: kCreamColor,
+                                  fontSize: 46,
+                                  fontWeight: FontWeight.w800,
+                                  height: 1.4,
+                                ))
+                          ]),
+                          /* Text('I’m Adigun Alo',
                               style: GoogleFonts.manuale(
                                 color: kCreamColor,
                                 fontSize: 46,
                                 fontWeight: FontWeight.w800,
                                 height: 1.4,
-                              )),
+                              )),*/
                         ],
                       ),
                     ],
@@ -366,6 +412,7 @@ class MobileHomePage extends StatelessWidget {
             ),
             Gap(48),
             ZoomIn(
+              delay: Duration(milliseconds: 1190),
               duration: Duration(milliseconds: 1190),
               child: Padding(
                 padding: EdgeInsets.only(left: 24, right: 24),
@@ -394,7 +441,7 @@ class MobileHomePage extends StatelessWidget {
                     SizedBox(
                       height: 32,
                     ),
-                    Swing(
+                    Bounce(
                         delay: Duration(milliseconds: 2500),
                         duration: Duration(milliseconds: 1000),
                         child: Container(

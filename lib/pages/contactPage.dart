@@ -1,13 +1,10 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/utils/responsive.dart';
+import 'package:portfolio_app/utils/strings.dart';
 
 import '../utils/colors.dart';
-import 'package:portfolio_app/utils/strings.dart';
-import 'package:portfolio_app/widgets/contact_buttons.dart';
-import 'package:portfolio_app/widgets/social_button.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({Key? key, this.scrollController}) : super(key: key);
@@ -352,7 +349,7 @@ class FooterWidget extends StatelessWidget {
                 height: 10,
               ),
               Text(
-                ' copyright_txt,',
+                copyright_txt,
                 style: TextStyle(
                     fontWeight: FontWeight.w600,
                     color: kCreamColor,
