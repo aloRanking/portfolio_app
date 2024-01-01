@@ -136,19 +136,24 @@ class DesktopHomPage extends StatelessWidget {
                   SizedBox(
                     height: 32,
                   ),
-                  Container(
-                    width: 297,
-                    height: 64,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 61, vertical: 20),
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(color: Color(0xFF11CDF6)),
-                    child: Text('Download my Resume',
-                        style: GoogleFonts.judson(
-                          color: Color(0xFF000501),
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                        )),
+                  InkWell(
+                    onTap: () {
+                      js.context.callMethod('open', [downloadCV]);
+                    },
+                    child: Container(
+                      width: 297,
+                      height: 64,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 61, vertical: 20),
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(color: Color(0xFF11CDF6)),
+                      child: Text('Download my Resume',
+                          style: GoogleFonts.judson(
+                            color: Color(0xFF000501),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                          )),
+                    ),
                   ),
                 ],
               ),
@@ -255,18 +260,24 @@ class TabletHomPage extends StatelessWidget {
             SizedBox(
               height: 32,
             ),
-            Container(
-              width: 297,
-              height: 64,
-              padding: const EdgeInsets.symmetric(horizontal: 61, vertical: 20),
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(color: Color(0xFF11CDF6)),
-              child: Text('Download my Resume',
-                  style: GoogleFonts.judson(
-                    color: Color(0xFF000501),
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                  )),
+            InkWell(
+              onTap: () {
+                js.context.callMethod('open', [downloadCV]);
+              },
+              child: Container(
+                width: 297,
+                height: 64,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 61, vertical: 20),
+                clipBehavior: Clip.antiAlias,
+                decoration: BoxDecoration(color: Color(0xFF11CDF6)),
+                child: Text('Download my Resume',
+                    style: GoogleFonts.judson(
+                      color: Color(0xFF000501),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                    )),
+              ),
             )
           ],
         ),
@@ -412,39 +423,40 @@ class MobileHomePage extends StatelessWidget {
                   )),
             ),
             Gap(48),
-            ZoomIn(
-              delay: Duration(milliseconds: 1190),
-              duration: Duration(milliseconds: 1190),
-              child: Padding(
-                padding: EdgeInsets.only(left: 24, right: 24),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          'About Me',
-                          style: GoogleFonts.manuale(
-                            color: kCreamColor,
-                            fontSize: 48,
-                            fontWeight: FontWeight.w800,
-                          ),
+            Padding(
+              padding: EdgeInsets.only(left: 24, right: 24),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        'About Me',
+                        style: GoogleFonts.manuale(
+                          color: kCreamColor,
+                          fontSize: 48,
+                          fontWeight: FontWeight.w800,
                         ),
-                      ],
-                    ),
-                    Gap(24),
-                    Text(
-                      aboutMe_txt,
-                      style: GoogleFonts.manuale(
-                        color: kCreamColor,
-                        fontSize: 16,
                       ),
+                    ],
+                  ),
+                  Gap(24),
+                  Text(
+                    aboutMe_txt,
+                    style: GoogleFonts.manuale(
+                      color: kCreamColor,
+                      fontSize: 16,
                     ),
-                    SizedBox(
-                      height: 32,
-                    ),
-                    Bounce(
-                        delay: Duration(milliseconds: 2500),
-                        duration: Duration(milliseconds: 1000),
+                  ),
+                  SizedBox(
+                    height: 32,
+                  ),
+                  Bounce(
+                      delay: Duration(milliseconds: 2500),
+                      duration: Duration(milliseconds: 1000),
+                      child: InkWell(
+                        onTap: () {
+                          js.context.callMethod('open', [downloadCV]);
+                        },
                         child: Container(
                           //margin: EdgeInsets.symmetric(horizontal: 24),
                           width: double.infinity,
@@ -459,9 +471,9 @@ class MobileHomePage extends StatelessWidget {
                                 fontSize: 18,
                                 fontWeight: FontWeight.w700,
                               )),
-                        )),
-                  ],
-                ),
+                        ),
+                      )),
+                ],
               ),
             ),
             SizedBox(

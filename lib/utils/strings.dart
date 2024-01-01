@@ -23,8 +23,10 @@ const project_dev =
     'I use my knowledge, skills, techniques and tools at my disposal to ensure the project meets its stated goals and requirements ';
 
 //links
-const String downloadCV =
+const String oldDownloadCV =
     'https://drive.google.com/file/d/1VWMBD-jWo01zfaSHDBofXBArAzH2gwVU/view?usp=sharing';
+const String downloadCV =
+    'https://drive.google.com/file/d/1u32wAt_7Wdwo4_a36aRTFSwosOhldwMP/view?usp=drive_link';
 const String github = 'https://github.com/aloranking/';
 const String linkedIn = 'https://www.linkedin.com/in/adigun-abdul-lateef-02/';
 const String twitter = 'https://mobile.twitter.com/chuck8612';

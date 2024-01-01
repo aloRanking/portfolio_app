@@ -57,12 +57,13 @@ class MobileContactPage extends StatelessWidget {
               ),
               Gap(32),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                //crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
                     width: 295,
                     child: Text(
                       'My inbox is always open, if you have an offer or want to say hello',
+                      textAlign: TextAlign.center,
                       style: GoogleFonts.judson(
                         color: kCreamColor,
                         fontSize: 16,
