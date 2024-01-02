@@ -73,7 +73,7 @@ class MobileContactPage extends StatelessWidget {
                   ),
                   Gap(16),
                   SelectableText(
-                    'alobently@outlook.com',
+                    'adigunalo@outlook.com',
                     style: GoogleFonts.judson(
                       color: Color(0xFF11CDF6),
                       fontSize: 16,
@@ -160,7 +160,7 @@ class TabletContactPage extends StatelessWidget {
                   ),
                   Gap(16),
                   SelectableText(
-                    'alobently@outlook.com',
+                    'adigunalo@outlook.com',
                     style: GoogleFonts.judson(
                       color: Color(0xFF11CDF6),
                       fontSize: 18,
@@ -285,7 +285,7 @@ class DesktopContactPage extends StatelessWidget {
                     ),
                   ),
                   SelectableText(
-                    'alobently@outlook.com',
+                    'adigunalo@outlook.com',
                     style: GoogleFonts.judson(
                       color: Color(0xFF11CDF6),
                       fontSize: 32,
@@ -403,9 +403,9 @@ class ContactCard extends StatelessWidget {
               Text('Hii, you can hit me up @',
               style: TextStyle(fontSize: greetingTxtSize),),
               SizedBox(height: 20,),
-              SelectableText('alobently@outlook.com',
-              style: TextStyle(fontSize: emailTxtSize,
-              fontWeight: FontWeight.bold),)
+              SelectableText('adigunalo@outlook.com',
+                style: TextStyle(fontSize: emailTxtSize,
+                    fontWeight: FontWeight.bold),)
             ],
           ),
         ),
