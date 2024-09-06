@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/utils/responsive.dart';
+import 'package:portfolio_app/utils/strings.dart';
 
 import '../utils/colors.dart';
 
@@ -71,7 +72,7 @@ class MobileContactPage extends StatelessWidget {
                   ),
                   Gap(16),
                   SelectableText(
-                    'alobently@outlook.com',
+                    myEmail,
                     style: GoogleFonts.judson(
                       color: Color(0xFF11CDF6),
                       fontSize: 16,
@@ -158,7 +159,7 @@ class TabletContactPage extends StatelessWidget {
                   ),
                   Gap(16),
                   SelectableText(
-                    'alobently@outlook.com',
+                    myEmail,
                     style: GoogleFonts.judson(
                       color: Color(0xFF11CDF6),
                       fontSize: 18,
@@ -283,7 +284,7 @@ class DesktopContactPage extends StatelessWidget {
                     ),
                   ),
                   SelectableText(
-                    'alobently@outlook.com',
+                    myEmail,
                     style: GoogleFonts.judson(
                       color: Color(0xFF11CDF6),
                       fontSize: 32,

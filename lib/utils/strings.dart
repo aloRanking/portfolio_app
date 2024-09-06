@@ -14,7 +14,11 @@ const app_dev =
 const web_dev =
     'Web applications are software developed for a specific purpose, hosted on a web server. They can be accessed using any internet-enabled device, like phones, laptops, and desktops.';
 
+
+const String myEmail = 'adigunalo@outlook.com';
+
 //links
+
 const String github = 'https://github.com/aloranking/';
 const String linkedIn = 'https://www.linkedin.com/in/adigun-abdul-lateef-02/';
 const String twitter = 'https://mobile.twitter.com/chuck8612';
