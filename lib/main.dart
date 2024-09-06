@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       //darkTheme: ,
       theme: ThemeData(
         textTheme: GoogleFonts.latoTextTheme(textTheme).copyWith(
-          bodyText1: GoogleFonts.oswald(textStyle: textTheme.bodyText1),
+          bodyLarge: GoogleFonts.oswald(textStyle: textTheme.bodyLarge),
         ),
       ),
       home: HomeScreen(),

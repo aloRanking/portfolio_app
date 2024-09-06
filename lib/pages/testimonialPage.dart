@@ -174,7 +174,7 @@ class _MobileTestimonialState extends State<MobileTestimonial> {
                 ? SizedBox.shrink()
                 : ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.all(16), primary: kGreenColor),
+                        padding: EdgeInsets.all(16), backgroundColor: kGreenColor),
                     onPressed: () {
                       _pageController.previousPage(
                           duration: Duration(milliseconds: 700),
@@ -188,7 +188,7 @@ class _MobileTestimonialState extends State<MobileTestimonial> {
                 ? SizedBox.shrink()
                 : ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.all(16), primary: kGreenColor),
+                        padding: EdgeInsets.all(16), backgroundColor: kGreenColor),
                     onPressed: () {
                       _pageController.nextPage(
                           duration: Duration(milliseconds: 700),
