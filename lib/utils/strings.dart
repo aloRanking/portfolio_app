@@ -22,6 +22,9 @@ const train_dev =
 const project_dev =
     'I use my knowledge, skills, techniques and tools at my disposal to ensure the project meets its stated goals and requirements ';
 
+
+const String myEmail = 'adigunalo@outlook.com';
+
 //links
 const String oldDownloadCV =
     'https://drive.google.com/file/d/1VWMBD-jWo01zfaSHDBofXBArAzH2gwVU/view?usp=sharing';
