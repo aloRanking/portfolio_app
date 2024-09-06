@@ -96,7 +96,7 @@ class MobileServicePage extends StatelessWidget {
     return Column(
       children: [
         Container(
-          width: 328.32,
+          width: 358.32,
           height: 167.94,
           margin: EdgeInsets.symmetric(vertical: 56, horizontal: 24),
           decoration: ShapeDecoration(

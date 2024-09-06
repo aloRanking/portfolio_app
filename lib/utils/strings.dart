@@ -2,15 +2,16 @@ const String nav_title = 'AloRanking';
 const String user_name = 'ADIGUN ALO';
 const String flutter_dev_txt = 'Flutter Developer';
 const copyright_txt = '\u00a9 Alobently 2024. All rights reserved';
+const String mini_summary_text = 'Dedicated Flutter Developer committed to delivering exceptional user applications & maximizing revenue for organizations.';
 
 const aboutMe_txt =
     '''Experienced Flutter Developer with a proven track record of three years in crafting high-quality, cross-platform mobile applications. Proficient in leveraging the Flutter framework and Dart language to create visually appealing and efficient solutions.
     
- Adept at collaborating with multidisciplinary teams, I bring a blend of technical expertise, innovation, and commitment to delivering outstanding user experiences.
+Adept at collaborating with multidisciplinary teams, I bring a blend of technical expertise, innovation, and commitment to delivering outstanding user experiences.
      
- Known for adapting quickly to evolving project requirements and staying abreast of industry trends, I am poised to contribute my skills to drive the success of future development endeavors.
+Known for adapting quickly to evolving project requirements and staying abreast of industry trends, I am poised to contribute my skills to drive the success of future development endeavors.
      
- Outside work, I like to read books - Fiction precisely, enjoy good times with family & friends. Pretty interesting?''';
+Outside work, I like to read books - Fiction precisely, enjoy good times with family & friends. Pretty interesting?''';
 
 const app_dev =
     'I specialize in developing efficient apps that are pleasant to people and that work across all platform (Andriod, iOS and Web)';
@@ -25,9 +26,9 @@ const project_dev =
 
 const String myEmail = 'adigunalo@outlook.com';
 
+
 //links
-const String oldDownloadCV =
-    'https://drive.google.com/file/d/1VWMBD-jWo01zfaSHDBofXBArAzH2gwVU/view?usp=sharing';
+
 const String downloadCV =
     'https://drive.google.com/file/d/10HJ4lXdFTYw7i50JkCzhMwkUBLIlV3Nc/view?usp=sharing';
 const String github = 'https://github.com/aloranking/';
@@ -49,8 +50,9 @@ const String foodeloRider =
     'https://play.google.com/store/apps/details?id=ng.com.riders.foodelo';
 const String foodeloURL =
     'https://play.google.com/store/apps/details?id=africa.foodelo.hybrid';
-const String foodeloRiderURL =
-    'https://play.google.com/store/apps/details?id=ng.com.riders.foodelo';
+const String verimercePlaystoreUrl =
+    'https://play.google.com/store/apps/details?id=com.verimerce.app';
+
 const String contact_email = 'adigunalo21@gmail.com';
 
 //add optimized images for better load time and smooth scroll

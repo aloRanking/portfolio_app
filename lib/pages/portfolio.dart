@@ -109,28 +109,29 @@ class DesktopPortfolioPage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                         )),
                   ),
+                  Gap(24),
+                  Row(
+                    children: [
+                      DesktopAppstoreItem(
+                        image: 'icons/playstore.svg',
+                        title: 'Get on Android',
+                        onTapped: () {
+                          js.context.callMethod('open', [foodeloPlaystore]);
+                        },
+                      ),
+                      Gap(22),
+                      DesktopAppstoreItem(
+                        image: 'icons/apple_logo.svg',
+                        title: 'Get on iOS',
+                        onTapped: () {
+                          js.context.callMethod('open', [foodeloAppstore]);
+                        },
+                      ),
+                    ],
+                  ),
                 ],
               ),
-              Gap(24),
-              Row(
-                children: [
-                  DesktopAppstoreItem(
-                    image: 'icons/playstore.svg',
-                    title: 'Get on Android',
-                    onTapped: () {
-                      js.context.callMethod('open', [foodeloPlaystore]);
-                    },
-                  ),
-                  Gap(22),
-                  DesktopAppstoreItem(
-                    image: 'icons/apple_logo.svg',
-                    title: 'Get on iOS',
-                    onTapped: () {
-                      js.context.callMethod('open', [foodeloAppstore]);
-                    },
-                  ),
-                ],
-              ),
+
               Gap(32),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -152,28 +153,72 @@ class DesktopPortfolioPage extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                         )),
                   ),
+                  Gap(24),
+                  Row(
+                    children: [
+                      DesktopAppstoreItem(
+                        image: 'icons/playstore.svg',
+                        title: 'Get on Android',
+                        onTapped: () {
+                          js.context.callMethod('open', [foodeloRider]);
+                        },
+                      ),
+                      Gap(22),
+                      DesktopAppstoreItem(
+                        image: 'icons/apple_logo.svg',
+                        title: 'Get on iOS',
+                        onTapped: () {
+                          js.context.callMethod('open', [foodeloRider]);
+                        },
+                      ),
+                    ],
+                  ),
                 ],
               ),
-              Gap(24),
-              Row(
+              Gap(32),
+Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  DesktopAppstoreItem(
-                    image: 'icons/playstore.svg',
-                    title: 'Get on Android',
-                    onTapped: () {
-                      js.context.callMethod('open', [foodeloRider]);
-                    },
+                  Text('Verimerce',
+                      style: GoogleFonts.judson(
+                        color: kCreamColor,
+                        fontSize: 48,
+                        fontWeight: FontWeight.w400,
+                      )),
+                  Gap(8),
+                  SizedBox(
+                    width: 564,
+                    child: Text(
+                        'Find people you trust who can vouch for strangers you are about doing business with. Establish the genuineness of brands and their services/products.',
+                        style: GoogleFonts.judson(
+                          color: kCreamColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w400,
+                        )),
                   ),
-                  Gap(22),
-                  DesktopAppstoreItem(
-                    image: 'icons/apple_logo.svg',
-                    title: 'Get on iOS',
-                    onTapped: () {
-                      js.context.callMethod('open', [foodeloRider]);
-                    },
+                  Gap(24),
+                  Row(
+                    children: [
+                      DesktopAppstoreItem(
+                        image: 'icons/playstore.svg',
+                        title: 'Get on Android',
+                        onTapped: () {
+                          js.context.callMethod('open', [verimercePlaystoreUrl]);
+                        },
+                      ),
+                      Gap(22),
+                      DesktopAppstoreItem(
+                        image: 'icons/apple_logo.svg',
+                        title: 'Coming Soon',
+                        onTapped: () {
+                          //js.context.callMethod('open', [foodeloRider]);
+                        },
+                      ),
+                    ],
                   ),
                 ],
               ),
+
             ],
           ),
         )
@@ -368,6 +413,49 @@ class TabletPortfolioPage extends StatelessWidget {
                   ),
                 ],
               ),
+              Gap(32),
+            Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Verimerce',
+                      style: GoogleFonts.judson(
+                        color: kCreamColor,
+                        fontSize: 38,
+                        fontWeight: FontWeight.w400,
+                      )),
+                  Gap(8),
+                  SizedBox(
+                    width: 564,
+                    child: Text(
+                        'Find people you trust who can vouch for strangers you are about doing business with. Establish the genuineness of brands and their services/products.',
+                        style: GoogleFonts.judson(
+                          color: kCreamColor,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                        )),
+                  ),
+                  Gap(24),
+                  Row(
+                    children: [
+                      TabletAppStoreItem(
+                        image: 'icons/playstore.svg',
+                        title: 'Get on Android',
+                        onTapped: () {
+                          js.context.callMethod('open', [verimercePlaystoreUrl]);
+                        },
+                      ),
+                      Gap(22),
+                      TabletAppStoreItem(
+                        image: 'icons/apple_logo.svg',
+                        title: 'Coming Soon',
+                        onTapped: () {
+                          //js.context.callMethod('open', [foodeloRider]);
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ],
           ),
         )
@@ -477,86 +565,143 @@ class MobilePorfolioPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Foodelo - Hybrid Mobile App',
-                      style: GoogleFonts.judson(
-                        color: kCreamColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400,
-                      )),
-                  Gap(4),
-                  SizedBox(
-                    width: 316.58,
-                    child: Text(
-                        'Foodelo is an online food delivery solution that allows people to order food online and get it delivered to their homes',
-                        style: GoogleFonts.judson(
-                          color: kCreamColor,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        )),
-                  ),
-                  Gap(24),
-                  Row(
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      MobilePlaystoreItem(
-                        image: 'assets/icons/playstore.svg',
-                        title: 'Get on Android',
-                        onTapped: () {
-                          js.context.callMethod('open', [foodeloPlaystore]);
-                        },
+                      Text('Foodelo - Hybrid Mobile App',
+                          style: GoogleFonts.judson(
+                            color: kCreamColor,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w400,
+                          )),
+                      Gap(4),
+                      SizedBox(
+                        width: 316.58,
+                        child: Text(
+                            'Foodelo is an online food delivery solution that allows people to order food online and get it delivered to their homes',
+                            style: GoogleFonts.judson(
+                              color: kCreamColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                            )),
                       ),
-                      Gap(22),
-                      MobilePlaystoreItem(
-                        image: 'assets/icons/apple_logo.svg',
-                        title: 'Get on iOS',
-                        onTapped: () {
-                          js.context.callMethod('open', [foodeloAppstore]);
-                        },
+                      Gap(24),
+                      Row(
+                        children: [
+                          MobilePlaystoreItem(
+                            image: 'assets/icons/playstore.svg',
+                            title: 'Get on Android',
+                            onTapped: () {
+                              js.context.callMethod('open', [foodeloPlaystore]);
+                            },
+                          ),
+                          Gap(22),
+                          MobilePlaystoreItem(
+                            image: 'assets/icons/apple_logo.svg',
+                            title: 'Get on iOS',
+                            onTapped: () {
+                              js.context.callMethod('open', [foodeloAppstore]);
+                            },
+                          ),
+                        ],
                       ),
                     ],
                   ),
                 ],
               ),
               Gap(32),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Foodelo For delivery Riders',
-                      style: GoogleFonts.judson(
-                        color: kCreamColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400,
-                      )),
-                  Gap(4),
-                  SizedBox(
-                    width: 316.58,
-                    child: Text(
-                        'Foodelo is an online food delivery solution that allows people to order food online and get it delivered to their homes',
-                        style: GoogleFonts.judson(
-                          color: kCreamColor,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        )),
-                  ),
-                  Gap(24),
-                  Row(
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      MobilePlaystoreItem(
-                        image: 'assets/icons/playstore.svg',
-                        title: 'Get on Android',
-                        onTapped: () {
-                          js.context.callMethod('open', [foodeloRider]);
-                        },
+                      Text('Foodelo For delivery Riders',
+                          style: GoogleFonts.judson(
+                            color: kCreamColor,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w400,
+                          )),
+                      Gap(4),
+                      SizedBox(
+                        width: 316.58,
+                        child: Text(
+                            'Foodelo is an online food delivery solution that allows people to order food online and get it delivered to their homes',
+                            style: GoogleFonts.judson(
+                              color: kCreamColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                            )),
                       ),
-                      Gap(22),
-                      MobilePlaystoreItem(
-                        image: 'assets/icons/apple_logo.svg',
-                        title: 'Get on iOS',
-                        onTapped: () {
-                          js.context.callMethod('open', [foodeloRider]);
-                        },
+                      Gap(24),
+                      Row(
+                        children: [
+                          MobilePlaystoreItem(
+                            image: 'assets/icons/playstore.svg',
+                            title: 'Get on Android',
+                            onTapped: () {
+                              js.context.callMethod('open', [foodeloRider]);
+                            },
+                          ),
+                          Gap(22),
+                          MobilePlaystoreItem(
+                            image: 'assets/icons/apple_logo.svg',
+                            title: 'Get on iOS',
+                            onTapped: () {
+                              js.context.callMethod('open', [foodeloRider]);
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),Gap(32),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Verimerce',
+                          style: GoogleFonts.judson(
+                            color: kCreamColor,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w400,
+                          )),
+                      Gap(4),
+                      SizedBox(
+                        width: 316.58,
+                        child: Text(
+                            'Find people you trust who can vouch for strangers you are about doing business with. Establish the genuineness of brands and their services/products.',
+                            style: GoogleFonts.judson(
+                              color: kCreamColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                            )),
+                      ),
+                      Gap(24),
+                      Row(
+                        children: [
+                          MobilePlaystoreItem(
+                            image: 'assets/icons/playstore.svg',
+                            title: 'Get on Android',
+                            onTapped: () {
+                              js.context.callMethod('open', [verimercePlaystoreUrl]);
+                            },
+                          ),
+                          Gap(22),
+                          MobilePlaystoreItem(
+                            image: 'assets/icons/apple_logo.svg',
+                            title: 'Coming Soon',
+                            onTapped: () {
+                              //js.context.callMethod('open', [foodeloRider]);
+                            },
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -581,6 +726,7 @@ class MobilePlaystoreItem extends StatelessWidget {
   final String image;
   final String title;
   final Function()? onTapped;
+
 
   @override
   Widget build(BuildContext context) {

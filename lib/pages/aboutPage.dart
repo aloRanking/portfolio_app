@@ -94,14 +94,16 @@ class DesktopHomPage extends StatelessWidget {
                 const SizedBox(
                   width: 30,
                 ),
-                SizedBox(
-                  width: 723,
-                  child: Text(
-                      'Dedicated Flutter Developer committed to delivering exceptional user applications & maximizing revenue for organizations.',
-                      style: GoogleFonts.judson(
-                        color: Color(0xFF11CDF6),
-                        fontSize: 40,
-                      )),
+                Expanded(
+                  child: SizedBox(
+                    width: 723,
+                    child: Text(
+                        mini_summary_text,
+                         style: GoogleFonts.judson(
+                          color: Color(0xFF11CDF6),
+                          fontSize: 40,
+                        )),
+                  ),
                 )
               ],
             ),
@@ -136,24 +138,11 @@ class DesktopHomPage extends StatelessWidget {
                   SizedBox(
                     height: 32,
                   ),
-                  InkWell(
+                  DownloadResumeButton(
+                    title: 'Download My Resume',
                     onTap: () {
                       js.context.callMethod('open', [downloadCV]);
                     },
-                    child: Container(
-                      width: 297,
-                      height: 64,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 61, vertical: 20),
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(color: Color(0xFF11CDF6)),
-                      child: Text('Download my Resume',
-                          style: GoogleFonts.judson(
-                            color: Color(0xFF000501),
-                            fontSize: 18,
-                            fontWeight: FontWeight.w700,
-                          )),
-                    ),
                   ),
                 ],
               ),
@@ -164,6 +153,8 @@ class DesktopHomPage extends StatelessWidget {
     );
   }
 }
+
+
 
 class TabletHomPage extends StatelessWidget {
   const TabletHomPage({Key? key}) : super(key: key);
@@ -227,7 +218,7 @@ class TabletHomPage extends StatelessWidget {
             SizedBox(
               // width: 723,
               child: Text(
-                  'Dedicated Flutter Developer committed to\ndelivering exceptional user applications &\nmaximizing revenue for organizations.',
+                  mini_summary_text,
                   style: GoogleFonts.judson(
                     color: Color(0xFF11CDF6),
                     fontSize: 25,
@@ -260,25 +251,12 @@ class TabletHomPage extends StatelessWidget {
             SizedBox(
               height: 32,
             ),
-            InkWell(
+            DownloadResumeButton(
+              title: 'Download My Resume',
               onTap: () {
                 js.context.callMethod('open', [downloadCV]);
               },
-              child: Container(
-                width: 297,
-                height: 64,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 61, vertical: 20),
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(color: Color(0xFF11CDF6)),
-                child: Text('Download my Resume',
-                    style: GoogleFonts.judson(
-                      color: Color(0xFF000501),
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700,
-                    )),
-              ),
-            )
+            ),
           ],
         ),
       ),
@@ -416,7 +394,7 @@ class MobileHomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 24, right: 46),
               child: Text(
-                  'Dedicated Flutter Developer committed to delivering exceptional user applications & maximizing revenue for organizations.',
+                  mini_summary_text,
                   style: GoogleFonts.judson(
                     color: Color(0xFF11CDF6),
                     fontSize: 16,
@@ -453,26 +431,12 @@ class MobileHomePage extends StatelessWidget {
                   Bounce(
                       delay: Duration(milliseconds: 2500),
                       duration: Duration(milliseconds: 1000),
-                      child: InkWell(
+                      child:DownloadResumeButton(
+                        title: 'Download My Resume',
                         onTap: () {
                           js.context.callMethod('open', [downloadCV]);
                         },
-                        child: Container(
-                          //margin: EdgeInsets.symmetric(horizontal: 24),
-                          width: double.infinity,
-                          height: 64,
-                          alignment: Alignment.center,
-                          // padding: const EdgeInsets.symmetric(horizontal: 61, vertical: 20),
-                          clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(color: Color(0xFF11CDF6)),
-                          child: Text('Download my Resume',
-                              style: GoogleFonts.judson(
-                                color: Color(0xFF000501),
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700,
-                              )),
-                        ),
-                      )),
+                      ),),
                 ],
               ),
             ),
@@ -496,8 +460,8 @@ class MobileHomePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Container(
-            height: 150,
-            width: 150,
+            height: 200,
+            width: 200,
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
@@ -505,6 +469,38 @@ class MobileHomePage extends StatelessWidget {
                 )),
           ),
         ),
+      ),
+    );
+  }
+}
+
+
+class DownloadResumeButton extends StatelessWidget {
+  const DownloadResumeButton({
+    super.key, this.onTap, required this.title,
+  });
+
+  final Function()? onTap;
+  final String title;
+
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        width: 297,
+        height: 64,
+        alignment: Alignment.center,
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(color: Color(0xFF11CDF6),
+            borderRadius: BorderRadius.circular(8)),
+        child: Text(title,
+            style: GoogleFonts.judson(
+              color: Color(0xFF000501),
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+            )),
       ),
     );
   }

@@ -25,7 +25,7 @@ List<Project> selectedProjects = [
       image: kProjectImageUrl9,
       title: 'Foodelo for Riders',
       subtitle: 'A food ordering and delivering app',
-      url: foodeloRiderURL),
+      url: foodeloRider),
   Project(
       image: kProjectImageUrl8,
       title: 'Foodelo',
